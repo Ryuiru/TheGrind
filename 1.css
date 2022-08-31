@@ -1,0 +1,23 @@
+ul {
+    list-style-type:"➕";
+}
+table{
+    border-spacing: 0px;
+}
+table, th, td {
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+  .manoid {
+    width: 250px;
+  }
+  td {
+    padding: 5px;
+    border: 1px solid #666;
+    word-break: break-all;
+    width: 112px;
+    
+  }
+  tr {
+    background-color: rgb(216, 240, 240);
+  }

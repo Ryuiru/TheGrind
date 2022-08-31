@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(236, 239, 241);
+}
 ul {
     list-style-type:"➕";
 }
@@ -16,8 +19,13 @@ table, th, td {
     border: 1px solid #666;
     word-break: break-all;
     width: 112px;
-    
   }
   tr {
     background-color: rgb(216, 240, 240);
+  }
+  fieldset {
+    background-color: white;
+    display: inline;
+    padding-top: 25px;
+    padding-right: 100px;
   }

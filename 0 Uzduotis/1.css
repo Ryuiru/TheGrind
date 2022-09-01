@@ -29,3 +29,8 @@ table, th, td {
     padding-top: 20px;
     padding-right: 60px;
   }
+
+  p {
+    position: absolute;
+    top: 0;
+  }

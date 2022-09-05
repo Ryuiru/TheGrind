@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,16 +45,35 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* my codeeeeeeeeeeee */
+/* break */
+body {
+    background-image: url('wallone.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 10% 0px 0px;
+}
+h6{
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 0px 0px 15px 0px;
+    line-height: 1.2;
+}
+p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+}
 div{
-	border: 2px solid darkblue;
-	width: 50%;
-	margin: 50px;
+    border: 2px solid white;
+    display: inline-block;
+    margin: 0px 20px;
 }
-p {
-	position: absolute;
+form{
+    display: block;
 }
-img {
-	display: block;
-	margin: auto;
+input{
+    width: 100%;
 }

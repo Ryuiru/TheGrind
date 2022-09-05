@@ -46,16 +46,42 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* my codeeeeeeeeeeee */
-div{
-	border: 2px solid darkblue;
-	width: 50%;
-	margin: 50px;
+/* a break line to seperate css reset with my own code */
+body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 50px 0px 0px;
 }
-p {
-	position: absolute;
+div.main {
+    background-color: rgb(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 30px 50px;
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 1; 
+    display: block;
+    /* text-align: center; */
 }
-img {
-	display: block;
-	margin: auto;
+div.textboxone {
+    width: 49%;
+    display: inline-block;
+    border-radius: 10px;
+    background: rgb(252, 147, 147 , 1);
+}
+div.textboxtwo {
+    width: 49%;
+    display: inline-block;
+    border-radius: 10px;
+    background: rgb(127, 127, 250, 1);
+}
+p{
+    margin: 20px;
+}
+h6{
+    font-size: 40px;
+    padding: 20px 0px 0px 20px;
+    font-weight: bold;
 }

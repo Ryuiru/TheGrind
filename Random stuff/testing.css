@@ -46,16 +46,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* my codeeeeeeeeeeee */
+/* code */
+body{
+}
+#divas {
+    font-size: 0;
+    width: 80%;
+    display: block;
+}
 div{
-	border: 2px solid darkblue;
-	width: 50%;
-	margin: 50px;
-}
-p {
-	position: absolute;
-}
-img {
-	display: block;
-	margin: auto;
+    font-size: 16px;
+    background-color: green;
+    border: 1px solid black;
+    width: 12.5%;
+    height: 50px;
+    display: inline-block;
+    color: white;
+    margin: 0 auto;
+    box-sizing: border-box;
 }

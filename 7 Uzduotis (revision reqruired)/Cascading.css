@@ -46,16 +46,36 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* my codeeeeeeeeeeee */
+/* line break */
+body{
+    margin-top: 10%;
+    background-color: rgba(243,243,243,255);
+}
 div{
-	border: 2px solid darkblue;
-	width: 50%;
-	margin: 50px;
+    display: inline-block;
+    padding: 0px 10px;
 }
-p {
-	position: absolute;
+.blockone {
+    width: 70%;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
-img {
-	display: block;
-	margin: auto;
+.blocktwo {
+    width: 70%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+img{
+    padding: 10px;
+}
+H6{
+    padding: 10px 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+p{
+    color: rgba(0, 0, 0, 0.342);
+    line-height: 1.4;
 }

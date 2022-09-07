@@ -5,7 +5,7 @@ antra taisykle: apie inline-block elementus ir ju esme elementai prisispaudzia v
 Norint 100% sutalpinti 2 inline elementus 
 
 1. Taisykle:
-Blokiniai elementai uzima visa ploti ir isstumia po savim kaimynus(kitus elementus). Blokiniai elementai centruojasi su margin: 0 auto; width: maziau nei 100% (tevinio elemento)
+Blokiniai elementai uzima visa ploti ir isstumia po savim kaimynus(kitus elementus). Blokiniai elementai centruojasi su margin: 0 auto; width: maziau nei 100% (tevinis elementas) (taip pat gal ir reikia ant tevinio elemento irgi margin: 0 auto; uzdeti)
 
 2. Taisykle:
 Inline-block elementai priima draugelius salia ir neisstumia po savim, jeigu jiems uztenka plocio tevinio elemento atzvilgiu.

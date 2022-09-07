@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -45,35 +47,65 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* break */
-body {
-    background-image: url('wallone.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 10% 0px 0px;
-}
-h6{
-    color: white;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    padding: 0px 0px 15px 0px;
-    line-height: 1.2;
-}
-p{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
+
+/* my coooooooode */
+body{
+    background-color: rgb(255, 240, 242);
+    margin-top: 20vh;
+    text-align: center;
 }
 div{
-    border: 2px solid white;
-    display: inline-block;
-    margin: 0px 20px;
-}
-form{
+    width: 50%;
     display: block;
+    font-size: 0; 
+    margin: 0 auto;
 }
-input{
-    width: 100%;
+.eyde{
+    background-color: white;
+    display: inline-block;
+    border: 2px solid rgb(219, 194, 194);
+    width: 45%;
+    box-sizing: border-box;
+    margin: 0px 20px 0px 20px;
+}
+h6 {
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px 0px 10px;
+}
+p{
+    padding: 10px 0px 10px 0px;
+    color: rgb(192, 185, 176);
+    font-size: 18px;
+}
+button{
+    margin: 20px;
+}
+.blue {
+    color: rgb(118, 118, 236);
+}
+.orange{
+    color: orange;
+}
+p:nth-child(2){
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+.bluebutton{
+    color: white;
+    padding: 15px;
+    background-color: rgb(118, 118, 236);
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.orangebutton{
+    color: white;
+    padding: 15px;
+    background-color: orange;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    border-radius: 5px;
 }

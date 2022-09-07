@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -52,36 +53,38 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    margin: 50px 0px 0px;
+    margin-top: 20vh;
+    text-align: center;
 }
-div.main {
+.main {
     background-color: rgb(255, 255, 255, 0.6);
     border-radius: 20px;
     padding: 30px 50px;
-    width: 60%;
-    margin: auto;
-    box-sizing: border-box;
-    font-size: 1; 
-    display: block;
-    /* text-align: center; */
+    width: 50%;
+    margin: 0 auto;
+    font-size: 0;
 }
-div.textboxone {
-    width: 49%;
+.textboxone {
+    width: 45%;
     display: inline-block;
     border-radius: 10px;
     background: rgb(252, 147, 147 , 1);
+    margin-right: 40px;
 }
-div.textboxtwo {
-    width: 49%;
+.textboxtwo {
+    width: 45%;
     display: inline-block;
     border-radius: 10px;
     background: rgb(127, 127, 250, 1);
 }
 p{
-    margin: 20px;
+    margin: 15px;
+    font-size: 16px;
+    text-align: left;
 }
 h6{
     font-size: 40px;
     padding: 20px 0px 0px 20px;
     font-weight: bold;
+    text-align: left;
 }

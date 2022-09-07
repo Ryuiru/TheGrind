@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -46,36 +47,43 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* line break */
-body{
-    margin-top: 10%;
-    background-color: rgba(243,243,243,255);
+/* asdf */
+body {
+    background-image: url('wallone.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
 }
 div{
-    display: inline-block;
-    padding: 0px 10px;
+    padding: 200px 100px 100px 100px;
 }
-.blockone {
-    width: 70%;
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-.blocktwo {
-    width: 70%;
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-img{
-    padding: 10px;
-}
-H6{
-    padding: 10px 0px 10px;
+h6 {
+    font-size: 48px;
     font-weight: bold;
-    font-size: 18px;
+    color: white;
+    display: block;
+    padding-bottom: 30px;
 }
-p{
-    color: rgba(0, 0, 0, 0.342);
-    line-height: 1.4;
+p {
+    max-width: 900px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.486);
+    display: block;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+input{
+    width: 150px;
+    height: 45px;
+    border-style: none;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    background: rgb(255, 112, 60);
+    font-size: 14px;
 }

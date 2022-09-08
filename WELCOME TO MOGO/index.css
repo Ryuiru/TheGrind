@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+* *, *:before *, *:after * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
   margin: 0;
   padding: 0;
@@ -43,6 +49,21 @@ table {
 input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px #95e1d3;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #95e1d3;
+  -webkit-box-shadow: inset 0 0 0px #95e1d3;
 }
 
 body {
@@ -212,35 +233,286 @@ nav img {
   font-size: 0;
   background-color: #95e1d3;
   text-align: center;
-  margin: 0 auto;
-}
-.facts div {
-  width: 240px;
-  margin: 0 auto;
   height: 270px;
-  display: inline-block;
-  text-align: center;
-  position: relative;
+  margin-top: 105px;
 }
-.facts div h6 {
+.facts div:first-child {
+  border-left: 1px solid #b5eae0;
+}
+.facts .flexing {
+  display: inline-block;
+  width: 240px;
+  padding-top: 86px;
+  padding-bottom: 88px;
+  border-right: 1px solid #b5eae0;
+}
+.facts .flexing h6 {
   font-family: Montserrat, sans-serif;
   font-weight: bold;
   font-size: 72px;
   color: white;
-  position: absolute;
-  top: 30%;
-  left: 35%;
-  transform: -50%, -50%;
   margin: 0 auto;
 }
-.facts div p {
+.facts .flexing p {
+  font-family: Montserrat, sans-serif;
+  color: white;
+  margin: 0 auto;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.workwith {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+.workwith h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  padding-bottom: 20px;
+  padding-top: 120px;
+}
+.workwith p {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  color: #333333;
+  font-weight: bold;
+}
+.workwith img {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+.workwith div {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+.workwith div div {
+  width: 32%;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+.workwith div div h5 {
   font-family: Montserrat, sans-serif;
   font-size: 14px;
-  color: white;
-  width: 240px;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  padding-left: 70px;
+  padding-bottom: 12px;
+}
+.workwith div div p {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #999999;
+  display: inline-block;
+  padding-left: 70px;
+  line-height: 22px;
+  font-weight: normal;
+}
+.workwith div div img {
+  display: inline-block;
   position: absolute;
-  top: 60%;
-  left: 4%;
-  transform: -50%, -50%;
+  top: -57%;
+  left: 3%;
+}
+.workwith .firstrow {
+  padding-bottom: 50px;
+}
+.workwith .secondrow {
+  border-top: 1px solid #b5eae0;
+  padding-top: 50px;
+}
+
+.features {
+  max-height: 100%;
+  max-width: 100%;
+  height: 905px;
+  width: 1920px;
+  background-image: url("images/feauture.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin-top: 150px;
+}
+.features .container {
+  text-align: center;
+}
+.features .container img {
+  padding-top: 25px;
+}
+.features .container h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  padding-top: 140px;
+}
+.features .container p {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  padding-top: 15px;
+}
+
+.service {
+  text-align: center;
+}
+.service h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  padding-top: 70px;
+}
+.service p {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  padding-top: 20px;
+}
+.service img {
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
+.service .textunderservice {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #999999;
+  width: 960px;
   margin: 0 auto;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+.idk {
+  font-size: 0;
+  margin: 75px auto;
+  text-align: center;
+  width: 62.5%;
+  height: 100%;
+}
+.idk .picture {
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+}
+.idk .fieldtextarea {
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+  height: 400px;
+  vertical-align: top;
+}
+.idk .fieldtextarea .importantdiv {
+  margin-bottom: 200px;
+}
+.idk .fieldtextarea .importantdiv div {
+  height: 190px;
+  width: 600px;
+  margin-left: -1px;
+  margin-top: 56px;
+}
+.idk .fieldtextarea .importantdiv div textarea {
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  border: 0px;
+  height: 126px;
+  width: 565px;
+  resize: none;
+  margin-top: 15px;
+  margin-left: 15px;
+  color: #999999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-weight: 300;
+}
+.idk .fieldtextarea div {
+  display: block;
+  width: 600px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+  margin-left: 17px;
+  height: 58px;
+  position: relative;
+}
+.idk .fieldtextarea div h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 36%;
+  left: 9%;
+  color: #333333;
+}
+.idk .fieldtextarea div img {
+  position: absolute;
+  top: 15%;
+  left: 2%;
+}
+.idk .fieldtextarea div img.arrows {
+  position: absolute;
+  top: 38%;
+  left: 94%;
+}
+
+.quote {
+  max-height: 100%;
+  max-width: 100%;
+  background-color: #f8f8f8;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 1920px;
+  margin: 0 auto;
+  font-size: 0;
+}
+.quote div {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 0;
+  height: 290px;
+  display: block;
+}
+.quote div .left {
+  display: inline-block;
+  margin: 0 auto;
+  width: 30%;
+  position: relative;
+}
+.quote div .left img {
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+  top: 22%;
+  left: 52%;
+}
+.quote div .right {
+  display: inline-block;
+  margin: 0 auto;
+  width: 70%;
+}
+.quote div .right img {
+  display: inline-block;
+  margin: 0px 0px 148px 45px;
+}
+.quote div .right p {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  color: #999999;
+  display: inline-block;
+  margin: 0px 0px 0px 40px;
+}
+.quote div .right h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
 }/*# sourceMappingURL=index.css.map */

@@ -76,6 +76,29 @@ body {
   margin: 29px auto;
 }
 
+.sometext {
+  text-align: center;
+  margin: 0 auto;
+}
+.sometext h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+}
+.sometext h5 {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+}
+.sometext p {
+  margin: 0 auto;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #999999;
+  width: 1200px;
+}
+
 nav {
   margin: 0 auto;
   display: block;
@@ -462,57 +485,331 @@ nav img {
 }
 
 .quote {
-  max-height: 100%;
   max-width: 100%;
   background-color: #f8f8f8;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  width: 1920px;
-  margin: 0 auto;
+  margin: 0;
   font-size: 0;
+  padding: 69px;
 }
 .quote div {
-  width: 1200px;
   margin: 0 auto;
   font-size: 0;
-  height: 290px;
-  display: block;
+  text-align: center;
+  padding: 0px 0;
+  width: 1200px;
 }
-.quote div .left {
-  display: inline-block;
+.quote div .contone {
+  width: 32%;
   margin: 0 auto;
-  width: 30%;
-  position: relative;
+  display: inline;
+  vertical-align: middle;
 }
-.quote div .left img {
-  display: inline-block;
+.quote div .conttwo {
+  width: 68%;
   margin: 0 auto;
-  position: absolute;
-  top: 22%;
-  left: 52%;
-}
-.quote div .right {
   display: inline-block;
-  margin: 0 auto;
-  width: 70%;
+  vertical-align: middle;
+  font-size: 24px;
+  text-align: left;
 }
-.quote div .right img {
-  display: inline-block;
-  margin: 0px 0px 148px 45px;
+.quote div .conttwo .hr-line {
+  padding-right: 10px;
 }
-.quote div .right p {
+.quote div p {
   font-family: Roboto, sans-serif;
   font-size: 24px;
-  font-style: italic;
   font-weight: 300;
+  font-style: italic;
   color: #999999;
   display: inline-block;
-  margin: 0px 0px 0px 40px;
+  padding-bottom: 11px;
+  line-height: 35px;
 }
-.quote div .right h6 {
+.quote div h6 {
   font-family: Kaushan Script, sans-serif;
   font-size: 24px;
   color: #333333;
   display: inline-block;
-  margin: 0px 0px 0px 0px;
+  padding-top: 5px;
+}
+.quote div .rodykles {
+  margin: 0px 0px -12px 20px;
+}
+.quote div .squareimage {
+  padding: 0px 60px 0px 90px;
+}
+
+.meetourteam div {
+  margin: 0 auto;
+  text-align: center;
+  width: 1200px;
+}
+.meetourteam div h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  padding-top: 100px;
+}
+.meetourteam div h5 {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  padding-top: 20px;
+}
+.meetourteam div p {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #999999;
+  height: 40px;
+  width: 950px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.meetourteam div img {
+  padding: 35px 0px;
+}
+.meetourteam .teamtwo {
+  margin: 0 auto;
+}
+.meetourteam .teamtwo h6 {
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.meetourteam .teamtwo p {
+  width: auto;
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  color: #999999;
+}
+.meetourteam .teamtwo .secondimage {
+  margin: 50px;
+}
+.meetourteam .teamtwo div {
+  width: 30%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+.meetourteam .teamtwo div img {
+  display: inline-block;
+}
+
+.logos {
+  width: 100%;
+  height: 250px;
+  background-color: #f8f8f8;
+  margin: 0 auto;
+}
+.logos div {
+  width: 1200px;
+  margin: 0 auto;
+}
+.logos div img {
+  margin: 0 auto;
+  padding-top: 51px;
+}
+
+.whatwedo {
+  height: 780px;
+  font-size: 0;
+}
+.whatwedo .leftpictures {
+  width: 50%;
+  display: inline-block;
+  font-size: 0;
+}
+.whatwedo .leftpictures img {
+  width: 50%;
+}
+.whatwedo .rightpictures {
+  width: 50%;
+  display: inline-block;
+  font-size: 0;
+}
+.whatwedo .rightpictures img {
+  width: 50%;
+}
+.whatwedo .rightpictures div {
+  width: 50%;
+  display: inline-block;
+}
+.whatwedo .rightpictures div img {
+  width: 100%;
+}
+
+.quotetwo {
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin: 0;
+  font-size: 0;
+  padding: 118px;
+}
+.quotetwo div {
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+  padding: 0px 0;
+  width: 1200px;
+}
+.quotetwo div .contone {
+  width: 32%;
+  margin: 0 auto;
+  display: inline;
+  vertical-align: middle;
+}
+.quotetwo div .conttwo {
+  width: 68%;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+  text-align: left;
+}
+.quotetwo div .conttwo .hr-line {
+  padding-right: 10px;
+}
+.quotetwo div p {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  color: #999999;
+  display: inline-block;
+  padding-bottom: 11px;
+  line-height: 35px;
+}
+.quotetwo div h6 {
+  font-family: Kaushan Script, sans-serif;
+  font-size: 24px;
+  color: #333333;
+  display: inline-block;
+  padding-top: 5px;
+}
+.quotetwo div .rodykles {
+  margin: 0px 0px -12px 20px;
+}
+.quotetwo div .squareimage {
+  padding: 0px 60px 0px 90px;
+}
+.quotetwo div .pfppicture {
+  padding: 0px 30px 0px 60px;
+}
+
+.happyclients {
+  height: 100%;
+  background-image: url("images/background2.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: white;
+  margin: 0 auto;
+  height: 830px;
+  font-size: 0;
+  text-align: center;
+  padding-top: 50px;
+}
+.happyclients .main {
+  width: 62.5%;
+  text-align: center;
+  margin: 0 auto;
+}
+.happyclients .main div {
+  margin: 0 auto;
+  font-size: 0;
+  width: 50%;
+  display: inline-block;
+  padding-bottom: 25px;
+}
+.happyclients .main div .contone {
+  margin: 0 auto;
+  display: inline;
+}
+.happyclients .main .conttwo {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+  text-align: left;
+  padding-left: 30px;
+}
+.happyclients .main .conttwo h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+.happyclients .main .conttwo h5 {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #333333;
+}
+.happyclients .main .conttwo p {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  color: #999999;
+}
+
+.latestblog {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+.latestblog .blogblocks {
+  width: 33.3%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0;
+}
+.latestblog .blogblocks h6 {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  color: #333333;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.latestblog .blogblocks .smallnumbers {
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #999999;
+  border: none;
+  display: inline-block;
+  width: 10%;
+}
+.latestblog .blogblocks p {
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  color: #999999;
+  border-bottom: 1px solid #e5e5e5;
+  width: 95%;
+  padding-left: 10px;
+}
+
+.openmap {
+  width: 100%;
+  background-image: url("images/openmap.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: white;
+  margin: 0 auto;
+  height: 210px;
+  font-size: 0;
+  text-align: center;
+  padding-top: 50px;
+}
+.openmap h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f38181;
 }/*# sourceMappingURL=index.css.map */

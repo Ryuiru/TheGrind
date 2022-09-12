@@ -51,6 +51,10 @@ input {
   border-radius: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 textarea::-webkit-scrollbar {
   width: 5px;
 }
@@ -74,6 +78,8 @@ body {
   background-attachment: scroll;
   background-color: white;
   margin: 29px auto;
+  font-size: 1.6rem;
+  background-size: 100% auto;
 }
 
 .sometext {
@@ -82,21 +88,28 @@ body {
 }
 .sometext h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
+  padding: 50px 0px 20px;
 }
 .sometext h5 {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   color: #333333;
+  padding-bottom: 35px;
 }
 .sometext p {
   margin: 0 auto;
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
   width: 1200px;
+  padding: 0px 0px 80px;
+  max-width: 100%;
+}
+.sometext img {
+  padding-bottom: 40px;
 }
 
 nav {
@@ -106,6 +119,8 @@ nav {
   max-height: 100%;
   font-size: 0;
   text-align: right;
+  position: relative;
+  width: 1200px;
 }
 nav ul {
   list-style-type: none;
@@ -128,14 +143,16 @@ nav .underline:hover {
 }
 nav h6 {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   display: inline-block;
   color: white;
+  position: absolute;
+  left: 1%;
 }
 nav a {
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   text-decoration: none;
   color: white;
   display: inline-block;
@@ -158,12 +175,12 @@ nav img {
 }
 .sad h4 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 72px;
+  font-size: 7.2rem;
   padding-bottom: 40px;
 }
 .sad h5 {
   font-family: Montserrat, sans-serif;
-  font-size: 150px;
+  font-size: 15rem;
   font-weight: bold;
   display: block;
 }
@@ -175,7 +192,7 @@ nav img {
 .sad p {
   font-family: Montserrat, sans-serif;
   color: white;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
   border: 3px solid white;
   padding: 16px 0px 14px;
@@ -200,7 +217,7 @@ nav img {
   border-top: 3px solid white;
 }
 .fakefooter div h6 {
-  font-size: 24px;
+  font-size: 2.4rem;
   display: inline-block;
   padding: 25px 8px 0px 0px;
   font-weight: bold;
@@ -209,7 +226,7 @@ nav img {
 }
 .fakefooter div p {
   font-family: Montserrat, sans-serif;
-  font-size: 18px;
+  font-size: 1.8rem;
   display: inline-block;
   color: white;
 }
@@ -217,34 +234,6 @@ nav img {
 .ABOUT {
   margin: 0 auto;
   text-align: center;
-}
-.ABOUT hr {
-  border-bottom: 3px solid #f38181;
-  width: 60px;
-}
-.ABOUT h6 {
-  font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
-  color: #333333;
-  display: block;
-  padding-bottom: 20px;
-}
-.ABOUT h5 {
-  font-family: Montserrat, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: #333333;
-  display: block;
-  padding-bottom: 20px;
-}
-.ABOUT p {
-  font-family: Roboto, sans-serif;
-  font-size: 15px;
-  color: #999999;
-  display: block;
-  width: 960px;
-  height: 130px;
-  margin: 39px auto;
 }
 .ABOUT .middlephoto {
   padding: 0px 27px 0px 30px;
@@ -256,7 +245,6 @@ nav img {
   font-size: 0;
   background-color: #95e1d3;
   text-align: center;
-  height: 270px;
   margin-top: 105px;
 }
 .facts div:first-child {
@@ -272,7 +260,7 @@ nav img {
 .facts .flexing h6 {
   font-family: Montserrat, sans-serif;
   font-weight: bold;
-  font-size: 72px;
+  font-size: calc(3vw + 2rem);
   color: white;
   margin: 0 auto;
 }
@@ -280,7 +268,7 @@ nav img {
   font-family: Montserrat, sans-serif;
   color: white;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 1.4rem;
   padding-top: 10px;
 }
 
@@ -291,14 +279,14 @@ nav img {
 }
 .workwith h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
   padding-bottom: 20px;
   padding-top: 120px;
 }
 .workwith p {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: 3rem;
   color: #333333;
   font-weight: bold;
 }
@@ -311,6 +299,7 @@ nav img {
   margin: 0 auto;
   font-size: 0;
   text-align: center;
+  max-width: 100%;
 }
 .workwith div div {
   width: 32%;
@@ -321,7 +310,7 @@ nav img {
 }
 .workwith div div h5 {
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #333333;
   font-weight: bold;
   display: inline-block;
@@ -330,7 +319,7 @@ nav img {
 }
 .workwith div div p {
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
   display: inline-block;
   padding-left: 70px;
@@ -360,6 +349,7 @@ nav img {
   background-repeat: no-repeat;
   background-attachment: scroll;
   margin-top: 150px;
+  background-size: 100% auto;
 }
 .features .container {
   text-align: center;
@@ -369,13 +359,13 @@ nav img {
 }
 .features .container h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: calc(1rem + 1vw);
   color: #333333;
   padding-top: 140px;
 }
 .features .container p {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: calc(1rem + 1vw);
   font-weight: bold;
   color: #333333;
   padding-top: 15px;
@@ -386,13 +376,13 @@ nav img {
 }
 .service h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
   padding-top: 70px;
 }
 .service p {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   color: #333333;
   padding-top: 20px;
@@ -403,7 +393,7 @@ nav img {
 }
 .service .textunderservice {
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
   width: 960px;
   margin: 0 auto;
@@ -415,13 +405,16 @@ nav img {
   font-size: 0;
   margin: 75px auto;
   text-align: center;
-  width: 62.5%;
-  height: 100%;
+  width: 1200px;
+  max-width: 100%;
 }
 .idk .picture {
   width: 50%;
   margin: 0 auto;
   display: inline-block;
+}
+.idk .picture img {
+  max-width: 100%;
 }
 .idk .fieldtextarea {
   width: 50%;
@@ -443,7 +436,7 @@ nav img {
 .idk .fieldtextarea .importantdiv div textarea {
   font-family: Roboto, sans-serif;
   font-style: italic;
-  font-size: 15px;
+  font-size: 1.5rem;
   border: 0px;
   height: 126px;
   width: 565px;
@@ -466,7 +459,7 @@ nav img {
 }
 .idk .fieldtextarea div h6 {
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
   position: absolute;
   top: 36%;
@@ -489,6 +482,7 @@ nav img {
   background-color: #f8f8f8;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  width: 1920px;
   margin: 0;
   font-size: 0;
   padding: 69px;
@@ -499,6 +493,7 @@ nav img {
   text-align: center;
   padding: 0px 0;
   width: 1200px;
+  max-width: 100%;
 }
 .quote div .contone {
   width: 32%;
@@ -511,7 +506,7 @@ nav img {
   margin: 0 auto;
   display: inline-block;
   vertical-align: middle;
-  font-size: 24px;
+  font-size: 2.4rem;
   text-align: left;
 }
 .quote div .conttwo .hr-line {
@@ -519,7 +514,7 @@ nav img {
 }
 .quote div p {
   font-family: Roboto, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 300;
   font-style: italic;
   color: #999999;
@@ -529,7 +524,7 @@ nav img {
 }
 .quote div h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
   display: inline-block;
   padding-top: 5px;
@@ -541,35 +536,43 @@ nav img {
   padding: 0px 60px 0px 90px;
 }
 
+.meetourteam {
+  max-width: 100%;
+}
 .meetourteam div {
   margin: 0 auto;
   text-align: center;
   width: 1200px;
+  max-width: 100%;
 }
 .meetourteam div h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
   padding-top: 100px;
+  max-width: 100%;
 }
 .meetourteam div h5 {
   font-family: Montserrat, sans-serif;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   color: #333333;
   padding-top: 20px;
+  max-width: 100%;
 }
 .meetourteam div p {
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
   height: 40px;
   width: 950px;
   margin: 0 auto;
   line-height: 1.5;
+  max-width: 100%;
 }
 .meetourteam div img {
   padding: 35px 0px;
+  max-width: 100%;
 }
 .meetourteam .teamtwo {
   margin: 0 auto;
@@ -577,7 +580,7 @@ nav img {
 .meetourteam .teamtwo h6 {
   padding: 0;
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #333333;
   font-weight: bold;
   padding-bottom: 10px;
@@ -587,11 +590,12 @@ nav img {
   font-family: Roboto, sans-serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
 }
 .meetourteam .teamtwo .secondimage {
   margin: 50px;
+  max-width: 100%;
 }
 .meetourteam .teamtwo div {
   width: 30%;
@@ -607,15 +611,17 @@ nav img {
   width: 100%;
   height: 250px;
   background-color: #f8f8f8;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .logos div {
   width: 1200px;
   margin: 0 auto;
+  max-width: 100%;
 }
 .logos div img {
   margin: 0 auto;
   padding-top: 51px;
+  max-width: 100%;
 }
 
 .whatwedo {
@@ -650,9 +656,9 @@ nav img {
   max-width: 100%;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  margin: 0;
+  margin: 0 auto;
   font-size: 0;
-  padding: 118px;
+  padding: 400px 0px 150px;
 }
 .quotetwo div {
   margin: 0 auto;
@@ -660,6 +666,7 @@ nav img {
   text-align: center;
   padding: 0px 0;
   width: 1200px;
+  max-width: 100%;
 }
 .quotetwo div .contone {
   width: 32%;
@@ -672,7 +679,7 @@ nav img {
   margin: 0 auto;
   display: inline-block;
   vertical-align: middle;
-  font-size: 24px;
+  font-size: 2.4rem;
   text-align: left;
 }
 .quotetwo div .conttwo .hr-line {
@@ -680,7 +687,7 @@ nav img {
 }
 .quotetwo div p {
   font-family: Roboto, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 300;
   font-style: italic;
   color: #999999;
@@ -690,7 +697,7 @@ nav img {
 }
 .quotetwo div h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #333333;
   display: inline-block;
   padding-top: 5px;
@@ -706,7 +713,6 @@ nav img {
 }
 
 .happyclients {
-  height: 100%;
   background-image: url("images/background2.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -715,45 +721,52 @@ nav img {
   height: 830px;
   font-size: 0;
   text-align: center;
-  padding-top: 50px;
+  max-width: 100%;
 }
 .happyclients .main {
   width: 62.5%;
-  text-align: center;
   margin: 0 auto;
+  padding-top: 100px;
+  max-width: 100%;
 }
 .happyclients .main div {
-  margin: 0 auto;
   font-size: 0;
   width: 50%;
   display: inline-block;
-  padding-bottom: 25px;
+  text-align: left;
+  max-width: 100%;
 }
 .happyclients .main div .contone {
-  margin: 0 auto;
   display: inline;
 }
 .happyclients .main .conttwo {
   display: inline-block;
   vertical-align: top;
-  font-size: 15px;
+  font-size: 1.5rem;
   text-align: left;
   padding-left: 30px;
+  max-width: 100%;
 }
 .happyclients .main .conttwo h6 {
   font-family: Montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #333333;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 .happyclients .main .conttwo h5 {
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #333333;
+  padding-bottom: 10px;
 }
 .happyclients .main .conttwo p {
   font-family: Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #999999;
+  padding-top: 15px;
+  line-height: 1.5;
+  width: 300px;
 }
 
 .latestblog {
@@ -761,23 +774,25 @@ nav img {
   margin: 0 auto;
   font-size: 0;
   text-align: center;
+  max-width: 100%;
 }
 .latestblog .blogblocks {
-  width: 33.3%;
+  width: 400px;
   display: inline-block;
   margin: 0 auto;
   text-align: left;
   font-size: 0;
+  max-width: 100%;
 }
 .latestblog .blogblocks h6 {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-family: Montserrat, sans-serif;
   color: #333333;
   font-weight: bold;
-  padding-left: 10px;
+  padding: 10px 0px 10px 10px;
 }
 .latestblog .blogblocks .smallnumbers {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-family: Roboto, sans-serif;
   font-style: italic;
   font-weight: 300;
@@ -785,14 +800,17 @@ nav img {
   border: none;
   display: inline-block;
   width: 10%;
+  padding: 20px 0px 80px 2px;
 }
 .latestblog .blogblocks p {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-family: Roboto, sans-serif;
   color: #999999;
   border-bottom: 1px solid #e5e5e5;
   width: 95%;
   padding-left: 10px;
+  line-height: 1.5;
+  padding: 0px 0px 15px;
 }
 
 .openmap {
@@ -809,7 +827,169 @@ nav img {
 }
 .openmap h6 {
   font-family: Montserrat, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #f38181;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  max-width: 100%;
+  text-align: center;
+  font-size: 0;
+  padding-top: 100px;
+  width: 1920px;
+}
+.footer hr {
+  width: 1200px;
+  border: 1px solid #e5e5e5;
+}
+.footer div {
+  width: 400px;
+  text-align: left;
+  display: inline-block;
+}
+.footer p {
+  font-size: 1.4rem;
+  font-family: Montserrat, sans-serif;
+  color: #333333;
+  font-weight: bold;
+}
+.footer p span {
+  color: #f38181;
+}
+.footer .leftfooter {
+  vertical-align: top;
+  font-size: 0;
+}
+.footer .leftfooter hr {
+  width: 320px;
+  border: 1px solid #e5e5e5;
+}
+.footer .leftfooter h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 4.6rem;
+  font-weight: bold;
+  color: #999999;
+  padding-bottom: 20px;
+}
+.footer .leftfooter p {
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  color: #999999;
+  font-weight: 400;
+  line-height: 1.3;
+  padding-bottom: 45px;
+  width: 350px;
+}
+.footer .leftfooter h5 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333;
+  padding-bottom: 10px;
+}
+.footer .leftfooter span {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.footer .leftfooter h4 {
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #999999;
+  font-weight: 300;
+  display: inline-block;
+  padding-right: 15px;
+}
+.footer .leftfooter img {
+  display: inline-block;
+  padding: 15px 0px 0px 0px;
+  margin: 0px 5px 0px;
+}
+.footer .leftfooter input[type=submit] {
+  border: 1px solid #95e1d3;
+  background-color: #95e1d3;
+  width: 130px;
+  height: 44px;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin: 30px 0px 50px;
+}
+.footer .leftfooter input[type=email] {
+  border: solid 1px #d2d2d2;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #999999;
+  width: 230px;
+  height: 40px;
+  display: inline-block;
+}
+.footer .middlefooter {
+  vertical-align: top;
+}
+.footer .middlefooter h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4rem;
+  color: #333333;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+.footer .middlefooter div {
+  margin: 0 auto;
+  font-size: 0;
+  padding: 0;
+  max-width: 400px;
+  width: 100%;
+}
+.footer .middlefooter div img {
+  display: inline-block;
+  vertical-align: top;
+  padding-bottom: 20px;
+}
+.footer .middlefooter div h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.2rem;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px 0px 0px 20px;
+  line-height: 1.4;
+}
+.footer .middlefooter div p {
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #999999;
+  margin: 1px auto;
+}
+.footer .rightfooter h6 {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #333333;
+  padding-bottom: 40px;
+}
+.footer .rightfooter p {
+  font-family: Roboto, sans-serif;
+  font-size: 1.3rem;
+  color: #333333;
+  font-weight: 300;
+  font-style: italic;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+.footer .rightfooter img {
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
 }/*# sourceMappingURL=index.css.map */

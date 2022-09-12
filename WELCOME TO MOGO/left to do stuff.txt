@@ -1,0 +1,3 @@
+padaryti viska resizeable normaliai ir teksta
+kad graze atrodytu
+suzinot kap padaryt position absolute irgi resiezable

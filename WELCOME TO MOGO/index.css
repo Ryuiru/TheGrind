@@ -55,6 +55,82 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 700px) {
+  body {
+    width: 100%;
+  }
+  body .sometext p {
+    padding: 0px 10px 10px;
+  }
+  body .whatwedo div {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+  body .whatwedo div .leftpictures {
+    width: 100%;
+  }
+  body .whatwedo div .rightpictures {
+    display: block;
+    width: 100%;
+  }
+  body .idk .picture {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  body .idk .fieldtextarea {
+    width: 94%;
+    margin: 0 auto;
+  }
+  body nav li {
+    display: block;
+    padding-right: 25px;
+  }
+  body nav img {
+    display: inline;
+    padding: 5px;
+  }
+  body .fakefooter {
+    padding-top: 300px;
+  }
+  body .workwith .firstrow {
+    padding: 0;
+  }
+  body .workwith .secondrow {
+    padding: 0;
+    border: none;
+  }
+  body .workwith div div {
+    display: block;
+    padding: 25px 0px 25px;
+  }
+  body .quotetwo {
+    padding-top: 700px;
+  }
+  body .happyclients {
+    width: 100%;
+  }
+  body .happyclients .main {
+    width: 100%;
+    padding: 25px;
+  }
+  body .happyclients .main p {
+    width: 180px;
+  }
+  body .features {
+    height: 340px;
+  }
+  body .features .texttext h6 {
+    font-size: 1.8rem;
+    padding: 10px 0px 10px;
+  }
+  body .features .texttext h5 {
+    font-size: 2rem;
+    padding-bottom: 15px;
+  }
+}
 textarea::-webkit-scrollbar {
   width: 5px;
 }
@@ -77,9 +153,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-color: white;
-  margin: 29px auto;
   font-size: 1.6rem;
-  background-size: 100% auto;
+  padding-top: 30px;
 }
 
 .sometext {
@@ -124,12 +199,12 @@ nav {
 }
 nav ul {
   list-style-type: none;
-  display: inline-block;
   word-spacing: 25px;
 }
 nav li {
   display: inline-block;
   text-decoration: none;
+  padding-bottom: 10px;
 }
 nav .underline:hover {
   -webkit-text-decoration: underline 10px;
@@ -145,7 +220,6 @@ nav h6 {
   font-family: Montserrat, sans-serif;
   font-size: 3rem;
   font-weight: bold;
-  display: inline-block;
   color: white;
   position: absolute;
   left: 1%;
@@ -155,7 +229,6 @@ nav a {
   font-size: 1.4rem;
   text-decoration: none;
   color: white;
-  display: inline-block;
 }
 nav img {
   padding: 0px 20px 0px;
@@ -175,19 +248,17 @@ nav img {
 }
 .sad h4 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 7.2rem;
+  font-size: calc(3vw + 1rem);
   padding-bottom: 40px;
 }
 .sad h5 {
   font-family: Montserrat, sans-serif;
-  font-size: 15rem;
+  font-size: calc(7vw + 1.5rem);
   font-weight: bold;
   display: block;
 }
-.sad hr {
-  border-bottom: 3px solid white;
-  width: 60px;
-  margin-top: 45px;
+.sad img {
+  color: white;
 }
 .sad p {
   font-family: Montserrat, sans-serif;
@@ -212,21 +283,22 @@ nav img {
   display: inline-block;
   width: 25%;
 }
-.fakefooter div hr {
-  width: 280px;
-  border-top: 3px solid white;
+.fakefooter div img {
+  max-width: 100%;
+  padding-right: 10px;
 }
 .fakefooter div h6 {
-  font-size: 2.4rem;
+  font-size: calc(1.4rem + 0.5vw);
   display: inline-block;
-  padding: 25px 8px 0px 0px;
+  padding: 25px 6px 0px 0px;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
   color: white;
+  width: auto;
 }
 .fakefooter div p {
   font-family: Montserrat, sans-serif;
-  font-size: 1.8rem;
+  font-size: calc(0.8rem + 0.5vw);
   display: inline-block;
   color: white;
 }
@@ -235,10 +307,12 @@ nav img {
   margin: 0 auto;
   text-align: center;
 }
-.ABOUT .middlephoto {
-  padding: 0px 27px 0px 30px;
+.ABOUT .hrline {
+  padding-bottom: 40px;
 }
-
+.ABOUT img {
+  padding: 10px;
+}
 .facts {
   width: 100%;
   max-width: 100%;
@@ -247,15 +321,13 @@ nav img {
   text-align: center;
   margin-top: 105px;
 }
-.facts div:first-child {
-  border-left: 1px solid #b5eae0;
-}
 .facts .flexing {
   display: inline-block;
   width: 240px;
   padding-top: 86px;
   padding-bottom: 88px;
   border-right: 1px solid #b5eae0;
+  border-left: 1px solid #b5eae0;
 }
 .facts .flexing h6 {
   font-family: Montserrat, sans-serif;
@@ -276,23 +348,6 @@ nav img {
   text-align: center;
   width: 100%;
   max-width: 100%;
-}
-.workwith h6 {
-  font-family: Kaushan Script, sans-serif;
-  font-size: 2.4rem;
-  color: #333333;
-  padding-bottom: 20px;
-  padding-top: 120px;
-}
-.workwith p {
-  font-family: Montserrat, sans-serif;
-  font-size: 3rem;
-  color: #333333;
-  font-weight: bold;
-}
-.workwith img {
-  padding-top: 40px;
-  padding-bottom: 70px;
 }
 .workwith div {
   width: 1200px;
@@ -329,8 +384,8 @@ nav img {
 .workwith div div img {
   display: inline-block;
   position: absolute;
-  top: -57%;
   left: 3%;
+  max-width: 100%;
 }
 .workwith .firstrow {
   padding-bottom: 50px;
@@ -341,64 +396,17 @@ nav img {
 }
 
 .features {
-  max-height: 100%;
   max-width: 100%;
-  height: 905px;
+  height: auto;
   width: 1920px;
-  background-image: url("images/feauture.png");
+  background-image: url("images/white.png");
   background-repeat: no-repeat;
-  background-attachment: scroll;
   margin-top: 150px;
-  background-size: 100% auto;
+  padding-bottom: 1000px;
 }
-.features .container {
-  text-align: center;
-}
-.features .container img {
-  padding-top: 25px;
-}
-.features .container h6 {
-  font-family: Kaushan Script, sans-serif;
-  font-size: calc(1rem + 1vw);
-  color: #333333;
-  padding-top: 140px;
-}
-.features .container p {
-  font-family: Montserrat, sans-serif;
-  font-size: calc(1rem + 1vw);
-  font-weight: bold;
-  color: #333333;
-  padding-top: 15px;
-}
-
-.service {
-  text-align: center;
-}
-.service h6 {
-  font-family: Kaushan Script, sans-serif;
-  font-size: 2.4rem;
-  color: #333333;
-  padding-top: 70px;
-}
-.service p {
-  font-family: Montserrat, sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333333;
-  padding-top: 20px;
-}
-.service img {
-  padding-top: 35px;
-  padding-bottom: 20px;
-}
-.service .textunderservice {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5rem;
-  color: #999999;
-  width: 960px;
-  margin: 0 auto;
-  font-weight: normal;
-  line-height: 22px;
+.features .hero-image {
+  background: url("images/somebackground.png");
+  position: relative;
 }
 
 .idk {
@@ -423,6 +431,7 @@ nav img {
   text-align: left;
   height: 400px;
   vertical-align: top;
+  max-width: 100%;
 }
 .idk .fieldtextarea .importantdiv {
   margin-bottom: 200px;
@@ -496,17 +505,20 @@ nav img {
   max-width: 100%;
 }
 .quote div .contone {
+  max-width: 100%;
   width: 32%;
   margin: 0 auto;
   display: inline;
   vertical-align: middle;
+}
+.quote div .contone img {
+  max-width: 125%;
 }
 .quote div .conttwo {
   width: 68%;
   margin: 0 auto;
   display: inline-block;
   vertical-align: middle;
-  font-size: 2.4rem;
   text-align: left;
 }
 .quote div .conttwo .hr-line {
@@ -514,7 +526,7 @@ nav img {
 }
 .quote div p {
   font-family: Roboto, sans-serif;
-  font-size: 2.4rem;
+  font-size: calc(1.2rem + 1vw);
   font-weight: 300;
   font-style: italic;
   color: #999999;
@@ -524,7 +536,7 @@ nav img {
 }
 .quote div h6 {
   font-family: Kaushan Script, sans-serif;
-  font-size: 2.4rem;
+  font-size: calc(1.2rem + 1vw);
   color: #333333;
   display: inline-block;
   padding-top: 5px;
@@ -545,45 +557,16 @@ nav img {
   width: 1200px;
   max-width: 100%;
 }
-.meetourteam div h6 {
-  font-family: Kaushan Script, sans-serif;
-  font-size: 2.4rem;
-  color: #333333;
-  padding-top: 100px;
-  max-width: 100%;
-}
-.meetourteam div h5 {
-  font-family: Montserrat, sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333333;
-  padding-top: 20px;
-  max-width: 100%;
-}
-.meetourteam div p {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5rem;
-  color: #999999;
-  height: 40px;
-  width: 950px;
-  margin: 0 auto;
-  line-height: 1.5;
-  max-width: 100%;
-}
-.meetourteam div img {
-  padding: 35px 0px;
-  max-width: 100%;
-}
 .meetourteam .teamtwo {
   margin: 0 auto;
 }
 .meetourteam .teamtwo h6 {
-  padding: 0;
   font-family: Montserrat, sans-serif;
   font-size: 1.4rem;
   color: #333333;
   font-weight: bold;
   padding-bottom: 10px;
+  width: auto;
 }
 .meetourteam .teamtwo p {
   width: auto;
@@ -593,18 +576,20 @@ nav img {
   font-size: 1.5rem;
   color: #999999;
 }
-.meetourteam .teamtwo .secondimage {
-  margin: 50px;
-  max-width: 100%;
-}
 .meetourteam .teamtwo div {
   width: 30%;
   margin: 0 auto;
   display: inline-block;
+  margin: 18px;
   text-align: center;
+  max-width: 100%;
+  padding: 10px;
+  vertical-align: top;
 }
 .meetourteam .teamtwo div img {
   display: inline-block;
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .logos {
@@ -722,12 +707,34 @@ nav img {
   font-size: 0;
   text-align: center;
   max-width: 100%;
+  width: 1920px;
 }
 .happyclients .main {
   width: 62.5%;
   margin: 0 auto;
   padding-top: 100px;
   max-width: 100%;
+}
+.happyclients .main h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4rem;
+  color: #333333;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.happyclients .main h5 {
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  color: #333333;
+  padding-bottom: 10px;
+}
+.happyclients .main p {
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  color: #999999;
+  padding-top: 15px;
+  line-height: 1.5;
+  width: 300px;
 }
 .happyclients .main div {
   font-size: 0;
@@ -747,27 +754,6 @@ nav img {
   padding-left: 30px;
   max-width: 100%;
 }
-.happyclients .main .conttwo h6 {
-  font-family: Montserrat, sans-serif;
-  font-size: 1.4rem;
-  color: #333333;
-  padding-bottom: 10px;
-  font-weight: bold;
-}
-.happyclients .main .conttwo h5 {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5rem;
-  color: #333333;
-  padding-bottom: 10px;
-}
-.happyclients .main .conttwo p {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5rem;
-  color: #999999;
-  padding-top: 15px;
-  line-height: 1.5;
-  width: 300px;
-}
 
 .latestblog {
   width: 1200px;
@@ -775,6 +761,7 @@ nav img {
   font-size: 0;
   text-align: center;
   max-width: 100%;
+  padding-top: 20px;
 }
 .latestblog .blogblocks {
   width: 400px;

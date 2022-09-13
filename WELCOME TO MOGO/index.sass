@@ -52,6 +52,75 @@ $almostblack: #333333
 $grey: #999999
 $bordercolor: #b5eae0
 $textareacolors: #e5e5e5
+@media only screen and (max-width: 700px)
+    body
+        width: 100%
+        .sometext
+            p
+                padding: 0px 10px 10px
+        .whatwedo
+            div
+                text-align: center
+                display: block
+                margin: 0 auto
+                // max-width: 100000%
+                .leftpictures
+                    width: 100%
+                .rightpictures
+                    display: block
+                    width: 100%
+        .idk
+            .picture
+                display: block
+                text-align: center
+                width: 100%
+                margin: 0 auto
+            .fieldtextarea
+                width: 94%
+                margin: 0 auto
+        nav
+            li
+                display: block
+                padding-right: 25px
+            img
+                display: inline
+                padding: 5px
+        .fakefooter
+            padding-top: 300px
+            // padding-right: 25px
+        .workwith
+            .firstrow
+                padding: 0
+            .secondrow
+                padding: 0
+                border: none
+            div
+                div
+                    display: block
+                    padding: 25px 0px 25px
+        .quotetwo
+            padding-top: 700px
+        .happyclients
+            width: 100%
+            .maintwo
+                // padding: 25px
+            .main
+                width: 100%
+                padding: 25px
+                p
+                    width: 180px
+        .latestblog
+            // padding-top: 200px
+        .features
+            height: 340px
+            .texttext
+
+                h6
+                    font-size: 1.8rem
+                    padding: 10px 0px 10px
+                h5
+                    font-size: 2rem
+                    padding-bottom: 15px
 textarea::-webkit-scrollbar 
     width: 5px
 ::-webkit-scrollbar-track 
@@ -59,6 +128,7 @@ textarea::-webkit-scrollbar
     -webkit-border-radius: 0
     border-radius: 0
 ::-webkit-scrollbar-thumb 
+
     -webkit-border-radius: 10px
     border-radius: 10px
     background: #95e1d3
@@ -73,9 +143,10 @@ body
     background-attachment: scroll
     background-color: white
     // margin: 29px 360px 0px 360px
-    margin: 29px auto
+    // margin: 29px auto
     font-size: 1.6rem
-    background-size: 100% auto
+    padding-top: 30px
+    // background-size: 100% auto
 .sometext
     text-align: center
     margin: 0 auto
@@ -111,13 +182,14 @@ nav
     width: 1200px
     ul
         list-style-type: none
-        display: inline-block
+        // display: inline-block
         word-spacing: 25px
         // margin: 0 auto
         // text-align: right
     li
         display: inline-block
         text-decoration: none
+        padding-bottom: 10px
         // text-align: right
     .underline:hover
         text-decoration: underline 10px
@@ -132,7 +204,7 @@ nav
         font-family: $mont
         font-size: 3.0rem
         font-weight: bold
-        display: inline-block
+        // display: inline-block
         // margin-right: 441px
         color: white
         position: absolute
@@ -142,7 +214,7 @@ nav
         font-size: 1.4rem
         text-decoration: none
         color: white
-        display: inline-block
+        // display: inline-block
     img
         padding: 0px 20px 0px
         display: inline-block
@@ -158,21 +230,18 @@ nav
     margin: 0 auto
     h4
         font-family: $kaushan
-        font-size: 7.2rem
+        font-size: calc(3vw + 1rem)
         padding-bottom: 40px
     h5
         font-family: $mont
-        font-size: 15rem
+        font-size: calc(7vw + 1.5rem)
         font-weight: bold
         // border-bottom: 4px solid white
         // padding-bottom: 60px
         display: block
         // width: 10%
-    hr
-        border-bottom: 3px solid white
-        width: 60px
-        margin-top: 45px
-        // color: white
+    img
+        color: white
     p
         font-family: $mont
         color: white
@@ -182,6 +251,7 @@ nav
         padding: 16px 0px 14px 
         margin: 49px auto
         width: 161px
+        // max-width: 100%
 .fakefooter
     width: 62.5%
     // display: block
@@ -195,34 +265,33 @@ nav
         display: inline-block
         width: 25%
         // position: relative
-        // border-top: 3px solid white
+        // border-top: 3px solid black
         // padding-top: 60px
-        hr
-            width: 280px
-            // position: absolute
-            // margin-bottom: 36px
-            border-top: 3px solid white
+        img
+            max-width: 100%
+            padding-right: 10px
         h6
-            font-size: 2.4rem
+            font-size: calc(1.4rem + 0.5vw)
             display: inline-block            
-            // border-top: 3px solid white
-            // width: 280px
-            padding: 25px 8px 0px 0px
+            padding: 25px 6px 0px 0px
             font-weight: bold
             font-family: $mont
             color: white
+            width: auto
         p
             font-family: $mont
-            font-size: 1.8rem
+            font-size: calc(0.8rem + 0.5vw)
             display: inline-block
-            // border-top: 3px solid white
-            // width: 280px
             color: white
 .ABOUT
+    .hrline 
+        padding-bottom: 40px
     margin: 0 auto 
     text-align: center
+    img
+        padding: 10px
     .middlephoto
-        padding: 0px 27px 0px 30px
+        // padding: 0px 27px 0px 30px
 .facts
     width: 100%
     max-width: 100%
@@ -232,7 +301,7 @@ nav
     // height: 270px
     margin-top: 105px
     div:first-child
-        border-left: 1px solid $bordercolor
+        // border-left: 1px solid $bordercolor
     .flexing
         display: inline-block
         width: 240px
@@ -242,7 +311,8 @@ nav
         // position: relative
         padding-top: 86px
         padding-bottom: 88px
-        border-right: 1px solid $bordercolor  
+        border-right: 1px solid $bordercolor
+        border-left: 1px solid $bordercolor   
         h6
             font-family: $mont
             font-weight: bold
@@ -273,20 +343,6 @@ nav
     text-align: center
     width: 100%
     max-width: 100%
-    h6
-        font-family: $kaushan
-        font-size: 2.4rem
-        color: $almostblack
-        padding-bottom: 20px
-        padding-top: 120px
-    p
-        font-family: $mont
-        font-size: 3.0rem
-        color: $almostblack
-        font-weight: bold
-    img
-        padding-top: 40px
-        padding-bottom: 70px
     div
         width: 1200px
         margin: 0 auto
@@ -319,8 +375,9 @@ nav
             img
                 display: inline-block
                 position: absolute
-                top: -57%
+                // top: -57%
                 left: 3%
+                max-width: 100%
     .firstrow
         //nothing here
         padding-bottom: 50px
@@ -330,64 +387,25 @@ nav
         padding-top: 50px
         // text-align: left
 .features
-    max-height:100% 
+    // max-height:100% 
     max-width: 100%
-    height:905px
+    // height:905px
+    height: auto
     width: 1920px
-    background-image: url('images/feauture.png')
+    background-image: url('images/white.png'), 
+    // background-position-x: center
+    // background-position-y: bottom
     background-repeat: no-repeat
-    background-attachment: scroll
+    // background-attachment: scroll
     margin-top: 150px
+    padding-bottom: 1000px
     // position: relative
-    background-size: 100% auto
-    .container
-        // position: relative
-        text-align: center
-        img
-            padding-top: 25px
-        h6
-            // position: absolute
-            font-family: $kaushan
-            font-size: calc(1rem + 1vw)
-            color: $almostblack
-            // top: 50%
-            // left: 50%
-            // position: relative
-            padding-top: 140px
-        p
-            // position: absolute
-            font-family: $mont
-            font-size: calc(1rem + 1vw)
-            font-weight: bold
-            color: $almostblack
-            padding-top: 15px
-            // top: 50%
-            // left: 50%
-            // position: relative
-.service
-    text-align: center
-    h6
-        font-family: $kaushan
-        font-size: 2.4rem
-        color: $almostblack
-        padding-top: 70px
-    p
-        font-family: $mont
-        font-size: 3.0rem
-        font-weight: bold
-        color: $almostblack
-        padding-top: 20px
-    img
-        padding-top: 35px
-        padding-bottom: 20px
-    .textunderservice
-        font-family: $roboto
-        font-size: 1.5rem
-        color: $grey
-        width: 960px
-        margin: 0 auto
-        font-weight: normal
-        line-height: 22px
+    // background-size: 100% auto
+    .hero-image
+        background: url('images/somebackground.png')
+        // background-size: cover
+        // height: 1000px
+        position: relative
 .idk
     font-size: 0
     margin: 75px auto
@@ -408,7 +426,7 @@ nav
         text-align: left
         height: 400px
         vertical-align: top
-        // max-width: 100%
+        max-width: 100%
         .importantdiv
             margin-bottom: 200px   
             div
@@ -475,22 +493,29 @@ nav
         width: 1200px
         max-width: 100%
         .contone
+            max-width: 100%
             width: 32%
             margin: 0 auto
             display: inline
             vertical-align: middle
+            img
+                max-width: 125%
+                // min-width: 75%
+                // max-height: 100%
+                // width: 300px
+                // height: 150px
         .conttwo
             width: 68%
             margin: 0 auto
             display: inline-block
             vertical-align: middle
-            font-size: 2.4rem
+            // font-size: calc(1rem +1vw)
             text-align: left
             .hr-line
                 padding-right: 10px
         p
             font-family: $roboto                
-            font-size: 2.4rem
+            font-size: calc(1.2rem + 1vw)
             font-weight: 300
             font-style: italic
             color: $grey
@@ -499,7 +524,7 @@ nav
             line-height: 35px
         h6
             font-family: $kaushan
-            font-size: 2.4rem
+            font-size: calc(1.2rem + 1vw)
             color: $almostblack
             display: inline-block
             padding-top: 5px
@@ -514,40 +539,17 @@ nav
         text-align: center
         width: 1200px
         max-width: 100%
-        h6
-            font-family: $kaushan
-            font-size: 2.4rem
-            color: $almostblack
-            padding-top: 100px
-            max-width: 100%
-        h5
-            font-family: $mont
-            font-size: 3.0rem
-            font-weight: bold
-            color: $almostblack
-            padding-top: 20px
-            max-width: 100%
-        p
-            font-family: $roboto
-            font-size: 1.5rem
-            color: $grey
-            height: 40px
-            width: 950px
-            margin: 0 auto
-            line-height: 1.5
-            max-width: 100%
-        img
-            padding: 35px 0px
-            max-width: 100%
     .teamtwo
         margin: 0 auto
         h6
-            padding: 0
+            // padding-top: 5px
             font-family: $mont
             font-size: 1.4rem
             color: $almostblack
             font-weight: bold
             padding-bottom: 10px
+            width: auto
+            // margin: 10px 0 0 10px
         p
             width: auto
             font-family: $roboto
@@ -555,17 +557,23 @@ nav
             font-weight: 300
             font-size: 1.5rem
             color: $grey
-        .secondimage
-            margin: 50px
-            max-width: 100%
+        // .secondimage
+        //     margin: 50px
+        //     max-width: 100%
         div
             width: 30%
             margin: 0 auto
             display: inline-block
-            // margin: 18px
+            margin: 18px
             text-align: center
+            max-width: 100%
+            padding: 10px
+            vertical-align: top
             img
                 display: inline-block
+                max-width: 100%
+                margin-bottom: 10px
+                // vertical-align: top
 .logos
     width: 100%
     height: 250px
@@ -673,12 +681,36 @@ nav
     text-align: center
     // padding-top: 50px
     max-width: 100%
+    width: 1920px
+    .maintwo
+        // padding: 500px
     .main
         width: 62.5%
         // text-align: left
         margin: 0 auto
         padding-top: 100px
         max-width: 100%
+        h6
+            font-family: $mont
+            font-size: 1.4rem
+            color: $almostblack
+            padding-bottom: 10px
+            font-weight: bold
+            // max-width: 100%
+        h5
+            font-family: $roboto
+            font-size: 1.5rem
+            color: $almostblack
+            padding-bottom: 10px
+            // max-width: 100%
+        p
+            font-family: $roboto
+            font-size: 1.5rem
+            color: $grey
+            padding-top: 15px
+            line-height: 1.5
+            width: 300px
+            // max-width: 100%
         div
             // margin: 0 auto
             font-size: 0
@@ -697,33 +729,13 @@ nav
             text-align: left
             padding-left: 30px
             max-width: 100%
-            h6
-                font-family: $mont
-                font-size: 1.4rem
-                color: $almostblack
-                padding-bottom: 10px
-                font-weight: bold
-                // max-width: 100%
-            h5
-                font-family: $roboto
-                font-size: 1.5rem
-                color: $almostblack
-                padding-bottom: 10px
-                // max-width: 100%
-            p
-                font-family: $roboto
-                font-size: 1.5rem
-                color: $grey
-                padding-top: 15px
-                line-height: 1.5
-                width: 300px
-                // max-width: 100%
 .latestblog
     width: 1200px
     margin: 0 auto
     font-size: 0
     text-align: center
     max-width: 100%
+    padding-top: 20px
     .blogblocks
         width: 400px
         display: inline-block

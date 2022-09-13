@@ -17,41 +17,63 @@
             padding: 0;
             max-height: 100%;
             max-width: 100%;
-        }
-        .image1{
-            background: url('images/somebackground.png') no-repeat;
+        }        
+        /* .image2{
+            /* min-width: 300px; */
+            /* max-width: 100%; */
+            /* background: url('images/ipad.png') no-repeat;
             background-size: cover;
-            position: relative;
-            /* height: 90vh; */
-            padding-bottom: 700px;
-        }
-        .image2{
-            min-width: 300px;
-            max-width: 100%;
             width: 50%;            
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0%);
-            display: inline-block;
+            border: 2px solid black;
+        } 
+        .image1{
+            background: url('images/iphone.png')no-repeat bottom, url('images/ipad.png')no-repeat bottom, url('images/bgbird.jpg') no-repeat top left;
+            background-size: 25vh, 50vh, cover;
+            position: absolute, absolute, relative; 
+            /* height: 90vh; 
+            padding-bottom: 700px;
+            border: 2px solid red;
+            /* top: 15px, 200px, 500px; 
+            right: 30px; */
+            /* transform: translate(-50%, 46%);  
         }
-        .image3 {            
+
+        /* .image3 {            
             min-width: 100px;
             max-width: 100%;
-            /* width: 50%;      */
+            width: 50%;      
             position: absolute;
-            /* top: 15px; */
-            /* right: 30px; */
+            top: 15px; 
+            right: 30px; 
             transform: translate(-50%, 46%);
-            display: inline-block;
-}
+} */
+        .image3{
+            position: absolute;
+            /* transform: translate(-50%, 46%); */
+            bottom: -10%;
+            right: 30%;
+        }
+        .image2{
+            background: url("images/ipad.png") no-repeat center;
+            position: relative;
+            padding-bottom: 584px;
+        }
+        .image1{
+            background: url("images/somebackground.png") no-repeat center;
+            background-size: cover;
+            position: relative;
+            padding-top: 50px;
+        }
     </style>
 </head>
 <body>
     <div class="image1">
         <div class="image2">
-            <img src="images/Ipad.png" alt="">
-            <img src="images/iphone.png" alt="" class="image3">
+            <img class="image3" src="images/iphone.png" alt="">
         </div>
     </div>
     

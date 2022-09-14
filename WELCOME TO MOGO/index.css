@@ -59,6 +59,21 @@ html {
   body {
     width: 100%;
   }
+  body .sad .fakefooter {
+    width: 90%;
+  }
+  body .sad .fakefooter div {
+    width: 25%;
+    max-width: 1080px;
+  }
+  body .sad nav li {
+    display: block;
+    padding-right: 25px;
+  }
+  body .sad nav img {
+    display: inline;
+    padding: 5px;
+  }
   body .sometext p {
     padding: 0px 10px 10px;
   }
@@ -92,9 +107,6 @@ html {
     display: inline;
     padding: 5px;
   }
-  body .fakefooter {
-    padding-top: 300px;
-  }
   body .workwith .firstrow {
     padding: 0;
   }
@@ -105,6 +117,9 @@ html {
   body .workwith div div {
     display: block;
     padding: 25px 0px 25px;
+  }
+  body .workwith div div p {
+    width: 24rem;
   }
   body .quotetwo {
     padding-top: 700px;
@@ -119,9 +134,6 @@ html {
   body .happyclients .main p {
     width: 180px;
   }
-  body .features {
-    height: 340px;
-  }
   body .features .texttext h6 {
     font-size: 1.8rem;
     padding: 10px 0px 10px;
@@ -129,6 +141,10 @@ html {
   body .features .texttext h5 {
     font-size: 2rem;
     padding-bottom: 15px;
+  }
+  body .features .texttext .image1 .image2 {
+    top: 28%;
+    right: -2%;
   }
 }
 textarea::-webkit-scrollbar {
@@ -144,17 +160,6 @@ textarea::-webkit-scrollbar {
   border-radius: 10px;
   background: #95e1d3;
   -webkit-box-shadow: inset 0 0 0px #95e1d3;
-}
-
-body {
-  max-height: 100%;
-  max-width: 100%;
-  background-image: url("images/BGbird.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-color: white;
-  font-size: 1.6rem;
-  padding-top: 30px;
 }
 
 .sometext {
@@ -187,73 +192,32 @@ body {
   padding-bottom: 40px;
 }
 
-nav {
-  margin: 0 auto;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  font-size: 0;
-  text-align: right;
-  position: relative;
-  width: 1200px;
-}
-nav ul {
-  list-style-type: none;
-  word-spacing: 25px;
-}
-nav li {
-  display: inline-block;
-  text-decoration: none;
-  padding-bottom: 10px;
-}
-nav .underline:hover {
-  -webkit-text-decoration: underline 10px;
-          text-decoration: underline 10px;
-  -webkit-text-decoration-color: #fce38a;
-          text-decoration-color: #fce38a;
-  -moz-text-decoration-color: #fce38a;
-  text-decoration-thickness: 3px;
-  color: #fce38a;
-  text-underline-offset: 10px;
-}
-nav h6 {
-  font-family: Montserrat, sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  left: 1%;
-}
-nav a {
-  font-family: Montserrat, sans-serif;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: white;
-}
-nav img {
-  padding: 0px 20px 0px;
-  display: inline-block;
-}
-
 .sad {
-  padding-top: 160px;
   margin: 0 auto;
   text-align: center;
   color: white;
-  height: 400px;
-  width: 840px;
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
+  height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  background-image: url("images/BGbird.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: white;
+  font-size: 1.6rem;
+  padding-top: 30px;
 }
 .sad h4 {
   font-family: Kaushan Script, sans-serif;
   font-size: calc(3vw + 1rem);
   padding-bottom: 40px;
+  padding-top: 100px;
 }
 .sad h5 {
   font-family: Montserrat, sans-serif;
-  font-size: calc(7vw + 1.5rem);
+  font-size: calc(6vw + 1.5rem);
   font-weight: bold;
   display: block;
 }
@@ -270,56 +234,138 @@ nav img {
   margin: 49px auto;
   width: 161px;
 }
-
-.fakefooter {
+.sad nav {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  font-size: 0;
+  text-align: right;
+  position: relative;
+  width: 1200px;
+}
+.sad nav ul {
+  list-style-type: none;
+  word-spacing: 25px;
+}
+.sad nav li {
+  display: inline-block;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.sad nav .underline:hover {
+  -webkit-text-decoration: underline 10px;
+          text-decoration: underline 10px;
+  -webkit-text-decoration-color: #fce38a;
+          text-decoration-color: #fce38a;
+  -moz-text-decoration-color: #fce38a;
+  text-decoration-thickness: 3px;
+  color: #fce38a;
+  text-underline-offset: 10px;
+}
+.sad nav h6 {
+  font-family: Montserrat, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 4%;
+  padding-left: 20px;
+}
+.sad nav a {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+}
+.sad nav img {
+  padding: 0px 20px 0px;
+  display: inline-block;
+}
+.sad .fakefooter {
   width: 62.5%;
   margin: 0 auto;
   font-size: 0;
   max-width: 100%;
-  padding-top: 463px;
-  padding-bottom: 163px;
+  padding-top: 200px;
+  padding-bottom: 50px;
 }
-.fakefooter div {
+.sad .fakefooter div {
   display: inline-block;
   width: 25%;
+  text-align: left;
+  vertical-align: top;
 }
-.fakefooter div img {
+.sad .fakefooter div img {
   max-width: 100%;
   padding-right: 10px;
 }
-.fakefooter div h6 {
+.sad .fakefooter div h6 {
   font-size: calc(1.4rem + 0.5vw);
   display: inline-block;
-  padding: 25px 6px 0px 0px;
+  padding: 10px 5px 0px 0px;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
   color: white;
   width: auto;
+  margin: 0;
+  font-size: calc(1.2rem + 0.5vw);
 }
-.fakefooter div p {
+.sad .fakefooter div p {
   font-family: Montserrat, sans-serif;
   font-size: calc(0.8rem + 0.5vw);
   display: inline-block;
   color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-size: calc(0.9rem + 0.5vw);
 }
 
 .ABOUT {
+  padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
 }
-.ABOUT .hrline {
-  padding-bottom: 40px;
+.ABOUT .gradient {
+  background-image: url("images/gradient1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+}
+.ABOUT .gradient .photo:hover .verynice {
+  box-shadow: 10px 10px #95e1d3;
+  opacity: 0.5;
+  visibility: visible;
+}
+.ABOUT .gradient .gradient:hover .verynice {
+  opacity: 1;
+  visibility: visible;
+}
+.ABOUT .gradient .verynice {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #000000;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 2rem;
 }
 .ABOUT img {
-  padding: 10px;
+  margin: 10px;
 }
+
 .facts {
   width: 100%;
   max-width: 100%;
   font-size: 0;
   background-color: #95e1d3;
   text-align: center;
-  margin-top: 105px;
+  margin-top: 50px;
 }
 .facts .flexing {
   display: inline-block;
@@ -396,22 +442,29 @@ nav img {
 }
 
 .features {
-  max-width: 100%;
-  height: auto;
-  width: 1920px;
-  background-image: url("images/white.png");
-  background-repeat: no-repeat;
-  margin-top: 150px;
-  padding-bottom: 1000px;
-}
-.features .hero-image {
-  background: url("images/somebackground.png");
+  background: url("images/somebackground.png") no-repeat center;
+  background-size: cover;
   position: relative;
+  padding-top: 50px;
+  margin-top: 30px;
+  padding-bottom: 800px;
+}
+.features .image1 {
+  position: absolute;
+  bottom: -4%;
+  right: 37%;
+  max-width: 100%;
+}
+.features .image2 {
+  position: absolute;
+  bottom: -8%;
+  right: 28%;
+  max-width: 44%;
 }
 
 .idk {
   font-size: 0;
-  margin: 75px auto;
+  margin: 20px auto;
   text-align: center;
   width: 1200px;
   max-width: 100%;
@@ -423,6 +476,8 @@ nav img {
 }
 .idk .picture img {
   max-width: 100%;
+  padding: 5px;
+  padding-left: 35px;
 }
 .idk .fieldtextarea {
   width: 50%;
@@ -503,6 +558,7 @@ nav img {
   padding: 0px 0;
   width: 1200px;
   max-width: 100%;
+  position: relative;
 }
 .quote div .contone {
   max-width: 100%;
@@ -541,8 +597,17 @@ nav img {
   display: inline-block;
   padding-top: 5px;
 }
-.quote div .rodykles {
-  margin: 0px 0px -12px 20px;
+.quote div .rodykles1 {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.quote div .rodykles2 {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .quote div .squareimage {
   padding: 0px 60px 0px 90px;
@@ -594,9 +659,10 @@ nav img {
 
 .logos {
   width: 100%;
-  height: 250px;
+  padding-bottom: 51px;
   background-color: #f8f8f8;
-  margin: 30px auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 .logos div {
   width: 1200px;
@@ -612,6 +678,9 @@ nav img {
 .whatwedo {
   height: 780px;
   font-size: 0;
+}
+.whatwedo div p {
+  padding-bottom: 20px;
 }
 .whatwedo .leftpictures {
   width: 50%;
@@ -652,6 +721,7 @@ nav img {
   padding: 0px 0;
   width: 1200px;
   max-width: 100%;
+  position: relative;
 }
 .quotetwo div .contone {
   width: 32%;
@@ -679,6 +749,8 @@ nav img {
   display: inline-block;
   padding-bottom: 11px;
   line-height: 35px;
+  width: auto;
+  padding-right: 25px;
 }
 .quotetwo div h6 {
   font-family: Kaushan Script, sans-serif;
@@ -695,6 +767,18 @@ nav img {
 }
 .quotetwo div .pfppicture {
   padding: 0px 30px 0px 60px;
+}
+.quotetwo div .rodykles1 {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.quotetwo div .rodykles2 {
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .happyclients {
@@ -807,10 +891,11 @@ nav img {
   background-attachment: scroll;
   background-color: white;
   margin: 0 auto;
-  height: 210px;
+  height: 100%;
   font-size: 0;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 .openmap h6 {
   font-family: Montserrat, sans-serif;
@@ -825,7 +910,7 @@ nav img {
   text-align: center;
   font-size: 0;
   padding-top: 100px;
-  width: 1920px;
+  padding-bottom: 20px;
 }
 .footer hr {
   width: 1200px;

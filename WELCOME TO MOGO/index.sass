@@ -3,7 +3,6 @@
         margin: 0
         padding: 0
         box-sizing: border-box
-
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
     margin: 0
     padding: 0
@@ -15,31 +14,24 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
     -webkit-font-smoothing: antialiased
     text-size-adjust: none
     box-sizing: border-box
-
 footer, header, nav, section, main
     display: block
-
 body
     line-height: 1
-
 ol, ul
     list-style: none
-
 blockquote, q
     quotes: none
-
 blockquote:before, blockquote:after, q:before, q:after
     content: ''
     content: none
-
 table
     border-collapse: collapse
     border-spacing: 0
-
 input
     -webkit-appearance: none
     border-radius: 0
-// 
+// sass reset
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap')
 html
     font-size: 62.5%
@@ -55,6 +47,21 @@ $textareacolors: #e5e5e5
 @media only screen and (max-width: 700px)
     body
         width: 100%
+        .sad
+            .fakefooter
+                // padding-top: 300px
+                // padding-right: 25px
+                width: 90%
+                div
+                    width: 25%
+                    max-width: 1080px
+            nav
+                li
+                    display: block
+                    padding-right: 25px
+                img
+                    display: inline
+                    padding: 5px
         .sometext
             p
                 padding: 0px 10px 10px
@@ -85,9 +92,6 @@ $textareacolors: #e5e5e5
             img
                 display: inline
                 padding: 5px
-        .fakefooter
-            padding-top: 300px
-            // padding-right: 25px
         .workwith
             .firstrow
                 padding: 0
@@ -98,6 +102,8 @@ $textareacolors: #e5e5e5
                 div
                     display: block
                     padding: 25px 0px 25px
+                    p
+                        width: 24rem
         .quotetwo
             padding-top: 700px
         .happyclients
@@ -112,15 +118,18 @@ $textareacolors: #e5e5e5
         .latestblog
             // padding-top: 200px
         .features
-            height: 340px
+            // height: 340px
             .texttext
-
                 h6
                     font-size: 1.8rem
                     padding: 10px 0px 10px
                 h5
                     font-size: 2rem
                     padding-bottom: 15px
+                .image1
+                    .image2
+                        top: 28%
+                        right: -2%
 textarea::-webkit-scrollbar 
     width: 5px
 ::-webkit-scrollbar-track 
@@ -136,16 +145,16 @@ textarea::-webkit-scrollbar
 body
     // width: 100vh
     // height: 100vh
-    max-height:100% 
-    max-width: 100%
-    background-image: url('images/BGbird.jpg')
-    background-repeat: no-repeat
-    background-attachment: scroll
-    background-color: white
+    // max-height:100% 
+    // max-width: 100%
+    // background-image: url('images/BGbird.jpg')
+    // background-repeat: no-repeat
+    // background-attachment: scroll
+    // background-color: white
     // margin: 29px 360px 0px 360px
     // margin: 29px auto
-    font-size: 1.6rem
-    padding-top: 30px
+    // font-size: 1.6rem
+    // padding-top: 30px
     // background-size: 100% auto
 .sometext
     text-align: center
@@ -171,70 +180,37 @@ body
         max-width: 100%
     img
         padding-bottom: 40px
-nav
-    margin: 0 auto
-    display: block
-    max-width: 100%
-    max-height: 100%
-    font-size: 0 
-    text-align: right
-    position: relative
-    width: 1200px
-    ul
-        list-style-type: none
-        // display: inline-block
-        word-spacing: 25px
-        // margin: 0 auto
-        // text-align: right
-    li
-        display: inline-block
-        text-decoration: none
-        padding-bottom: 10px
-        // text-align: right
-    .underline:hover
-        text-decoration: underline 10px
-        text-decoration-color: $hovercolor
-        -moz-text-decoration-color: $hovercolor
-        text-decoration-thickness: 3px
-        color: $hovercolor
-        text-underline-offset: 10px
-        // border-bottom: 3px solid $hovercolor for ie:11
-        // padding-bottom: 10px
-    h6
-        font-family: $mont
-        font-size: 3.0rem
-        font-weight: bold
-        // display: inline-block
-        // margin-right: 441px
-        color: white
-        position: absolute
-        left: 1%
-    a
-        font-family: $mont
-        font-size: 1.4rem
-        text-decoration: none
-        color: white
-        // display: inline-block
-    img
-        padding: 0px 20px 0px
-        display: inline-block
-.sad
-    padding-top: 160px
+.sad    
+    // padding-top: 160px
     margin: 0 auto
     text-align: center
     color: white
-    height: 400px
-    width: 840px
+    // height: 400px
+    // width: 840px
     max-width: 100%
     max-height: 100%
     margin: 0 auto
+    // width: 100vh
+    height: 100vh
+    max-height:100% 
+    max-width: 100%
+    background-image: url('images/BGbird.jpg')
+    background-repeat: no-repeat
+    background-attachment: scroll
+    background-color: white
+    // padding: 29px 360px 0px 360px
+    // margin: 29px auto
+    font-size: 1.6rem
+    padding-top: 30px
+    // background-size: 100% auto
     h4
         font-family: $kaushan
         font-size: calc(3vw + 1rem)
         padding-bottom: 40px
+        padding-top: 100px
     h5
         font-family: $mont
-        font-size: calc(7vw + 1.5rem)
+        font-size: calc(6vw + 1.5rem)
         font-weight: bold
         // border-bottom: 4px solid white
         // padding-bottom: 60px
@@ -252,46 +228,141 @@ nav
         margin: 49px auto
         width: 161px
         // max-width: 100%
-.fakefooter
-    width: 62.5%
-    // display: block
-    margin: 0 auto
-    font-size: 0
-    max-width: 100%
-    // position: relative
-    padding-top: 463px
-    padding-bottom: 163px
-    div
-        display: inline-block
-        width: 25%
-        // position: relative
-        // border-top: 3px solid black
-        // padding-top: 60px
-        img
-            max-width: 100%
-            padding-right: 10px
-        h6
-            font-size: calc(1.4rem + 0.5vw)
-            display: inline-block            
-            padding: 25px 6px 0px 0px
-            font-weight: bold
-            font-family: $mont
-            color: white
-            width: auto
-        p
-            font-family: $mont
-            font-size: calc(0.8rem + 0.5vw)
+    nav
+        margin: 0 auto
+        display: block
+        max-width: 100%
+        max-height: 100%
+        font-size: 0 
+        text-align: right
+        position: relative
+        width: 1200px
+        ul
+            list-style-type: none
+            // display: inline-block
+            word-spacing: 25px
+            // margin: 0 auto
+            // text-align: right
+        li
             display: inline-block
+            text-decoration: none
+            padding-bottom: 10px
+            // text-align: right
+        .underline:hover
+            text-decoration: underline 10px
+            text-decoration-color: $hovercolor
+            -moz-text-decoration-color: $hovercolor
+            text-decoration-thickness: 3px
+            color: $hovercolor
+            text-underline-offset: 10px
+            // border-bottom: 3px solid $hovercolor for ie:11
+            // padding-bottom: 10px
+        h6
+            font-family: $mont
+            font-size: 3.0rem
+            font-weight: bold
+            // display: inline-block
+            // margin-right: 441px
             color: white
+            position: absolute
+            left: 4%
+            padding-left: 20px
+        a
+            font-family: $mont
+            font-size: 1.4rem
+            text-decoration: none
+            color: white
+            // display: inline-block
+        img
+            padding: 0px 20px 0px
+            display: inline-block
+    .fakefooter
+        width: 62.5%
+        // display: block
+        margin: 0 auto
+        font-size: 0
+        max-width: 100%
+        // position: relative
+        padding-top: 200px
+        padding-bottom: 50px
+        div
+            display: inline-block
+            width: 25%
+            // position: relative
+            // border-top: 3px solid black
+            // padding-top: 60px
+            text-align: left
+            vertical-align: top
+            img
+                max-width: 100%
+                padding-right: 10px
+            h6
+                font-size: calc(1.4rem + 0.5vw)
+                display: inline-block            
+                padding: 10px 5px 0px 0px
+                font-weight: bold
+                font-family: $mont
+                color: white
+                width: auto
+                margin: 0
+                font-size: calc(1.2rem + 0.5vw) 
+            p
+                font-family: $mont
+                font-size: calc(0.8rem + 0.5vw)
+                display: inline-block
+                color: white
+                border: none
+                margin: 0
+                padding: 0
+                width: auto
+                font-size: calc(0.9rem + 0.5vw)
 .ABOUT
-    .hrline 
-        padding-bottom: 40px
+    padding-bottom: 40px
     margin: 0 auto 
     text-align: center
+    .gradient
+        background-image: url('images/gradient1.png')
+        background-repeat: no-repeat
+        // background-attachment: fixed
+        background-position: center
+        display: inline-block
+        position: relative
+        .photo:hover .verynice
+            // padding: 10px
+            box-shadow: 10px 10px #95e1d3
+            // top: -10px
+            // left: -10px
+            opacity: 0.5
+            visibility: visible
+        .gradient:hover .verynice
+            // padding: 10px
+            // box-shadow: 10px 10px #95e1d3
+            // top: -10px
+            // left: -10px
+            opacity: 1
+            visibility: visible
+        .verynice 
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            // background: rgba(29, 106, 154, 0.72)
+            color: #000000
+            visibility: hidden
+            opacity: 0
+            font-size: 2rem
+    .gradient:hover
+        // box-shadow: 10px 10px #95e1d3
+        // top: -10px
+        // left: -10px
+        // opacity: 0.2
+        // opacity: 1
+        // visibility: visible
     img
-        padding: 10px
-    .middlephoto
-        // padding: 0px 27px 0px 30px
+        margin: 10px
+        // position: relative
+        // top: 0
 .facts
     width: 100%
     max-width: 100%
@@ -299,7 +370,7 @@ nav
     background-color: #95e1d3
     text-align: center
     // height: 270px
-    margin-top: 105px
+    margin-top: 50px
     div:first-child
         // border-left: 1px solid $bordercolor
     .flexing
@@ -387,28 +458,28 @@ nav
         padding-top: 50px
         // text-align: left
 .features
-    // max-height:100% 
-    max-width: 100%
-    // height:905px
-    height: auto
-    width: 1920px
-    background-image: url('images/white.png'), 
-    // background-position-x: center
-    // background-position-y: bottom
-    background-repeat: no-repeat
-    // background-attachment: scroll
-    margin-top: 150px
-    padding-bottom: 1000px
-    // position: relative
-    // background-size: 100% auto
-    .hero-image
-        background: url('images/somebackground.png')
-        // background-size: cover
-        // height: 1000px
-        position: relative
+    background: url("images/somebackground.png")no-repeat center
+    background-size: cover
+    position: relative
+    padding-top: 50px
+    // height: auto
+    margin-top: 30px
+    padding-bottom: 800px
+    .image1
+        position: absolute
+        // object-fit: cover
+        bottom: -4%
+        right: 37%
+        max-width: 100% 
+    .image2
+        position: absolute
+        // object-fit: cover
+        bottom: -8%
+        right: 28%
+        max-width: 44%
 .idk
     font-size: 0
-    margin: 75px auto
+    margin: 20px auto
     text-align: center
     width: 1200px
     max-width: 100%
@@ -419,6 +490,8 @@ nav
         display: inline-block
         img
             max-width: 100%
+            padding: 5px
+            padding-left: 35px
     .fieldtextarea
         width: 50%
         margin: 0 auto
@@ -475,7 +548,6 @@ nav
                 top: 38.0%
                 left: 94.0%
 .quote
-
     // max-height:100% 
     max-width: 100%
     background-color: #f8f8f8
@@ -492,6 +564,7 @@ nav
         padding: 0px 0
         width: 1200px
         max-width: 100%
+        position: relative
         .contone
             max-width: 100%
             width: 32%
@@ -528,8 +601,16 @@ nav
             color: $almostblack
             display: inline-block
             padding-top: 5px
-        .rodykles
-            margin: 0px 0px -12px 20px
+        .rodykles1
+            position: absolute
+            left: 0% 
+            top: 50%
+            transform: translate(-50%,-50%)
+        .rodykles2
+            position: absolute
+            left: 100% 
+            top: 50%
+            transform: translate(-50%,-50%)
         .squareimage
             padding: 0px 60px 0px 90px
 .meetourteam
@@ -576,10 +657,12 @@ nav
                 // vertical-align: top
 .logos
     width: 100%
-    height: 250px
+    padding-bottom: 51px
     background-color: #f8f8f8
-    margin: 30px auto
+    // margin: 30px auto
     // background-image: no-repeat fixed center
+    max-width: 100%
+    max-height: 100%
     div
         width: 1200px
         margin: 0 auto
@@ -593,6 +676,9 @@ nav
     height: 780px
     font-size: 0
     // overflow: hidden
+    div
+        p
+            padding-bottom: 20px
     .leftpictures
         width: 50%
         display: inline-block
@@ -632,6 +718,7 @@ nav
         padding: 0px 0
         width: 1200px
         max-width: 100%
+        position: relative
         .contone
             width: 32%
             margin: 0 auto
@@ -655,6 +742,8 @@ nav
             display: inline-block
             padding-bottom: 11px
             line-height: 35px
+            width: auto
+            padding-right: 25px
         h6
             font-family: $kaushan
             font-size: 2.4rem
@@ -667,6 +756,16 @@ nav
             padding: 0px 60px 0px 90px
         .pfppicture
             padding: 0px 30px 0px 60px
+        .rodykles1
+            position: absolute
+            left: 5% 
+            top: 50%
+            transform: translate(-50%,-50%)
+        .rodykles2
+            position: absolute
+            left: 95% 
+            top: 50%
+            transform: translate(-50%,-50%)
 .happyclients
     // height:100% 
     // width: 1200px
@@ -779,25 +878,28 @@ nav
     background-color: white
     // margin: 29px 360px 0px 360px
     margin: 0 auto
-    height: 210px
+    height: 100%
     font-size: 0
     text-align: center
-    padding-top: 50px
+    padding-top: 70px
+    padding-bottom: 70px
     h6
         font-family: $mont
         font-size: 2.4rem
         font-weight: bold
         color: #f38181
 .footer
+
+
     background-color: #f8f8f8
     max-width: 100%
     // height: 100%
-    // text-align: center
     // margin: 0 auto
     text-align: center
     font-size: 0
     padding-top: 100px
-    width: 1920px
+    // width: 1920px
+    padding-bottom: 20px
     hr
         width: 1200px
         border: 1px solid #e5e5e5
@@ -938,7 +1040,4 @@ nav
             display: inline-block
             padding: 0
             margin: 0 auto
-
-
-
-        
+// End

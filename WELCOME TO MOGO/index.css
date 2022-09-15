@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
@@ -55,16 +56,17 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   body {
     width: 100%;
   }
-  body .sad .fakefooter {
-    width: 90%;
+  body .quote div .squareimage {
+    padding: 0px;
   }
   body .sad .fakefooter div {
-    width: 25%;
+    width: 50%;
     max-width: 1080px;
+    padding-top: 1vh;
   }
   body .sad nav li {
     display: block;
@@ -95,8 +97,12 @@ html {
     width: 100%;
     margin: 0 auto;
   }
+  body .idk .picture img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   body .idk .fieldtextarea {
-    width: 94%;
+    width: 100%;
     margin: 0 auto;
   }
   body nav li {
@@ -114,15 +120,16 @@ html {
     padding: 0;
     border: none;
   }
+  body .workwith div {
+    width: 100%;
+  }
   body .workwith div div {
     display: block;
-    padding: 25px 0px 25px;
+    padding: 25px 210px 25px 0px;
   }
   body .workwith div div p {
     width: 24rem;
-  }
-  body .quotetwo {
-    padding-top: 700px;
+    padding-left: 0px;
   }
   body .happyclients {
     width: 100%;
@@ -131,20 +138,24 @@ html {
     width: 100%;
     padding: 25px;
   }
+  body .happyclients .main div {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  body .happyclients .main div .conttwo {
+    display: block;
+    text-align: center;
+    padding-left: 0;
+  }
   body .happyclients .main p {
-    width: 180px;
+    width: 100%;
   }
-  body .features .texttext h6 {
-    font-size: 1.8rem;
-    padding: 10px 0px 10px;
+  body .quotetwo div .pfppicture {
+    padding: 0px;
   }
-  body .features .texttext h5 {
-    font-size: 2rem;
-    padding-bottom: 15px;
-  }
-  body .features .texttext .image1 .image2 {
-    top: 28%;
-    right: -2%;
+  body .quotetwo div .squareimage {
+    padding: 0px;
   }
 }
 textarea::-webkit-scrollbar {
@@ -207,7 +218,7 @@ textarea::-webkit-scrollbar {
   background-attachment: scroll;
   background-color: white;
   font-size: 1.6rem;
-  padding-top: 30px;
+  padding-top: 2vh;
 }
 .sad h4 {
   font-family: Kaushan Script, sans-serif;
@@ -287,21 +298,22 @@ textarea::-webkit-scrollbar {
   margin: 0 auto;
   font-size: 0;
   max-width: 100%;
-  padding-top: 200px;
-  padding-bottom: 50px;
+  position: absolute;
+  bottom: 3%;
+  right: -14%;
+  max-width: 100%;
+  transform: translate(-50%, 0%);
 }
 .sad .fakefooter div {
   display: inline-block;
   width: 25%;
   text-align: left;
-  vertical-align: top;
 }
 .sad .fakefooter div img {
   max-width: 100%;
   padding-right: 10px;
 }
 .sad .fakefooter div h6 {
-  font-size: calc(1.4rem + 0.5vw);
   display: inline-block;
   padding: 10px 5px 0px 0px;
   font-weight: bold;
@@ -313,13 +325,12 @@ textarea::-webkit-scrollbar {
 }
 .sad .fakefooter div p {
   font-family: Montserrat, sans-serif;
-  font-size: calc(0.8rem + 0.5vw);
   display: inline-block;
   color: white;
   border: none;
   margin: 0;
   padding: 0;
-  width: auto;
+  width: 30%;
   font-size: calc(0.9rem + 0.5vw);
 }
 
@@ -328,35 +339,46 @@ textarea::-webkit-scrollbar {
   margin: 0 auto;
   text-align: center;
 }
+.ABOUT img {
+  max-width: 100%;
+}
 .ABOUT .gradient {
-  background-image: url("images/gradient1.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+  background: rgb(195, 85, 17);
+  background: linear-gradient(165deg, rgb(195, 85, 17) 0%, rgba(254, 183, 101, 0.6671043417) 33%, rgb(209, 147, 21) 100%);
   display: inline-block;
   position: relative;
+  max-width: 100%;
+  margin: 5px;
 }
-.ABOUT .gradient .photo:hover .verynice {
+.ABOUT .gradient .photo {
+  text-align: center;
+  position: relative;
+}
+.ABOUT .gradient .photo .verynice {
+  position: absolute;
+  top: 116px;
+  bottom: 0;
+  left: 125px;
+  right: 13px;
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+}
+.ABOUT .gradient .photo p {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.ABOUT .gradient .photo:hover {
   box-shadow: 10px 10px #95e1d3;
   opacity: 0.5;
   visibility: visible;
 }
-.ABOUT .gradient .gradient:hover .verynice {
-  opacity: 1;
+.ABOUT .gradient:hover .verynice {
   visibility: visible;
-}
-.ABOUT .gradient .verynice {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #000000;
-  visibility: hidden;
-  opacity: 0;
-  font-size: 2rem;
-}
-.ABOUT img {
-  margin: 10px;
+  opacity: 1;
 }
 
 .facts {
@@ -374,6 +396,7 @@ textarea::-webkit-scrollbar {
   padding-bottom: 88px;
   border-right: 1px solid #b5eae0;
   border-left: 1px solid #b5eae0;
+  max-width: 100%;
 }
 .facts .flexing h6 {
   font-family: Montserrat, sans-serif;
@@ -408,6 +431,7 @@ textarea::-webkit-scrollbar {
   display: inline-block;
   position: relative;
   text-align: left;
+  max-width: 100%;
 }
 .workwith div div h5 {
   font-family: Montserrat, sans-serif;
@@ -435,10 +459,12 @@ textarea::-webkit-scrollbar {
 }
 .workwith .firstrow {
   padding-bottom: 50px;
+  max-width: 100%;
 }
 .workwith .secondrow {
   border-top: 1px solid #b5eae0;
   padding-top: 50px;
+  max-width: 100%;
 }
 
 .features {
@@ -447,24 +473,29 @@ textarea::-webkit-scrollbar {
   position: relative;
   padding-top: 50px;
   margin-top: 30px;
-  padding-bottom: 800px;
+  padding-bottom: 80vh;
 }
-.features .image1 {
+.features .wot .image1 {
   position: absolute;
-  bottom: -4%;
-  right: 37%;
-  max-width: 100%;
+  max-width: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0%);
+  padding: 0;
+  margin: 0;
 }
-.features .image2 {
+.features .wot .image2 {
   position: absolute;
-  bottom: -8%;
-  right: 28%;
-  max-width: 44%;
+  bottom: 0%;
+  padding: 0;
+  margin: 0;
+  max-width: 25%;
+  transform: translate(50%, 20%);
 }
 
 .idk {
   font-size: 0;
-  margin: 20px auto;
+  padding: 20px;
+  margin: 0px auto;
   text-align: center;
   width: 1200px;
   max-width: 100%;
@@ -476,15 +507,12 @@ textarea::-webkit-scrollbar {
 }
 .idk .picture img {
   max-width: 100%;
-  padding: 5px;
-  padding-left: 35px;
 }
 .idk .fieldtextarea {
   width: 50%;
   margin: 0 auto;
   display: inline-block;
   text-align: left;
-  height: 400px;
   vertical-align: top;
   max-width: 100%;
 }
@@ -493,7 +521,7 @@ textarea::-webkit-scrollbar {
 }
 .idk .fieldtextarea .importantdiv div {
   height: 190px;
-  width: 600px;
+  width: 100%;
   margin-left: -1px;
   margin-top: 56px;
 }
@@ -503,7 +531,7 @@ textarea::-webkit-scrollbar {
   font-size: 1.5rem;
   border: 0px;
   height: 126px;
-  width: 565px;
+  width: 90%;
   resize: none;
   margin-top: 15px;
   margin-left: 15px;
@@ -514,10 +542,9 @@ textarea::-webkit-scrollbar {
 }
 .idk .fieldtextarea div {
   display: block;
-  width: 600px;
   border: 1px solid #e5e5e5;
   margin-bottom: 10px;
-  margin-left: 17px;
+  margin-left: 0px;
   height: 58px;
   position: relative;
 }
@@ -527,7 +554,7 @@ textarea::-webkit-scrollbar {
   font-weight: bold;
   position: absolute;
   top: 36%;
-  left: 9%;
+  left: 12%;
   color: #333333;
 }
 .idk .fieldtextarea div img {
@@ -538,7 +565,7 @@ textarea::-webkit-scrollbar {
 .idk .fieldtextarea div img.arrows {
   position: absolute;
   top: 38%;
-  left: 94%;
+  left: 90%;
 }
 
 .quote {
@@ -676,7 +703,6 @@ textarea::-webkit-scrollbar {
 }
 
 .whatwedo {
-  height: 780px;
   font-size: 0;
 }
 .whatwedo div p {
@@ -701,6 +727,7 @@ textarea::-webkit-scrollbar {
 .whatwedo .rightpictures div {
   width: 50%;
   display: inline-block;
+  padding-bottom: 50px;
 }
 .whatwedo .rightpictures div img {
   width: 100%;
@@ -712,7 +739,7 @@ textarea::-webkit-scrollbar {
   background-attachment: scroll;
   margin: 0 auto;
   font-size: 0;
-  padding: 400px 0px 150px;
+  padding: 0px 0px 5vh;
 }
 .quotetwo div {
   margin: 0 auto;
@@ -764,9 +791,11 @@ textarea::-webkit-scrollbar {
 }
 .quotetwo div .squareimage {
   padding: 0px 60px 0px 90px;
+  max-width: 100%;
 }
 .quotetwo div .pfppicture {
   padding: 0px 30px 0px 60px;
+  max-width: 100%;
 }
 .quotetwo div .rodykles1 {
   position: absolute;
@@ -786,12 +815,12 @@ textarea::-webkit-scrollbar {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-color: white;
+  background-size: cover;
   margin: 0 auto;
-  height: 830px;
   font-size: 0;
   text-align: center;
   max-width: 100%;
-  width: 1920px;
+  padding-bottom: 50px;
 }
 .happyclients .main {
   width: 62.5%;
@@ -818,7 +847,7 @@ textarea::-webkit-scrollbar {
   color: #999999;
   padding-top: 15px;
   line-height: 1.5;
-  width: 300px;
+  max-width: 294%;
 }
 .happyclients .main div {
   font-size: 0;
@@ -837,15 +866,18 @@ textarea::-webkit-scrollbar {
   text-align: left;
   padding-left: 30px;
   max-width: 100%;
+  width: 100%;
 }
 
 .latestblog {
-  width: 1200px;
   margin: 0 auto;
   font-size: 0;
   text-align: center;
   max-width: 100%;
-  padding-top: 20px;
+  padding: 20px;
+}
+.latestblog img {
+  max-width: 100%;
 }
 .latestblog .blogblocks {
   width: 400px;
@@ -909,17 +941,18 @@ textarea::-webkit-scrollbar {
   max-width: 100%;
   text-align: center;
   font-size: 0;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  padding: 100px 20px 10px;
 }
 .footer hr {
-  width: 1200px;
+  max-width: 100%;
   border: 1px solid #e5e5e5;
 }
 .footer div {
-  width: 400px;
-  text-align: left;
+  width: 375px;
   display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
 }
 .footer p {
   font-size: 1.4rem;
@@ -933,17 +966,19 @@ textarea::-webkit-scrollbar {
 .footer .leftfooter {
   vertical-align: top;
   font-size: 0;
+  text-align: left;
+  max-width: 100%;
 }
 .footer .leftfooter hr {
   width: 320px;
   border: 1px solid #e5e5e5;
+  max-width: 95%;
 }
 .footer .leftfooter h6 {
   font-family: Montserrat, sans-serif;
   font-size: 4.6rem;
   font-weight: bold;
   color: #999999;
-  padding-bottom: 20px;
 }
 .footer .leftfooter p {
   font-family: Roboto, sans-serif;
@@ -951,15 +986,13 @@ textarea::-webkit-scrollbar {
   color: #999999;
   font-weight: 400;
   line-height: 1.3;
-  padding-bottom: 45px;
-  width: 350px;
+  width: 100%;
 }
 .footer .leftfooter h5 {
   font-family: Montserrat, sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
   color: #333333;
-  padding-bottom: 10px;
 }
 .footer .leftfooter span {
   font-family: Montserrat, sans-serif;
@@ -991,6 +1024,7 @@ textarea::-webkit-scrollbar {
   font-size: 1.4rem;
   display: inline-block;
   margin: 30px 0px 50px;
+  width: 30%;
 }
 .footer .leftfooter input[type=email] {
   border: solid 1px #d2d2d2;
@@ -1001,9 +1035,11 @@ textarea::-webkit-scrollbar {
   width: 230px;
   height: 40px;
   display: inline-block;
+  width: 65%;
 }
 .footer .middlefooter {
   vertical-align: top;
+  max-width: 100%;
 }
 .footer .middlefooter h6 {
   font-family: Montserrat, sans-serif;
@@ -1013,6 +1049,7 @@ textarea::-webkit-scrollbar {
   padding-bottom: 40px;
 }
 .footer .middlefooter div {
+  text-align: left;
   margin: 0 auto;
   font-size: 0;
   padding: 0;
@@ -1043,6 +1080,9 @@ textarea::-webkit-scrollbar {
   font-weight: 300;
   color: #999999;
   margin: 1px auto;
+}
+.footer .rightfooter {
+  max-width: 100%;
 }
 .footer .rightfooter h6 {
   font-family: Montserrat, sans-serif;

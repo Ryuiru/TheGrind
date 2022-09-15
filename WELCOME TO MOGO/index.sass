@@ -3,6 +3,7 @@
         margin: 0
         padding: 0
         box-sizing: border-box
+        max-width: 100%
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
     margin: 0
     padding: 0
@@ -44,17 +45,29 @@ $almostblack: #333333
 $grey: #999999
 $bordercolor: #b5eae0
 $textareacolors: #e5e5e5
-@media only screen and (max-width: 700px)
+@media only screen and (max-width: 750px)
     body
         width: 100%
+        .quote
+            div
+                .squareimage
+                    padding: 0px
         .sad
             .fakefooter
-                // padding-top: 300px
+                // padding-top: 20vh
                 // padding-right: 25px
-                width: 90%
+                // width: 100%
+                // height: 15vw
+                // position: absolute
+                // object-fit: cover
+                // bottom: 3%
+                // right: -14%
+                // max-width: 100%
+                // transform: translate(-50%, 0%)
                 div
-                    width: 25%
+                    width: 50%
                     max-width: 1080px
+                    padding-top: 1vh
             nav
                 li
                     display: block
@@ -82,8 +95,11 @@ $textareacolors: #e5e5e5
                 text-align: center
                 width: 100%
                 margin: 0 auto
+                img
+                    width: 100%
+                    margin-bottom: 10px
             .fieldtextarea
-                width: 94%
+                width: 100%
                 margin: 0 auto
         nav
             li
@@ -99,12 +115,14 @@ $textareacolors: #e5e5e5
                 padding: 0
                 border: none
             div
+                width: 100%
                 div
                     display: block
-                    padding: 25px 0px 25px
+                    padding: 25px 210px 25px 0px
                     p
                         width: 24rem
-        .quotetwo
+                        padding-left: 0px
+        // .quotetwo
             padding-top: 700px
         .happyclients
             width: 100%
@@ -113,23 +131,47 @@ $textareacolors: #e5e5e5
             .main
                 width: 100%
                 padding: 25px
+                div
+                    display: block
+                    width: 100%
+                    text-align: center
+                    .conttwo
+                        display: block
+                        text-align: center
+                        padding-left: 0
                 p
-                    width: 180px
+                    width: 100%
         .latestblog
             // padding-top: 200px
         .features
             // height: 340px
-            .texttext
-                h6
-                    font-size: 1.8rem
-                    padding: 10px 0px 10px
-                h5
-                    font-size: 2rem
-                    padding-bottom: 15px
-                .image1
-                    .image2
-                        top: 28%
-                        right: -2%
+            // .image1
+            //     position: absolute
+            //     max-width: 72%
+            //     bottom: -4%
+            //     right: -20% 
+            //     transform: translate(-50%, 0%)      
+            // .image2
+            //     position: absolute
+            //     max-width: 30%
+            //     bottom: -6%
+            //     right: -7%
+            //     max-width: 30%
+            //     transform: translate(-50%, 0%)      
+            // .texttext
+            //     h6
+            //         font-size: 1.8rem
+            //         padding: 10px 0px 10px
+            //     h5
+            //         font-size: 2rem
+            //         padding-bottom: 15px
+        .quotetwo
+            div
+                .pfppicture
+                    padding: 0px
+                .squareimage
+                    padding: 0px
+        .footer
 textarea::-webkit-scrollbar 
     width: 5px
 ::-webkit-scrollbar-track 
@@ -181,16 +223,12 @@ body
     img
         padding-bottom: 40px
 .sad    
-    // padding-top: 160px
     margin: 0 auto
     text-align: center
     color: white
-    // height: 400px
-    // width: 840px
     max-width: 100%
     max-height: 100%
     margin: 0 auto
-    // width: 100vh
     height: 100vh
     max-height:100% 
     max-width: 100%
@@ -198,11 +236,10 @@ body
     background-repeat: no-repeat
     background-attachment: scroll
     background-color: white
-    // padding: 29px 360px 0px 360px
-    // margin: 29px auto
     font-size: 1.6rem
-    padding-top: 30px
+    padding-top: 2vh
     // background-size: 100% auto
+    // padding-bottom: 20vh
     h4
         font-family: $kaushan
         font-size: calc(3vw + 1rem)
@@ -283,8 +320,14 @@ body
         font-size: 0
         max-width: 100%
         // position: relative
-        padding-top: 200px
-        padding-bottom: 50px
+        // padding-top: 20vh
+        // padding-top: 10vh
+        position: absolute
+        // object-fit: cover
+        bottom: 3%
+        right: -14%
+        max-width: 100%
+        transform: translate(-50%, 0%)
         div
             display: inline-block
             width: 25%
@@ -292,12 +335,12 @@ body
             // border-top: 3px solid black
             // padding-top: 60px
             text-align: left
-            vertical-align: top
+            // vertical-align: top
             img
                 max-width: 100%
                 padding-right: 10px
             h6
-                font-size: calc(1.4rem + 0.5vw)
+                // font-size: calc(1.4rem + 0.5vw)
                 display: inline-block            
                 padding: 10px 5px 0px 0px
                 font-weight: bold
@@ -308,61 +351,55 @@ body
                 font-size: calc(1.2rem + 0.5vw) 
             p
                 font-family: $mont
-                font-size: calc(0.8rem + 0.5vw)
+                // font-size: calc(0.8rem + 0.5vw)
                 display: inline-block
                 color: white
                 border: none
                 margin: 0
                 padding: 0
-                width: auto
+                width: 30%
                 font-size: calc(0.9rem + 0.5vw)
 .ABOUT
     padding-bottom: 40px
     margin: 0 auto 
     text-align: center
-    .gradient
-        background-image: url('images/gradient1.png')
-        background-repeat: no-repeat
-        // background-attachment: fixed
-        background-position: center
+    img
+        max-width: 100%
+    .gradient 
+        position: relative
+        background: rgb(195,85,17)
+        background: linear-gradient(165deg, rgba(195,85,17,1) 0%, rgba(254,183,101,0.6671043417366946) 33%, rgba(209,147,21,1) 100%)
         display: inline-block
         position: relative
-        .photo:hover .verynice
-            // padding: 10px
+        // padding: 15px
+        max-width: 100%
+        // padding: 5px
+        margin: 5px
+        .photo
+            text-align: center
+            position: relative
+            // padding: 5px            
+            .verynice 
+                position: absolute
+                top: 116px
+                bottom: 0
+                left: 125px
+                right: 13px
+                color: #ffffff
+                visibility: hidden
+                opacity: 0
+                text-align: center
+            p
+                font-family: $mont
+                font-size: 1.8rem
+                font-weight: bold
+        .photo:hover 
             box-shadow: 10px 10px #95e1d3
-            // top: -10px
-            // left: -10px
             opacity: 0.5
             visibility: visible
-        .gradient:hover .verynice
-            // padding: 10px
-            // box-shadow: 10px 10px #95e1d3
-            // top: -10px
-            // left: -10px
-            opacity: 1
-            visibility: visible
-        .verynice 
-            position: absolute
-            top: 0
-            bottom: 0
-            left: 0
-            right: 0
-            // background: rgba(29, 106, 154, 0.72)
-            color: #000000
-            visibility: hidden
-            opacity: 0
-            font-size: 2rem
-    .gradient:hover
-        // box-shadow: 10px 10px #95e1d3
-        // top: -10px
-        // left: -10px
-        // opacity: 0.2
-        // opacity: 1
-        // visibility: visible
-    img
-        margin: 10px
-        // position: relative
-        // top: 0
+    .gradient:hover .verynice 
+        visibility: visible
+        opacity: 1
 .facts
     width: 100%
     max-width: 100%
@@ -384,6 +421,7 @@ body
         padding-bottom: 88px
         border-right: 1px solid $bordercolor
         border-left: 1px solid $bordercolor   
+        max-width: 100%
         h6
             font-family: $mont
             font-weight: bold
@@ -426,6 +464,7 @@ body
             display: inline-block
             position: relative
             text-align: left
+            max-width: 100%
             h5                    
                 font-family: $mont
                 font-size: 1.4rem
@@ -453,10 +492,12 @@ body
         //nothing here
         padding-bottom: 50px
         // text-align: left
+        max-width: 100%
     .secondrow
         border-top: 1px solid $bordercolor
         padding-top: 50px
         // text-align: left
+        max-width: 100%
 .features
     background: url("images/somebackground.png")no-repeat center
     background-size: cover
@@ -464,22 +505,28 @@ body
     padding-top: 50px
     // height: auto
     margin-top: 30px
-    padding-bottom: 800px
-    .image1
-        position: absolute
-        // object-fit: cover
-        bottom: -4%
-        right: 37%
-        max-width: 100% 
-    .image2
-        position: absolute
-        // object-fit: cover
-        bottom: -8%
-        right: 28%
-        max-width: 44%
+    padding-bottom: 80vh
+    .wot
+        .image1
+            position: absolute
+            // object-fit: cover
+            max-width: 50%
+            bottom: 0%
+            transform: translate(-50%, 0%)
+            padding: 0
+            margin: 0
+        .image2
+            position: absolute
+            // object-fit: cover
+            bottom: 0%
+            padding: 0
+            margin: 0
+            max-width: 25%
+            transform: translate(50%, 20%)
 .idk
     font-size: 0
-    margin: 20px auto
+    padding: 20px
+    margin: 0px auto
     text-align: center
     width: 1200px
     max-width: 100%
@@ -490,21 +537,20 @@ body
         display: inline-block
         img
             max-width: 100%
-            padding: 5px
-            padding-left: 35px
+            // padding: 5px 20px 5px 20px
     .fieldtextarea
         width: 50%
         margin: 0 auto
         display: inline-block
         text-align: left
-        height: 400px
+        // height: 400px
         vertical-align: top
         max-width: 100%
         .importantdiv
             margin-bottom: 200px   
             div
                 height:190px 
-                width: 600px
+                width: 100%
                 margin-left: -1px
                 margin-top: 56px
                 textarea
@@ -513,7 +559,7 @@ body
                     font-size: 1.5rem
                     border: 0px
                     height: 126px
-                    width: 565px
+                    width: 90%
                     resize: none
                     margin-top: 15px
                     margin-left: 15px
@@ -523,10 +569,10 @@ body
                     font-weight: 300
         div
             display: block
-            width: 600px
+            // width: 90%
             border: 1px solid $textareacolors
             margin-bottom: 10px
-            margin-left: 17px
+            margin-left: 0px
             height: 58px
             position: relative
             h6
@@ -536,7 +582,7 @@ body
                 // display: inline-block
                 position: absolute
                 top: 36.0%
-                left: 9.0%
+                left: 12.0%
                 color: $almostblack
             img
                 // display: inline-block
@@ -546,7 +592,7 @@ body
             img.arrows
                 position: absolute
                 top: 38.0%
-                left: 94.0%
+                left: 90.0%
 .quote
     // max-height:100% 
     max-width: 100%
@@ -673,7 +719,7 @@ body
             max-width: 100%
 .whatwedo
     // width: 1920px
-    height: 780px
+    // height: 780px
     font-size: 0
     // overflow: hidden
     div
@@ -697,6 +743,7 @@ body
             width: 50%
             display: inline-block
             // vertical-align: top
+            padding-bottom: 50px
             img
                 width: 100%
                 // display: inline-block
@@ -709,8 +756,7 @@ body
     // width: 1920px
     margin: 0 auto
     font-size: 0
-    padding: 400px 0px 150px
-    
+    padding: 0px 0px 5vh
     div
         margin: 0 auto
         font-size: 0
@@ -754,8 +800,10 @@ body
             margin: 0px 0px -12px 20px
         .squareimage
             padding: 0px 60px 0px 90px
+            max-width: 100%
         .pfppicture
             padding: 0px 30px 0px 60px
+            max-width: 100%
         .rodykles1
             position: absolute
             left: 5% 
@@ -773,14 +821,15 @@ body
     background-repeat: no-repeat
     background-attachment: scroll
     background-color: white
+    background-size: cover
     // margin: 29px 360px 0px 360px
     margin: 0 auto
-    height: 830px
     font-size: 0
     text-align: center
     // padding-top: 50px
     max-width: 100%
-    width: 1920px
+    // width: 1920px
+    padding-bottom: 50px
     .maintwo
         // padding: 500px
     .main
@@ -808,8 +857,8 @@ body
             color: $grey
             padding-top: 15px
             line-height: 1.5
-            width: 300px
-            // max-width: 100%
+            // width: 200px
+            max-width: 294%
         div
             // margin: 0 auto
             font-size: 0
@@ -828,13 +877,16 @@ body
             text-align: left
             padding-left: 30px
             max-width: 100%
+            width: 100%
 .latestblog
-    width: 1200px
+    // width: 1200px
     margin: 0 auto
     font-size: 0
     text-align: center
     max-width: 100%
-    padding-top: 20px
+    padding:20px
+    img
+        max-width: 100%
     .blogblocks
         width: 400px
         display: inline-block
@@ -889,26 +941,27 @@ body
         font-weight: bold
         color: #f38181
 .footer
-
-
     background-color: #f8f8f8
     max-width: 100%
     // height: 100%
     // margin: 0 auto
     text-align: center
     font-size: 0
-    padding-top: 100px
     // width: 1920px
-    padding-bottom: 20px
+    padding: 100px 20px 10px 
     hr
-        width: 1200px
+        max-width: 100%
         border: 1px solid #e5e5e5
     div
-        width: 400px
+        width: 375px
+        // width: 33%
         // margin: 0 auto
-        text-align: left
+        // text-align: left
         display: inline-block
         // padding: 10px
+        margin: 0 auto
+        text-align: center
+        max-width: 100%
     p
         font-size: 1.4rem
         font-family: $mont
@@ -919,29 +972,29 @@ body
     .leftfooter
         vertical-align: top
         font-size: 0
+        text-align: left
+        max-width: 100%
         hr
             width: 320px
             border: 1px solid #e5e5e5
+            max-width: 95%
         h6
             font-family: $mont
             font-size: 4.6rem
             font-weight: bold
             color: $grey
-            padding-bottom: 20px
         p
             font-family: $roboto
             font-size: 1.5rem
             color: $grey
             font-weight: 400
             line-height: 1.3
-            padding-bottom: 45px
-            width: 350px
+            width: 100%
         h5
             font-family: $mont
             font-size: 1.8rem
             font-weight: bold
             color: $almostblack
-            padding-bottom: 10px
         span
             font-family: $mont
             font-size: 1.4rem
@@ -969,7 +1022,8 @@ body
             color: white
             font-size: 1.4rem
             display: inline-block
-            margin: 30px 0px 50px          
+            margin: 30px 0px 50px
+            width: 30%         
         input[type='email']
             border: solid 1px #d2d2d2
             font-family: $roboto
@@ -979,8 +1033,11 @@ body
             width: 230px
             height: 40px
             display: inline-block
+            width: 65%
     .middlefooter
         vertical-align: top
+        // text-align: left
+        max-width: 100%
         h6
             font-family: $mont
             font-size: 1.4rem
@@ -988,6 +1045,7 @@ body
             font-weight: bold
             padding-bottom: 40px
         div
+            text-align: left
             // display: inline-block
             margin: 0 auto
             font-size: 0
@@ -1022,6 +1080,7 @@ body
                 margin: 1px auto
                 // padding-bottom: 5px
     .rightfooter
+        max-width: 100%
         h6
             font-family: $mont
             font-weight: bold

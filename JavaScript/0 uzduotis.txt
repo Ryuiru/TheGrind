@@ -1,0 +1,38 @@
+Maryte turi x onuoliu, o Jonukas y, Parasyti koda, kiek 
+jie tures obuoliu bendrai ir isvesti i kintamaji ir atvaizduoti consoleje.
+
+Parasyti salyga, kad isvestasis kintamasis didetu, o po to mazetu per kazkoki skaiciu += / -=
+
+Parasyti patikrinimo salyga, jei Maryte turi daugiau
+obuoliu negu Jonas-  Ismesti i konsole teksta Maryte 
+turi daugiau obuoliu negu Jonukas, o jei ne, tai atvirksciai.
+Jeigu obuoliu kiekis yra vienodas, ismesti salyga atiduokim obuolius Editai.
+
+Per switch statement padaryti, kad esant tam tikram
+obuoliu kiekiui ismestu atsakyma: Jus turite tiek ir 
+tiek obuoliu ir padaryti default varianta, jeigu obuoliu 
+kiekis nera nurodytas standartiniuose variantuose.
+
+Sukurti masyva vaisiu(bent 6). Atspausdinti 3 ir 5 
+masyvo elementa. Kita uzduotis atspausdinti per for 
+cikla visus masyvo elementus.
+
+
+
+
+Užduotis 1:
+Sukurti div su id moku html’e. ir  įdėti tekstą: “Valio pavyko”.
+Tam pačiam moku uždėti background žalią su js.
+Uždėti moku matmenis 300x300 ir išcentruoti per vidurį.
+
+Užduotis 2:
+Sukurti per js div elementą su ID moku.
+Tam pačiam moku įdėti tekstą: “Valio pavyko”.
+Uždėti moku matmenis 300x300 ir išcentruoti per vidurį.
+Sukurti mygtuką per js su ID spaudaliukas.
+Padaryti, kad paspaudus ant mygtuko išnyktų mygtukas bei divas sukurtas prieš tai.
+
+Užduotis 3:
+Sukurti mygtuką html’e su id KARAMBA.
+Padaryti, kad paspaudus ant mygtuko sukurtų frame elementą ir į  jį įdėti video iš youtube, koks jums patinka.
+Išcentruoti frame per vidurį.

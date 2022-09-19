@@ -39,4 +39,4 @@
     //     iframe.style.margin = "0 auto";
     //     iframe.style.display = "block";
     //  };
-     //Trecia uzduotis
+     //3 uzduotis

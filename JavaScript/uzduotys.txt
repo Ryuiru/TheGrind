@@ -36,3 +36,23 @@ Užduotis 3:
 Sukurti mygtuką html’e su id KARAMBA.
 Padaryti, kad paspaudus ant mygtuko sukurtų frame elementą ir į  jį įdėti video iš youtube, koks jums patinka.
 Išcentruoti frame per vidurį.
+///////////////////////////////////////////
+https://blog.garstasio.com/you-dont-need-jquery/dom-manipulation/
+Užduotis 1:
+
+Padaryti funkciją, kurią iššaukus išmestų “Mėgstu programuoti.Yey”
+
+Užduotis 2:
+
+Sukurti funkciją į kurią įvedus vaisiaus pavadinimą ir jo kainą, suskaičiuotų, kiek kainuos penki tokie vaisiai ir atvaizduotų ekrane.
+
+Jeigu php, tai be input, o php kode per funkcijas.
+Užduotis 3:
+
+Pasinaudojant funkcija iš antros užduoties ir ją perdarius, padaryti html’e inputus vaisiaus, kainos ir kiekio įvedimui, bei buttona skaičiuoti kainą. Tada padaryti, kad paspaudus ant buttono suskaičiuotų kainą ir atvaizduotų į html jūsų vaisius ir jų kainą, bei koks buvo pirktas kiekis.
+
+Php: su get/post per formą.
+
+Užduotis 4:
+
+Sukurti masyvą su visais mūsų pasakos herojais ir jų savybėmis. Atvaizduoti masyvą į html per js panaudojant .each funkciją. Tada per each nuspalvinti, kas antrą elementą mėlynai ir teksto spalvą padaryti baltą.

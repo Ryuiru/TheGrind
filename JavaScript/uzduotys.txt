@@ -56,3 +56,28 @@ Php: su get/post per formą.
 Užduotis 4:
 
 Sukurti masyvą su visais mūsų pasakos herojais ir jų savybėmis. Atvaizduoti masyvą į html per js panaudojant .each funkciją. Tada per each nuspalvinti, kas antrą elementą mėlynai ir teksto spalvą padaryti baltą.
+
+Nr1. 
+Sukurti futbolisto objekta, kuris turi tureti:
+    Begimo greitis
+    Vardas 
+    Pavarde
+    Ugis
+    Amzius
+metodus pasiekti ypatybes
+Atvaizduoti futbolininku sarasa pagal varda pavarde i html.
++ Sunkiau
+Sukurti 3 futbolininkus ir atvaizduoti i html patikrinant, kuris is ju bega greiciausiai.
+
+Nr.2 
+
+Sukurti automobiliu konstruktoriaus objekta, kuris turetu tureti:
+    + Pavadinima
+    + Greiti
+    + Nuvaziuota kelia
+    + Sukurti jiems metodus ir sukurti metoda, kuris skaiciuotu nvaziuota 
+    kelia per valanda.
+    + Padaryti, kad galima butu sukurti 5 masinas ant paspaudimo mygtuko ir 
+    jas sukurti, bei atvaizduoti su visais parametrais i html.
+    ++ Sunkiau:
+    + Palyginti, kuri masina nuvaziuos daugiausiai kelio.

@@ -344,7 +344,7 @@ message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
 
 console.log(message.style.color);
-console.log(message.style.backgroundColor);
+console.log(message.style.backgroundColor); 
 
 console.log(getComputedStyle(message).color);
 console.log(getComputedStyle(message).height);

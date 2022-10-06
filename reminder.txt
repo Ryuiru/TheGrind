@@ -1,0 +1,170 @@
+17-5:
+    Pakonspektuot apie modules ir IIFE
+
+17-6:
+    method--: require. - Importing from other scripts with NodeJs
+
+17-7: 
+    Terminal commands: 
+dir - show all files
+cd -  change directory ../ moves up two levels 
+mkdir (makedirectory) - creates a fodler
+edit - create files
+del - delete (selected) files
+mv - move files 
+rmdir (remove directory)- remove directory ( works only on empty directories)
+
+17-8: 
+    Introduction to NPM (NodepacketManager)
+npm -v : checks for Npm version on vs code
+npm init - initialize npm
+npm install (name of program) - install a chosen program
+lodash.com - bundle of usefull stuff. has a dependency on copying nested objects( cloneDeep )
+npm i - checks dependenciens in package.json file and installs them (used to delete all files and restore the ones are needed)
+
+17-9:
+    PARCEL
+npm i parcel --save-dev : install parcel (dev dependency)
+npx parcel index.html - to bundle up parcel with html file
+what parcel does is bundle files for development
+makes importing files easier not needing to specify the location of file e.g.--------import cloneDeep from 'lodash';
+write in package.json 
+"scripts": {
+    "start": "parcel index.html" //automate npx parcel index.html 
+    "build": "parcen build index.html" //compress files for release (more performance)
+} 
+
+17-10:
+    Configuring Babel and Polyfilling
+Babel can only transform (ES6)+ features
+Transpiling code for older browser compability to (ES5)
+npm i core-js
+import 'core-js/stable (/array/find --  select what u want)'; // library for polyfilling 
+import 'regenerator-runtime/runtime';  // Polyfilling async functions
+
+17-11:
+    Modern, Clean and Declarative JavaScript Programming
+Basicly rules for how to write code cleany with no errors 
+
+17-12:
+    Let's FIx Some Bad Code!
+Fixing variable names into more easily readable code.
+REfactoring some code
+
+18-2:
+    Forkify Application- Project Overview and Planning
+Project Planning of the Application
+((1. User Stories -> 2, Features -> 3. Flowchart -> 4. Architecture)PLANNING STEP) -> Development Step
+
+User story: Description of the applications functionality from the unsers perspective.
+Features: List of features from user stories 
+Flowchart (part 1): part 1 of App Flowchart "Check Snaps for flowchart"
+
+18-3:
+    Loading a Recipe from api
+Using Sass for writing
+Create Initialie new project 
+npm init
+load up scripts 
+start: parcel index.html
+build: parcel build index.html
+Install Dev Parcel dependency
+
+first API call
+const showRecipe = async function() {
+    try {
+        const res = await fetch(Url link of forkify api);
+        const data = await res.json();
+
+        if (!res.ok) throw new Error (`${data.message} (${res.status})`);
+
+        console.log(res, data); // getting the api data
+        let {recipe} = data.data;
+        recipe = {
+            id: recipe.id,
+            title: recipe.title,
+            publisher: recipe.publisher
+            ...
+        }
+        console.log(recipe) // loading up recipe object
+    } catch (err){
+        alert(err);
+    }
+};
+
+18-4:
+    Rendering the Recipe
+adds a loading spinner for a image
+Renders the recipe from object
+
+18-5:
+    Listening For load and hashchange Events
+Adding EventHandlers 
+18-6:
+    The MVC Architecture
+Lots of Theory about Architecture and models of Forkify App
+
+18-7:
+    Refactoring for MVC (Model View Controller)
+Refactoring already written code into MVC three different javascript files and export/import them
+
+18-8:
+    Helpers and Configuration files
+makes a config.js file that puts important viarables three
+
+18-9:
+    Event Handlers in MVC Publisher-SUbscriber Pattern
+addEventHandlers IN MVC
+
+18-10:
+    Implementing Error and Success Messages
+as the name implies thats what he does in this section
+
+18-11/12:
+    Implementing Search REsults
+ 
+18-13/14
+    Implementing Pagination
+Implementing pages 
+for listed recipes on side bar to show only 10
+some more restructuring 
+
+18-15
+    Project Planning Part 2 The return of the king
+Basicly flowchart (part 2) for more features to add
+
+18-16
+    Updating Recipe Servings
+Make it so we can increase/reduce servings for the recipe and it changes quantity of ingredients 
+While re-rendering the recipe menu
+
+18-17
+    Developing a DOM Updating Algorith
+fixing 18-16 flaws so image doesnt re-renders 
+with update method
+
+18-18
+    Implementing bookmarks - Part 1
+Making that sellected recipe gets saved into bookmark with .push 
+Making to delete bookmark pressing same button with .splice and .findIndex methods
+
+18-19
+    Implementing bookmarks - Part 2
+Making that bookmarked bookmarks show up in bookmark tab
+more refactoring MVC 
+
+18-20
+    Storing Bookmarks With localStorage
+Storing bookmarks into local storage so theyre saved when refreshing the page and deleting bookmarked bookmarks
+
+18-21/22
+    Uploading a New Recipe - part 1
+Using a constructor function to add a new recipe
+and receive recipe data 
+18-23
+    Uploading a New Recipe - part 2
+Making so input ingredients data into new recipe and other stuff 
+
+18-24
+    Uploading a New Recipe - part 3
+Changing url in id with pushState

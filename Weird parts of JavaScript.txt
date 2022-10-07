@@ -1,0 +1,54 @@
+Understanding the code is best way to learn 
+
+2. Execution COntexts and Lexical Enviroments
+
+SYNTAX PARSER: A program that read your code and determines what it does and if its grammar is valid
+LEXICAL ENVIROMENT: Where something sits physically in the code you write
+EXECUTION CONTEXT: A wrapper to help manage the code that is running
+
+Global execution context creates a : Global Object(window) and creates a special variable .this 
+Global Object(window) = .this
+
+Execution context is created (CREATION PHASE) = Global Object , 'this', Outer Enviroment(null), Your Code(Setup Memory Space for Variables and Functions "Hoisting")
+Hoisting - Preloads the code preset things to undefined and readies code to be executed.
+
+undefined =  variable hasn't been Set 
+
+EXECUTION PHASE RUNS YOUR CODE LINE BY LINE
+
+SINGLE THREADED: One command is executed at a time
+
+SYNCHRONOUS: One at a time in ... in order it appears
+
+ASYNCHRONOUS: More than one at a time
+
+INVOCATION: running a function ()
+
+VARIABLE ENVIRONMENT: where the variables live
+
+SCOPE: WHERE A VARIABLE IS AVAILABLE IN YOUR CODE
+
+3. Types and Operators
+
+DYNAMIC TYPING: You don't tell the engine what type of data a variable holds, it figures it out while your code is running
+COERCION: Converting a value from one type to another
+
+PRIMITIVE TYPE: A type of data that represends a single value
+
+OPERATOR: A special function that is syntactically (written) differently
+
+OPERATOR PRECEDENCE: Which operator function get called first 
+
+ASSOCIATIVITY: What order operator functions get called in: Left-To-Right or Right-To-Left
+
+4. Objects and Functions 
+
+ NAMESPACE: a container for variables and functions // Typically to keep variables and functions with the same name separate
+
+ FIRST CLASS FUNCTIONS: Everything you can do with other types you can do with functions // assign them to variables, pass them around, create them on the fly 
+
+ EXPRESSION: A unit of code that results in a value // It doesn't have to save to a variable.
+
+ STATEMENT: Just does the work
+
+ 04-07

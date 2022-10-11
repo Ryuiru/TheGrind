@@ -51,4 +51,49 @@ ASSOCIATIVITY: What order operator functions get called in: Left-To-Right or Rig
 
  STATEMENT: Just does the work
 
- 04-07
+ MUTATE: To change something "immutable" means it can't be changed
+
+ ARGUMENTS: THe parameters you pass to a function //  Javascript gives you a keyword of the same name which contains them all.
+
+ WHITESPACE: Invisible characters that create literal 'space' in your written code //  carriage returns, tabs, spaces.
+
+ CALLBACK FUNCTION: A function you give to another function, to be run when the other function is finished. //  So the function you call (i.e. Invoke), 'calls back' by calling the function you gave it when it finishes.
+
+ BIND: Creates a copy of a function with arguments
+ CALL: Invokes a function 
+ APPLY: Invokes like CALL but with Array arguments.
+
+ FUNCTION CURRYING: Creating a copy of a function but with some preset parameters //  Very useful in mathematical situations.
+
+4. Object-Oriented Javascript and Prototypal Inheritance
+
+INHERITANCE: One Object gets access to the properties and methods of another object.
+
+REFLECTION: An object can look at itself, listing and changing its properties and methods. // so javascript object has the ability to look at its own properties and methods and we can use that to use method .extend
+
+underscore.js library = _.extend = merges objects with first object listed in argumnets 
+
+5. Building Objects
+
+FUNCTION CONSTRUCTORS: A normal function that is used to construct objects // THe 'this' variable points a new empty object, and that object is returned from the function automatically.
+
+function Person() {
+    this.firstName = 'jonas;
+    this.lastName = 'Jonaitis';
+}
+
+var jonas = new Person(); // New sukuria objekta
+ objektas Jonas sukurtas su parametrais firstName(jonas) ir lastName(jonaitis).
+
+Person.prototype.getFullName = function(){
+    return this.firstName = ' ' + this.lastName; //using a function constructor also calls this method for every object
+}
+
+POLYFILL: Code that adds a feature which the engine MAY lack.
+
+SYNTACTIC SUGAR: A different way to type something that doesn't change how it works under the hood
+
+6. Examining famous frameworks and libraries
+
+METHOD CHAINING: Calling one method after another, and each method affects the parent object. // So obj.method1().method2() where both methods end up with a 'this' variable pointing at 'obj'
+

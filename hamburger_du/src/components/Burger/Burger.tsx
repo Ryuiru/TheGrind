@@ -1,9 +1,10 @@
 import React from 'react';
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
-// type Props = {
-//   type: number;
-// };
+// interface Ingredient {
+//   ingredients: string (props: Ingredient)
+// }
+
 export const Burger = (props: any) => {
   let transformedIngredients: JSX.Element | JSX.Element[] = Object.keys(
     //tsx

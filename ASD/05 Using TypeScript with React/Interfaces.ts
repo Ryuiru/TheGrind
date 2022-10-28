@@ -5,7 +5,7 @@ interface Profile {
 }
 
 let profile: Profile = {
-  name: 'John'
+  name: 'John',
 };
 
 // Index Signature

@@ -2,16 +2,18 @@ import React from 'react';
 import './BuildControls.css';
 import { BuildControl } from './BuildControl/BuildControl';
 import {
-  Ingredients,
   BurgerBuilderState,
+  DisabledInfo,
+  Ingredients,
 } from '../../../containers/BurgerBuilder/BurgerBuilder';
 
 interface Props {
   ingredientAdded: (type: keyof Ingredients) => void;
   ingredientRemoved: (type: keyof Ingredients) => void;
   price: number;
-  disabled: any;
+  disabled: DisabledInfo;
   purchasable: boolean;
+  ordered: BurgerBuilderState;
 }
 
 export const controls = [
@@ -34,7 +36,11 @@ export const BuildControls: React.FC<Props> = (props) => (
         disabled={props.disabled}
       />
     ))}
-    <button className='OrderButton' disabled={props.purchasable}>
+    <button
+      className='OrderButton'
+      disabled={props.purchasable}
+      onClick={props.ordered}
+    >
       ORDER NOW!
     </button>
   </div>

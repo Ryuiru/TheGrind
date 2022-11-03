@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
-// interface Ingredient {
-//   ingredients: string (props: Ingredient)
-// }
+import {
+  Ingredients,
+  BurgerBuilderState,
+} from '../../containers/BurgerBuilder/BurgerBuilder';
+interface Props {
+  ingredients: Ingredients;
+}
 
-export const Burger = (props: any) => {
+export const Burger: React.FC<Props> = (props: Props) => {
   let transformedIngredients: JSX.Element | JSX.Element[] = Object.keys(
-    //tsx
     props.ingredients
   )
     .map((igKey) => {

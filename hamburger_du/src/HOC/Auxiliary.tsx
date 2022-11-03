@@ -1,10 +1,17 @@
-// import React, { Component } from 'react';
-// interface P {
-//   props: any;
-//   children: any;
+import React, { Component } from 'react';
+interface Props {
+  children: React.ReactNode;
+}
+const Auxiliary: React.FC<Props> = (props) => <>{props.children}</>;
+
+export default Auxiliary;
+
+// import * as React from 'react';
+
+// export interface AuxProps {
+//   children: React.ReactNode;
 // }
 
-// const aux: React.FC<P> = (props) => props.children;
-const aux = (props: any) => props.children;
+// const Auxiliary = (props: AuxProps) => props.children;
 
-export default aux;
+// export default Auxiliary;

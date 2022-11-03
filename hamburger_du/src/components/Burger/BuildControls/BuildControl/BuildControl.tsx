@@ -6,7 +6,7 @@ interface Props {
   label: string;
   added: () => void;
   removed: () => void;
-  disabled: any;
+  disabled: string;
   // onClick?: typeof BuildControl<T> | undefined;
 }
 export const BuildControl: React.FC<Props> = (props) => (

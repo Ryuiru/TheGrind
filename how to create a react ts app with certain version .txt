@@ -1,3 +1,0 @@
-npx create-react-app my-app --scripts-version 16.XX.XX --template  typescript
-
-Thats it

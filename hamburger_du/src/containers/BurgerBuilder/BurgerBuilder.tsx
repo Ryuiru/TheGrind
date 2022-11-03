@@ -15,10 +15,11 @@ export interface BurgerBuilderState {
   totalPrice?: number;
   purchasable?: boolean;
   purchasing?: boolean;
-  // purchaseCancelHandler?: boolean;
-  // purchaseContinueHandler?: string;
-  // purchaseCancelled?: boolean;
-  // purchaseContinued?: string;
+  purchaseCancelHandler: boolean;
+  purchaseContinueHandler?: string;
+  // purchaseCancelled: boolean;
+  // purchaseContinued: string;
+  purchaseHandler: boolean;
 }
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -50,6 +51,8 @@ export class BurgerBuilder extends React.Component<{}, BurgerBuilderState> {
     totalPrice: 4,
     purchasable: false,
     purchasing: false,
+    purchaseHandler: false,
+    purchaseCancelHandler: false,
   };
   updatePurchaseState(ingredients: { [x: string]: number }) {
     const sum = Object.keys(ingredients)
@@ -110,6 +113,7 @@ export class BurgerBuilder extends React.Component<{}, BurgerBuilderState> {
         >
           <OrderSummary
             ingredients={this.state.ingredients}
+            price={this.state.totalPrice}
             purchaseCancelled={this.purchaseCancelHandler}
             purchaseContinued={this.purchaseContinueHandler}
           />

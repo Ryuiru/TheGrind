@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+
+const burgerIngredient = (props) => {
+
+
+};
+export default burgerIngredient;
+
+https://codesandbox.io/s/3i5jv?file=/src/Components/Burger/OrderSummary/OrderSummary.js&resolutionWidth=320&resolutionHeight=675
+
+https://bobbyhadz.com/blog/react-property-does-not-exist-on-type-readonly
+
+https://github.com/DefinitelyTyped/DefinitelyTyped/issues/36505
+
+https://stackoverflow.com/questions/47561848/property-value-does-not-exist-on-type-readonly
+
+https://bobbyhadz.com/blog/typescript-no-index-signature-with-parameter-of-type-string

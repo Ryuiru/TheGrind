@@ -1,37 +1,39 @@
 import React, { Component } from 'react';
 import './BurgerIngredient.css';
-type P = {
-  type: string;
-  ingredient: string;
-};
 
-class BurgerIngredient extends React.Component<P> {
+export interface Props {
+  type: string;
+}
+class BurgerIngredient extends Component<Props> {
   render() {
     let ingredient = null;
+
     switch (this.props.type) {
       case 'bread-bottom':
-        ingredient = <div className='BreadBottom'></div>;
+        ingredient = <div className='BreadBottom' />;
         break;
       case 'bread-top':
         ingredient = (
           <div className='BreadTop'>
-            <div className='Seeds1'></div>
-            <div className='Seeds2'></div>
+            <div className='Seeds1' />
+            <div className='Seeds2' />
           </div>
         );
         break;
       case 'meat':
-        ingredient = <div className='Meat'></div>;
+        ingredient = <div className='Meat' />;
         break;
       case 'cheese':
-        ingredient = <div className='Cheese'></div>;
+        ingredient = <div className='Cheese' />;
         break;
       case 'bacon':
-        ingredient = <div className='Bacon'></div>;
+        ingredient = <div className='Bacon' />;
         break;
       case 'salad':
-        ingredient = <div className='Salad'></div>;
+        ingredient = <div className='Salad' />;
         break;
+      default:
+        ingredient = null;
     }
     return ingredient;
   }

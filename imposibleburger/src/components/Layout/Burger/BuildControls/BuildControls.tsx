@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, MouseEventHandler } from 'react';
 import './BuildControls.css';
-import { BuildControl } from './BuildControl/BuildControl';
+import BuildControl from './BuildControl/BuildControl';
 import {
-  BurgerBuilderState,
-  DisabledInfo,
   Ingredients,
-} from '../../../containers/BurgerBuilder/BurgerBuilder';
-
+  DisabledInfo,
+  BurgerBuilderState,
+} from '../../../../containers/BurgerBuilder/BurgerBuilder';
+const controls = [
+  { label: 'Salad', type: 'salad' },
+  { label: 'Bacon', type: 'bacon' },
+  { label: 'Cheese', type: 'cheese' },
+  { label: 'Meat', type: 'meat' },
+];
 interface Props {
   ingredientAdded: (type: keyof Ingredients) => void;
   ingredientRemoved: (type: keyof Ingredients) => void;
   price: number;
-  disabled?: DisabledInfo;
+  disabled: DisabledInfo;
   purchasable: boolean;
-  ordered: BurgerBuilderState;
+  ordered: MouseEventHandler | undefined;
 }
-
-export const controls = [
-  { label: 'Salad,', type: 'salad' },
-  { label: 'Bacon,', type: 'bacon' },
-  { label: 'Cheese,', type: 'cheese' },
-  { label: 'Meat,', type: 'meat' },
-];
-export const BuildControls: React.FC<Props> = (props) => (
+const BuildControls: React.FC<Props> = (props) => (
   <div className='BuildControls'>
     <p>
       Current Price: <strong>{props.price.toFixed(2)}</strong>
@@ -33,15 +31,17 @@ export const BuildControls: React.FC<Props> = (props) => (
         label={ctrl.label}
         added={() => props.ingredientAdded(ctrl.type as keyof Ingredients)}
         removed={() => props.ingredientRemoved(ctrl.type as keyof Ingredients)}
-        disabled={props.disabled}
+        disabled={props.disabled[ctrl.type]}
       />
     ))}
     <button
       className='OrderButton'
-      disabled={props.purchasable}
-      onClick={() => props.ordered}
+      disabled={!props.purchasable}
+      onClick={props.ordered}
     >
       ORDER NOW!
     </button>
   </div>
 );
+
+export default BuildControls;

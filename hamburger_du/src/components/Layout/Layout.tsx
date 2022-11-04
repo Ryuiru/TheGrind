@@ -3,11 +3,12 @@ import Auxiliary from '../../HOC/Auxiliary';
 import { Toolbar } from '../Navigation/Toolbar/Toolbar';
 import './Layout.css';
 import { SideDrawer } from '../Navigation/SideDrawer/SideDrawer';
-// import { AuxProps } from '../../HOC/Auxiliary';
-// export interface LayoutProps  {
-//    children: React.ReactNode
-// }
-export class Layout extends Component {
+import { any } from 'prop-types';
+
+export class Layout extends React.Component<
+  {},
+  { showSideDrawer: string | boolean }
+> {
   state = {
     showSideDrawer: true,
   };

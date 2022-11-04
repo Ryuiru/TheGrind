@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import { Ingredients } from '../../../containers/BurgerBuilder/BurgerBuilder';
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
-import {
-  Ingredients,
-  BurgerBuilderState,
-} from '../../containers/BurgerBuilder/BurgerBuilder';
-interface Props {
-  ingredients: Ingredients;
-}
 
-export const Burger: React.FC<Props> = (props) => {
+interface Props {
+  props?: Props;
+  ingredients: {
+    salad: number;
+    bacon: number;
+    cheese: number;
+    meat: number;
+    [key: string]: number;
+  };
+}
+const Burger: React.FC<Props> = (props) => {
   let transformedIngredients: JSX.Element | JSX.Element[] = Object.keys(
     props.ingredients
   )
@@ -32,3 +36,5 @@ export const Burger: React.FC<Props> = (props) => {
     </div>
   );
 };
+
+export default Burger;

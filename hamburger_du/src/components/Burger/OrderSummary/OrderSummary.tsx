@@ -7,8 +7,8 @@ import {
 import { Button } from '../../UI/Button/Button';
 
 export interface Props {
-  purchaseCancelled: boolean;
-  purchaseContinued: string;
+  purchaseCancelled: () => void;
+  purchaseContinued: () => void;
   price: number;
   ingredients: (type: keyof Ingredients) => void;
 }

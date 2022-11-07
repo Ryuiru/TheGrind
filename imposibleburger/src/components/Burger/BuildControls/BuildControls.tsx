@@ -5,7 +5,7 @@ import {
   Ingredients,
   DisabledInfo,
   BurgerBuilderState,
-} from '../../../../containers/BurgerBuilder/BurgerBuilder';
+} from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
 const controls = [
   { label: 'Salad', type: 'salad' },
   { label: 'Bacon', type: 'bacon' },

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Ingredients } from '../../../containers/BurgerBuilder/BurgerBuilder';
+import { Ingredients } from '../../containers/BurgerBuilder/BurgerBuilder';
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 

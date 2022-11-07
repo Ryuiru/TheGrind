@@ -3,7 +3,7 @@ import { Logo } from '../../Logo/Logo';
 import { NavigationItems } from '../NavigationItems/NavigationItems';
 import './SideDrawer.css';
 import { Backdrop } from '../../UI/Modal/Backdrop/Backdrop';
-import Auxiliary from '../../../HOC/Auxiliary';
+import  from '../../../HOC/Auxiliary';
 // interface Props{
 //   open:
 //   closed:

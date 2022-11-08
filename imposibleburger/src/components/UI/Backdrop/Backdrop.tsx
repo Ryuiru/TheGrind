@@ -1,8 +1,8 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import './Backdrop.css';
 
 export interface PropsBackdrop {
-  show: string | boolean;
+  show?: string | boolean | undefined | null;
   clicked: MouseEventHandler | undefined;
 }
 const backdrop: React.FC<PropsBackdrop> = (props) =>

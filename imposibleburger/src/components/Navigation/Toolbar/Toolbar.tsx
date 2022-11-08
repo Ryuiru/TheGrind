@@ -1,4 +1,4 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/Toggle/DrawerToggle';
@@ -10,9 +10,9 @@ interface PropsToolbar {
 const toolbar: React.FC<PropsToolbar> = (props) => (
   <header className='Toolbar'>
     <DrawerToggle clicked={props.drawerToggleClicked} />
-    <div className='Logo'>
-      <Logo />
-    </div>
+    {/* <div className='Logo'> */}
+    <Logo height='80%' />
+    {/* </div> */}
     <nav className='DesktopOnly'>
       <NavigationItems />
     </nav>

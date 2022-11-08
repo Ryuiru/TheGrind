@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavigationItem.css';
 
 interface PropsItem {
@@ -8,7 +8,7 @@ interface PropsItem {
 }
 
 const navigationItem: React.FC<PropsItem> = (props) => (
-  <li className='Navigationitem'>
+  <li className='NavigationItem'>
     <a href={props.link} className={props.active}>
       {props.children}
     </a>

@@ -1,10 +1,9 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
 import {
   Ingredients,
   DisabledInfo,
-  BurgerBuilderState,
 } from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
 const controls = [
   { label: 'Salad', type: 'salad' },

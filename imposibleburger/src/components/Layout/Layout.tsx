@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { JsxAttribute } from 'typescript';
+import React from 'react';
 import Auxiliary from '../../HOC/Auxiliary';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';

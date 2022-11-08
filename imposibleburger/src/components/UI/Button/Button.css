@@ -1,12 +1,3 @@
-.Success {
-  color: #5c9210;
-  display: inline-block;
-}
-
-.Danger {
-  color: #944317;
-  display: inline-block;
-}
 .Button {
   background-color: transparent;
   border: none;
@@ -18,13 +9,23 @@
   margin: 10px;
   font-weight: bold;
 }
+
 .Button:first-of-type {
   margin-left: 0;
   padding-left: 0;
-  color: #944317; /* most laziest fix need to improve */
+  color: #944317;
 }
 
 .Button:disabled {
-  color: grey;
+  color: #ccc;
   cursor: not-allowed;
+  color: #944317;
+}
+
+.Success {
+  color: #5c9210;
+}
+
+.Danger {
+  color: #944317;
 }

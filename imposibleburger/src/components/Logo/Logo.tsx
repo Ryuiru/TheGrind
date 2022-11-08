@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import burgerLogo from '../../assets/images/burger-logo.png';
 import './Logo.css';
 interface PropsLogo {

@@ -12,3 +12,10 @@ https://github.com/DefinitelyTyped/DefinitelyTyped/issues/36505
 https://stackoverflow.com/questions/47561848/property-value-does-not-exist-on-type-readonly
 
 https://bobbyhadz.com/blog/typescript-no-index-signature-with-parameter-of-type-string
+
+{
+  "rules": {
+    ".read": "now < 1670450400000",  // 2022-12-8
+    ".write": "now < 1670450400000",  // 2022-12-8
+  }
+}

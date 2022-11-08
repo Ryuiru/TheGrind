@@ -1,8 +1,9 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
+import './DrawerToggle.css';
 interface PropsToggle {
   clicked: MouseEventHandler | undefined;
 }
-const drawerToggle: React.FC<PropsToggle> = (props) => (
+const DrawerToggle: React.FC<PropsToggle> = (props) => (
   <div className='DrawerToggle' onClick={props.clicked}>
     <div></div>
     <div></div>
@@ -10,4 +11,4 @@ const drawerToggle: React.FC<PropsToggle> = (props) => (
   </div>
 );
 
-export default drawerToggle;
+export default DrawerToggle;

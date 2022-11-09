@@ -16,9 +16,9 @@ interface Props {
 }
 
 class OrderSummary extends React.Component<Props> {
-  // componentDidUpdate() {
-  //   console.log('[OrderSummary] WillUpdate');
-  // }
+  componentDidUpdate() {
+    console.log('[OrderSummary] Updated');
+  }
   render() {
     const ingredientSummary = Object.keys(this.props.ingredients).map(
       (igKey) => {

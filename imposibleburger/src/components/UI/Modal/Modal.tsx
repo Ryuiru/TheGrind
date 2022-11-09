@@ -18,13 +18,13 @@ class Modal extends React.Component<PropsModal> {
       nextProps.children !== this.props.children
     );
   }
-  // componentDidUpdate(
-  //   prevProps: Readonly<PropsModal>,
-  //   prevState: Readonly<{}>,
-  //   snapshot?: any
-  // ): void {
-  //   console.log('updated');
-  // }
+  componentDidUpdate(
+    prevProps: Readonly<PropsModal>,
+    prevState: Readonly<{}>,
+    snapshot?: any
+  ): void {
+    console.log('[Modal] Updated');
+  }
   render() {
     return (
       <Auxiliary>

@@ -1,17 +1,26 @@
 import { AxiosInstance } from 'axios';
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Auxiliary from '../Auxiliary';
-interface Props {
-  error: null;
+interface State {
+  error: boolean | null;
 }
-const withErrorHandler = (WrappedComponent, axios: AxiosInstance) => {
-  return class extends Component<{}> {
+const withErrorHandler = (
+  WrappedComponent: typeof React.Component,
+  axios: AxiosInstance
+) => {
+  return class extends React.Component<{}, State> {
+    // constructor(props: {} | Readonly<{}>) {
+    //   super(props);
+    //   this.state = {
+    //     error: null,
+    //   };
+    // }
     state = {
       error: null,
     };
-    resInterceptor: number;
-    reqInterceptor: number;
+    reqInterceptor!: number;
+    resInterceptor!: number;
 
     componentDidMount() {
       this.reqInterceptor = axios.interceptors.request.use((req) => {
@@ -32,7 +41,6 @@ const withErrorHandler = (WrappedComponent, axios: AxiosInstance) => {
     errorConfirmedHandler = () => {
       this.setState({ error: null });
     };
-
     render() {
       return (
         <Auxiliary>
@@ -40,7 +48,7 @@ const withErrorHandler = (WrappedComponent, axios: AxiosInstance) => {
             show={this.state.error}
             modalClosed={this.errorConfirmedHandler}
           >
-            {this.state.error ? this.state.error : null}
+            {this.state.error ? this.state.error['message'] : null}
           </Modal>
           <WrappedComponent {...this.props} />
         </Auxiliary>

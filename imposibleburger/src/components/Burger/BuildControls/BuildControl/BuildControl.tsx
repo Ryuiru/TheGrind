@@ -5,7 +5,7 @@ interface Props {
   label: string;
   added: () => void;
   removed: () => void;
-  disabled: boolean;
+  disabled?: boolean | undefined;
 }
 
 const BuildControl: React.FC<Props> = (props) => (

@@ -5,10 +5,6 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 interface Props {
   props?: Props;
   ingredients: {
-    salad: number;
-    bacon: number;
-    cheese: number;
-    meat: number;
     [key: string]: number;
   };
 }

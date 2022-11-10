@@ -4,10 +4,6 @@ import Button from '../../UI/Button/Button';
 // import './../../UI/Button/Button.css';
 interface Props {
   ingredients: {
-    salad: number;
-    bacon: number;
-    cheese: number;
-    meat: number;
     [Key: string]: number;
   };
   price: number;

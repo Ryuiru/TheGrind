@@ -1,4 +1,4 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import { Ingredients } from '../../../containers/BurgerBuilder/BurgerBuilder';
 import Burger from '../../Burger/Burger';
 import Button from '../../UI/Button/Button';

@@ -1,0 +1,14 @@
+REDUX  
+
+Having a cleary defined process of how your state may change
+
+
+Central Store - Sotres entire applications STATE 
+
+Action - Information Package 
+
+Reducers - Actions reaches Reducers(Receive action and update State (pure, sync functions, no side-effects!)
+Can be multiple, combined reducers) Input IN/ Output OUT no Delay
+and it updates Central Store
+
+Store Triggers all subscriptions whenever the state changes, whenever the state is updated in the store 

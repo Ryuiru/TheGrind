@@ -1,13 +1,19 @@
 import React, { MouseEventHandler } from 'react';
-import './Button.css';
+import classes from './Button.module.css';
 
 export interface PropsButton {
   clicked?: MouseEventHandler | undefined;
   children: React.ReactNode;
   onClick?: MouseEventHandler | undefined;
+  btnType: string;
+  disabled?: boolean;
 }
 const button: React.FC<PropsButton> = (props) => (
-  <button className='Button' onClick={props.clicked}>
+  <button
+    disabled={props.disabled}
+    className={[classes.Button, classes[props.btnType]].join(' ')}
+    onClick={props.clicked}
+  >
     {props.children}
   </button>
 );

@@ -1,10 +1,6 @@
 import React, { ChangeEventHandler } from 'react';
-import {
-  DevileryMethod,
-  SomeValues,
-} from '../../../containers/Checkout/ContactData/ContactData';
-import './Input.css';
-interface InputProps extends SomeValues {
+import classes from './Input.module.css';
+interface InputProps {
   elementType: string;
   elementConfig: {
     options?: [
@@ -18,15 +14,22 @@ interface InputProps extends SomeValues {
   label?: string;
   onChange?: ChangeEventHandler | undefined;
   changed: ChangeEventHandler | undefined;
+  invalid: boolean;
+  shouldValidate: {};
+  touched?: boolean;
 }
 const input: React.FC<InputProps> = (props) => {
   let inputElement = null;
+  const inputClasses = [classes.InputElement];
 
+  if (props.invalid && props.shouldValidate && props.touched) {
+    inputClasses.push(classes.Invalid);
+  }
   switch (props.elementType) {
     case 'input':
       inputElement = (
         <input
-          className='InputElement'
+          className={inputClasses.join(' ')}
           {...props.elementConfig}
           value={props.value}
           onChange={props.changed}
@@ -36,7 +39,7 @@ const input: React.FC<InputProps> = (props) => {
     case 'textarea':
       inputElement = (
         <textarea
-          className='InputElement'
+          className={inputClasses.join(' ')}
           {...props.elementConfig}
           value={props.value}
           onChange={props.changed}
@@ -46,7 +49,7 @@ const input: React.FC<InputProps> = (props) => {
     case 'select':
       inputElement = (
         <select
-          className='InputElement'
+          className={inputClasses.join(' ')}
           value={props.value}
           onChange={props.changed}
         >
@@ -61,7 +64,7 @@ const input: React.FC<InputProps> = (props) => {
     default:
       inputElement = (
         <input
-          className='InputElement'
+          className={inputClasses.join('')}
           {...props.elementConfig}
           value={props.value}
           onChange={props.changed}
@@ -69,8 +72,8 @@ const input: React.FC<InputProps> = (props) => {
       );
   }
   return (
-    <div className='Input'>
-      <label className='Label'>{props.label}</label>
+    <div className={classes.Input}>
+      <label className={classes.Label}>{props.label}</label>
       {inputElement}
     </div>
   );

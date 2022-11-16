@@ -3,41 +3,55 @@ import './ContactData.css';
 import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Button from '../../../components/UI/Button/Button';
-// import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
+import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
 import { RouteComponentProps } from 'react-router-dom';
+import { BooleanLiteral } from 'typescript';
 interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
   price: string | number;
 }
 interface ContactDataState {
-  orderForm: {
-    name: SomeValues;
-    street: SomeValues;
-    zipCode: SomeValues;
-    country: SomeValues;
-    email: SomeValues;
-    devileryMethod: DevileryMethod;
-  };
+  orderForm: OrderForm;
   loading: boolean;
+  formIsValid?: boolean;
+}
+interface OrderForm {
+  name: SomeValues;
+  street: SomeValues;
+  zipCode: SomeValues;
+  country: SomeValues;
+  email: SomeValues;
+  devileryMethod: DevileryMethod;
+  [key: string]: SomeValues | DevileryMethod;
 }
 export interface DevileryMethod {
   elementType: string;
   elementConfig: {
-    options?: [
+    options: [
       { value: string; displayValue: string },
       { value: string; displayValue: string }
     ];
   };
   value: string;
+  validation: {};
+  valid: boolean;
+  touched?: boolean;
 }
 export interface SomeValues {
   elementType: string;
   elementConfig: {
-    type?: string;
-    placeholder?: string;
+    type: string;
+    placeholder: string;
   };
   value: string;
+  validation: {
+    required: boolean;
+    minLength?: number;
+    maxLength?: number;
+  };
+  valid: boolean;
+  touched: boolean;
 }
 class ContactData extends React.Component<ContactDataProps, ContactDataState> {
   state: ContactDataState = {
@@ -49,6 +63,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'Your Name',
         },
         value: '',
+        validation: { required: true },
+        valid: false,
+        touched: false,
       },
       street: {
         elementType: 'input',
@@ -57,6 +74,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'Street',
         },
         value: '',
+        validation: { required: true },
+        valid: false,
+        touched: false,
       },
       zipCode: {
         elementType: 'input',
@@ -65,6 +85,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'ZIP Code ',
         },
         value: '',
+        validation: { required: true, minLength: 5, maxLength: 5 },
+        valid: false,
+        touched: false,
       },
       country: {
         elementType: 'input',
@@ -73,6 +96,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'Your Country',
         },
         value: '',
+        validation: { required: true },
+        valid: false,
+        touched: false,
       },
       email: {
         elementType: 'input',
@@ -81,6 +107,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'Your Email',
         },
         value: '',
+        validation: { required: true },
+        valid: false,
+        touched: false,
       },
       devileryMethod: {
         elementType: 'select',
@@ -90,17 +119,36 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
             { value: 'cheapest', displayValue: 'Cheapest ' },
           ],
         },
-        value: '',
+        value: 'fastest',
+        validation: {},
+        valid: true,
       },
     },
+    formIsValid: false,
     loading: false,
   };
   orderHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     this.setState({ loading: true });
+    const formData = {
+      name: {},
+      street: {},
+      zipCode: {},
+      country: {},
+      email: {},
+      devileryMethod: {},
+    };
+    // const formData = {};
+    for (let formElementIdentifier in this.state.orderForm) {
+      formData[formElementIdentifier as keyof typeof formData] =
+        this.state.orderForm[
+          formElementIdentifier as keyof typeof this.state.orderForm
+        ].value;
+    }
     const order = {
       ingredients: this.props.ingredients,
       price: this.props.price,
+      orderData: formData,
     };
     axios
       .post('/orders.json', order)
@@ -112,6 +160,29 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
         this.setState({ loading: false });
       });
   };
+  checkValidity(
+    value: string,
+    rules: {
+      required?: boolean;
+      minLength?: number | undefined;
+      maxLength?: number | undefined;
+    }
+  ) {
+    let isValid = true;
+    if (!rules) {
+      return true;
+    }
+    if (rules.required) {
+      isValid = value.trim() !== '' && isValid;
+    }
+    if (rules.minLength) {
+      isValid = value.length >= rules.minLength && isValid;
+    }
+    if (rules.maxLength) {
+      isValid = value.length <= rules.maxLength && isValid;
+    }
+    return isValid;
+  }
   inputChangedHandler = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
     inputIdentifier: string
@@ -121,9 +192,19 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       ...updatedOrderForm[inputIdentifier as keyof typeof updatedOrderForm],
     };
     updatedFormElement.value = event.target.value;
+    updatedFormElement.valid = this.checkValidity(
+      updatedFormElement.value,
+      updatedFormElement.validation
+    );
+    updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier as keyof typeof updatedOrderForm] =
       updatedFormElement;
-    this.setState({ orderForm: updatedOrderForm });
+    let formIsValid: boolean | undefined = true;
+    for (let inputIdentifier in updatedOrderForm) {
+      formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+    }
+
+    this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   };
   render() {
     const formElementsArray = [];
@@ -134,19 +215,24 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       });
     }
     let form = (
-      <form>
+      <form onSubmit={this.orderHandler}>
         {formElementsArray.map((formElement) => (
           <Input
             key={formElement.id}
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
+            invalid={!formElement.config.valid}
+            shouldValidate={formElement.config.validation}
+            touched={formElement.config.touched}
             changed={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
               this.inputChangedHandler(event, formElement.id)
             }
           />
         ))}
-        <Button clicked={this.orderHandler}>ORDER</Button>
+        <Button btnType='Success' disabled={!this.state.formIsValid}>
+          ORDER
+        </Button>
       </form>
     );
     if (this.state.loading) {

@@ -1,25 +1,29 @@
 import React, { MouseEventHandler } from 'react';
 import './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import {
-  Ingredients,
-  DisabledInfo,
-} from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
+import { Ingredients } from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
 const controls = [
   { label: 'Salad', type: 'salad' },
   { label: 'Bacon', type: 'bacon' },
   { label: 'Cheese', type: 'cheese' },
   { label: 'Meat', type: 'meat' },
 ];
-interface Props {
+interface Disabled {
+  salad: boolean;
+  bacon: boolean;
+  cheese: boolean;
+  meat: boolean;
+  [key: string]: boolean;
+}
+interface BuildControlProps {
   ingredientAdded: (type: keyof Ingredients) => void;
   ingredientRemoved: (type: keyof Ingredients) => void;
   price: number;
-  disabled: DisabledInfo;
+  disabled: Disabled;
   purchasable: boolean;
   ordered: MouseEventHandler | undefined;
 }
-const BuildControls: React.FC<Props> = (props) => (
+const BuildControls: React.FC<BuildControlProps> = (props) => (
   <div className='BuildControls'>
     <p>
       Current Price: <strong>{props.price.toFixed(2)}</strong>

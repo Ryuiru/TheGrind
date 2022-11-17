@@ -1,15 +1,17 @@
 import React from 'react';
 import './ContactData.css';
+import { connect } from 'react-redux';
 import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Button from '../../../components/UI/Button/Button';
 import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
 import { RouteComponentProps } from 'react-router-dom';
-import { BooleanLiteral } from 'typescript';
+import { InitialState } from '../../../store/reducer';
 interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
   price: string | number;
+  ings: {};
 }
 interface ContactDataState {
   orderForm: OrderForm;
@@ -141,12 +143,10 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
     // const formData = {};
     for (let formElementIdentifier in this.state.orderForm) {
       formData[formElementIdentifier as keyof typeof formData] =
-        this.state.orderForm[
-          formElementIdentifier as keyof typeof this.state.orderForm
-        ].value;
+        this.state.orderForm[formElementIdentifier].value;
     }
     const order = {
-      ingredients: this.props.ingredients,
+      ingredients: this.props.ings,
       price: this.props.price,
       orderData: formData,
     };
@@ -164,8 +164,8 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
     value: string,
     rules: {
       required?: boolean;
-      minLength?: number | undefined;
-      maxLength?: number | undefined;
+      minLength?: number;
+      maxLength?: number;
     }
   ) {
     let isValid = true;
@@ -189,7 +189,7 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
   ) => {
     const updatedOrderForm = { ...this.state.orderForm };
     const updatedFormElement = {
-      ...updatedOrderForm[inputIdentifier as keyof typeof updatedOrderForm],
+      ...updatedOrderForm[inputIdentifier],
     };
     updatedFormElement.value = event.target.value;
     updatedFormElement.valid = this.checkValidity(
@@ -197,9 +197,8 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       updatedFormElement.validation
     );
     updatedFormElement.touched = true;
-    updatedOrderForm[inputIdentifier as keyof typeof updatedOrderForm] =
-      updatedFormElement;
-    let formIsValid: boolean | undefined = true;
+    updatedOrderForm[inputIdentifier] = updatedFormElement;
+    let formIsValid: boolean = true;
     for (let inputIdentifier in updatedOrderForm) {
       formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
     }
@@ -211,7 +210,7 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
     for (let key in this.state.orderForm) {
       formElementsArray.push({
         id: key,
-        config: this.state.orderForm[key as keyof typeof this.state.orderForm],
+        config: this.state.orderForm[key],
       });
     }
     let form = (
@@ -246,4 +245,12 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
     );
   }
 }
-export default ContactData;
+
+const mapStateToProps = (state: InitialState) => {
+  return {
+    ings: state.ingredients,
+    price: state.totalPrice,
+  };
+};
+
+export default connect(mapStateToProps)(ContactData);

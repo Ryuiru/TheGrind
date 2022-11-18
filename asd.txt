@@ -12,3 +12,5 @@ Can be multiple, combined reducers) Input IN/ Output OUT no Delay
 and it updates Central Store
 
 Store Triggers all subscriptions whenever the state changes, whenever the state is updated in the store 
+
+Middleware- Middleware basically is a term used for functions or the code in general you hook into a process which then gets executed as part of that process without stopping it.  

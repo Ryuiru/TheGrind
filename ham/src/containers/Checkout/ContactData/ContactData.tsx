@@ -7,7 +7,7 @@ import Button from '../../../components/UI/Button/Button';
 import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
 import { RouteComponentProps } from 'react-router-dom';
-import { InitialState } from '../../../store/reducer';
+import { InitialState } from '../../../store/reducers/burgerBuilder';
 interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
   price: string | number;

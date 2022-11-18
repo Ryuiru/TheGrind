@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { connect } from 'react-redux/es/exports';
 import Auxiliary from '../../HOC/Auxiliary';
 import Burger from '../../components/Burger/Burger';
@@ -8,20 +8,19 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import { RouteComponentProps } from 'react-router-dom';
-import * as actionTypes from '../../store/actions';
+import * as burgerBuilderActions from '../../store/actions/index';
 import withErrorHandler from '../../HOC/withErrorHandler/withErrorHandler';
-import { ActionType, InitialState } from '../../store/reducer';
+import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
+import { ThunkDispatch } from 'redux-thunk';
 export interface BurgerBuilderState {
   purchasing: boolean;
-  loading: boolean;
-  error: boolean;
 }
 export interface DisabledInfo {
-  salad: boolean | number;
-  bacon: boolean | number;
-  cheese: boolean | number;
-  meat: boolean | number;
-  [key: string]: boolean | number;
+  salad: boolean;
+  bacon: boolean;
+  cheese: boolean;
+  meat: boolean;
+  [key: string]: boolean;
 }
 interface BurgerBuilderProps extends RouteComponentProps {
   ings: {
@@ -33,45 +32,29 @@ interface BurgerBuilderProps extends RouteComponentProps {
   };
   onIngredientAdded: (type: keyof Ingredients) => void;
   onIngredientRemoved: (type: keyof Ingredients) => void;
+  onInitIngredients: () => void;
   price: number;
+  error: boolean;
 }
 export interface Ingredients {
   [key: string]: number;
 }
-// const DISABLED_INFO: DisabledInfo = {
-//   salad: false,
-//   bacon: false,
-//   cheese: false,
-//   meat: false,
-// };
-// export interface INGREDIENT_PRICES {
-//   salad: number;
-//   cheese: number;
-//   meat: number;
-//   bacon: number;
-//   [key: string]: number;
-// }
+const DISABLED_INFO: DisabledInfo = {
+  salad: false,
+  bacon: false,
+  cheese: false,
+  meat: false,
+};
 class BurgerBuilder extends React.Component<
   BurgerBuilderProps,
   BurgerBuilderState
 > {
   state: BurgerBuilderState = {
     purchasing: false,
-    loading: false,
-    error: false,
   };
 
   componentDidMount() {
-    // axios
-    //   .get(
-    //     'https://react-burger-2caa5-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json'
-    //   )
-    //   .then((response) => {
-    //     this.setState({ ingredients: response.data });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({ error: true });
-    //   });
+    this.props.onInitIngredients();
   }
 
   updatePurchaseState(ingredients: { [igKey: string]: number }) {
@@ -98,17 +81,17 @@ class BurgerBuilder extends React.Component<
   };
 
   render() {
-    const disabledInfo: DisabledInfo = { ...this.props.ings };
+    const disabledInfo: DisabledInfo = { ...DISABLED_INFO };
     for (let key in disabledInfo) {
-      disabledInfo[key] = disabledInfo[key] <= 0;
+      disabledInfo[key] = this.props.ings[key] <= 0;
     }
     let orderSummary = null;
-    let burger = this.state.error ? (
+    let burger = this.props.error ? (
       <p>Ingredients can't be loaded!</p>
     ) : (
       <Spinner />
     );
-    if (this.props.ings) {
+    if (!this.props.error) {
       burger = (
         <Auxiliary>
           <Burger ingredients={this.props.ings} />
@@ -131,9 +114,6 @@ class BurgerBuilder extends React.Component<
         />
       );
     }
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    }
 
     return (
       <Auxiliary>
@@ -152,21 +132,21 @@ const mapStateToProps = (state: InitialState) => {
   return {
     ings: state.ingredients,
     price: state.totalPrice,
+    error: state.error,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<InitialState, void, ActionType>
+) => {
   return {
     onIngredientAdded: (ingName: string) =>
-      dispatch({
-        type: actionTypes.ADD_INGREDIENT,
-        ingredientName: ingName,
-      }),
+      dispatch(burgerBuilderActions.addIngredient(ingName)),
+
     onIngredientRemoved: (ingName: string) =>
-      dispatch({
-        type: actionTypes.REMOVE_INGREDIENT,
-        ingredientName: ingName,
-      }),
+      dispatch(burgerBuilderActions.removeIngredient(ingName)),
+
+    onInitIngredients: () => dispatch(burgerBuilderActions.initIngredients()),
   };
 };
 

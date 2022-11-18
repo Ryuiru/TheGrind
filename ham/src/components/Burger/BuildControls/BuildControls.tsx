@@ -1,7 +1,10 @@
 import React, { MouseEventHandler } from 'react';
 import './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import { Ingredients } from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
+import {
+  DisabledInfo,
+  Ingredients,
+} from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
 const controls = [
   { label: 'Salad', type: 'salad' },
   { label: 'Bacon', type: 'bacon' },
@@ -19,7 +22,7 @@ interface BuildControlProps {
   ingredientAdded: (type: keyof Ingredients) => void;
   ingredientRemoved: (type: keyof Ingredients) => void;
   price: number;
-  disabled: Disabled;
+  disabled: DisabledInfo;
   purchasable: boolean;
   ordered: MouseEventHandler | undefined;
 }

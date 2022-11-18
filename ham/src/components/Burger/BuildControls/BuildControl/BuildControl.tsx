@@ -1,11 +1,12 @@
 import React from 'react';
+import { DisabledInfo } from '../../../../containers/BurgerBuilder/BurgerBuilder';
 import './BuildControl.css';
 
 interface Props {
   label: string;
   added: () => void;
   removed: () => void;
-  disabled: undefined | boolean;
+  disabled?: boolean;
 }
 
 const BuildControl: React.FC<Props> = (props) => (

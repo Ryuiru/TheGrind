@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 import { RouteComponentProps } from 'react-router-dom';
-import { InitialState } from '../../store/reducer';
+import { InitialState } from '../../store/reducers/burgerBuilder';
 interface CheckoutProps extends RouteComponentProps {
   ings: {};
 }
@@ -52,4 +52,4 @@ const mapStateToProps = (state: InitialState) => {
     ings: state.ingredients,
   };
 };
-export default connect(mapStateToProps, null)(Checkout);
+export default connect(mapStateToProps)(Checkout);

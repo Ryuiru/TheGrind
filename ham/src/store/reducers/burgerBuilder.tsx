@@ -1,28 +1,27 @@
 import React from 'react';
-import * as actionTypes from './actions';
+import * as actionTypes from '../actions/actionTypes';
 export interface ActionType {
+  // ingredients?: string;
+  type: string;
+  ingredientName: string;
+}
+export interface ActionType2 {
+  ingredients: {};
   type: string;
   ingredientName: string | number;
 }
 export interface InitialState {
   ingredients: Ingredients;
   totalPrice: number;
+  error: boolean;
 }
 interface Ingredients {
-  salad: number;
-  bacon: number;
-  cheese: number;
-  meat: number;
   [key: string]: number;
 }
 const initialState: InitialState = {
-  ingredients: {
-    salad: 0,
-    bacon: 0,
-    cheese: 0,
-    meat: 0,
-  },
+  ingredients: {},
   totalPrice: 4,
+  error: false,
 };
 const INGREDIENT_PRICES: Ingredients = {
   salad: 0.5,
@@ -30,7 +29,7 @@ const INGREDIENT_PRICES: Ingredients = {
   meat: 1.3,
   bacon: 0.7,
 };
-const reducer = (state = initialState, action: ActionType) => {
+const reducer = (state = initialState, action: ActionType2) => {
   switch (action.type) {
     case actionTypes.ADD_INGREDIENT:
       return {
@@ -49,6 +48,17 @@ const reducer = (state = initialState, action: ActionType) => {
           [action.ingredientName]: state.ingredients[action.ingredientName] - 1,
         },
         totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName],
+      };
+    case actionTypes.SET_INGREDIENTS:
+      return {
+        ...state,
+        ingredients: action.ingredients,
+        error: false,
+      };
+    case actionTypes.FETCH_INGREDIENTS_FAILED:
+      return {
+        ...state,
+        error: true,
       };
     default:
       return state;

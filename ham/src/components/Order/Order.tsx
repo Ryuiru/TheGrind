@@ -1,7 +1,7 @@
 import React from 'react';
 import './Order.css';
 interface OrderProps {
-  ingredients: [];
+  ingredients: string[] | number[];
   price: string;
 }
 const order: React.FC<OrderProps> = (props) => {

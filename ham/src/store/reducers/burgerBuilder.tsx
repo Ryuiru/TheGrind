@@ -3,10 +3,10 @@ import * as actionTypes from '../actions/actionTypes';
 export interface ActionType {
   // ingredients?: string;
   type: string;
-  ingredientName: string;
+  ingredientName?: string;
 }
 export interface ActionType2 {
-  ingredients: {};
+  ingredients: Ingredients;
   type: string;
   ingredientName: string | number;
 }
@@ -14,6 +14,7 @@ export interface InitialState {
   ingredients: Ingredients;
   totalPrice: number;
   error: boolean;
+  loading?: boolean;
 }
 interface Ingredients {
   [key: string]: number;
@@ -52,7 +53,13 @@ const reducer = (state = initialState, action: ActionType2) => {
     case actionTypes.SET_INGREDIENTS:
       return {
         ...state,
-        ingredients: action.ingredients,
+        ingredients: {
+          salad: action.ingredients.salad,
+          bacon: action.ingredients.bacon,
+          cheese: action.ingredients.cheese,
+          meat: action.ingredients.meat,
+        },
+        totalPrice: 4,
         error: false,
       };
     case actionTypes.FETCH_INGREDIENTS_FAILED:

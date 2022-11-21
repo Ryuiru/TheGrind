@@ -1,22 +1,30 @@
 import React from 'react';
 import './ContactData.css';
 import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Button from '../../../components/UI/Button/Button';
 import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
 import { RouteComponentProps } from 'react-router-dom';
-import { InitialState } from '../../../store/reducers/burgerBuilder';
+import * as actions from './../../../store/actions/index';
+import {
+  ActionType,
+  InitialState,
+} from '../../../store/reducers/burgerBuilder';
+import { InitialState2 } from '../../../store/reducers/order';
 interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
   price: string | number;
   ings: {};
+  onOrderBurger: ({}) => void;
+  loading: boolean;
 }
 interface ContactDataState {
   orderForm: OrderForm;
-  loading: boolean;
   formIsValid?: boolean;
+  loading?: boolean;
 }
 interface OrderForm {
   name: SomeValues;
@@ -127,7 +135,6 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       },
     },
     formIsValid: false,
-    loading: false,
   };
   orderHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -150,15 +157,7 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       price: this.props.price,
       orderData: formData,
     };
-    axios
-      .post('/orders.json', order)
-      .then((response) => {
-        this.setState({ loading: false });
-        this.props.history.push('/');
-      })
-      .catch((error) => {
-        this.setState({ loading: false });
-      });
+    this.props.onOrderBurger(order);
   };
   checkValidity(
     value: string,
@@ -234,7 +233,7 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
         </Button>
       </form>
     );
-    if (this.state.loading) {
+    if (this.props.loading) {
       form = <Spinner />;
     }
     return (
@@ -246,11 +245,27 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
   }
 }
 
-const mapStateToProps = (state: InitialState) => {
+const mapStateToProps = (state: {
+  burgerBuilder: InitialState;
+  order: InitialState2;
+}) => {
   return {
-    ings: state.ingredients,
-    price: state.totalPrice,
+    ings: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    loading: state.order.loading,
   };
 };
 
-export default connect(mapStateToProps)(ContactData);
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<InitialState, void, ActionType>
+) => {
+  return {
+    onOrderBurger: (orderData: string) =>
+      dispatch(actions.purchaseBurger(orderData)),
+  };
+};
+// onOrderBurger
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withErrorHandler(ContactData, axios));

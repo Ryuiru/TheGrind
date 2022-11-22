@@ -7,14 +7,13 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Button from '../../../components/UI/Button/Button';
 import withErrorHandler from '../../../HOC/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
-import { RouteComponentProps } from 'react-router-dom';
 import * as actions from './../../../store/actions/index';
 import {
   ActionType,
   InitialState,
 } from '../../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../../store/reducers/order';
-interface ContactDataProps extends RouteComponentProps {
+interface ContactDataProps {
   ingredients: {};
   price: string | number;
   ings: {};
@@ -26,6 +25,7 @@ interface ContactDataState {
   formIsValid?: boolean;
   loading?: boolean;
 }
+
 interface OrderForm {
   name: SomeValues;
   street: SomeValues;

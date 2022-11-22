@@ -9,18 +9,10 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../store/reducers/order';
 
-// interface OrdersState {
-//   orders: string[] | number[];
-//   loading: boolean;
-// }
 interface OrdersProps extends InitialState2 {
   onFetchOrders: () => void;
 }
 class Orders extends React.Component<OrdersProps> {
-  // state = {
-  //   orders: [],
-  //   loading: true,
-  // };
   componentDidMount() {
     this.props.onFetchOrders();
   }
@@ -57,24 +49,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withErrorHandler(Orders, axios));
-
-// interface OrdersState {
-//   orders: string[] | number[];
-//   loading: boolean;
-// }
-// class Orders extends React.Component<{}, OrdersState> {
-//   state = {
-//     orders: [],
-//     loading: true,
-//   };
-//   render() {
-//     return (
-//       <div>
-//         {this.state.orders.map((order) => (
-//           <Order
-//             key={order['id']}
-//             ingredients={order['ingredients']}
-//             price={order['price']}
-//           />
-//         ))}
-//       </div>

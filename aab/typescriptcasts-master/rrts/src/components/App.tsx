@@ -60,7 +60,4 @@ const mapStateToProps = ({ todos }: StoreState): { todos: Todo[] } => {
   return { todos };
 };
 
-export const App = connect(
-  mapStateToProps,
-  { fetchTodos, deleteTodo }
-)(_App);
+export const App = connect(mapStateToProps, { fetchTodos, deleteTodo })(_App);

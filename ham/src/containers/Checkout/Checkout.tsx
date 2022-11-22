@@ -12,6 +12,7 @@ interface CheckoutProps extends RouteComponentProps {
   ings: {};
   onInitPurchase: () => void;
   purchased: boolean;
+  menuOpened: boolean;
 }
 export interface CheckoutState {
   ingredients: Ingredients;
@@ -20,10 +21,6 @@ export interface CheckoutState {
 }
 
 interface Ingredients {
-  // salad?: number;
-  // cheese?: number;
-  // bacon?: number;
-  // meat?: number;
   [key: string]: number;
 }
 
@@ -33,12 +30,11 @@ class Checkout extends React.Component<CheckoutProps, CheckoutState> {
   };
   checkoutContinuedHandler = () => {
     // console.log(this.state.totalPrice);
-
     this.props.history.replace('/checkout/contact-data');
   };
   render() {
     let summary = <Redirect to='/' />;
-    if (this.props.ings) {
+    if (Object.keys(this.props.ings).length !== 0) {
       const purchasedRedirect = this.props.purchased ? (
         <Redirect to='/' />
       ) : null;

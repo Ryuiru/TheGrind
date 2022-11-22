@@ -93,7 +93,7 @@ class BurgerBuilder extends React.Component<
     ) : (
       <Spinner />
     );
-    if (!this.props.error) {
+    if (Object.keys(this.props.ings).length !== 0) {
       burger = (
         <Auxiliary>
           <Burger ingredients={this.props.ings} />

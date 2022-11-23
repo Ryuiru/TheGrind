@@ -13,12 +13,15 @@ import {
   InitialState,
 } from '../../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../../store/reducers/order';
+import { InitialState3 } from '../../../store/reducers/auth';
 interface ContactDataProps {
   ingredients: {};
   price: string | number;
   ings: {};
-  onOrderBurger: ({}) => void;
+  onOrderBurger: ({}, Token: string) => void;
   loading: boolean;
+  token: string;
+  userId: string;
 }
 interface ContactDataState {
   orderForm: OrderForm;
@@ -156,8 +159,9 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
       ingredients: this.props.ings,
       price: this.props.price,
       orderData: formData,
+      userId: this.props.userId,
     };
-    this.props.onOrderBurger(order);
+    this.props.onOrderBurger(order, this.props.token);
   };
   checkValidity(
     value: string,
@@ -248,20 +252,23 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
 const mapStateToProps = (state: {
   burgerBuilder: InitialState;
   order: InitialState2;
+  auth: InitialState3;
 }) => {
   return {
     ings: state.burgerBuilder.ingredients,
     price: state.burgerBuilder.totalPrice,
     loading: state.order.loading,
+    token: state.auth.token,
+    userId: state.auth.userId,
   };
 };
 
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<InitialState, void, ActionType>
+  dispatch: ThunkDispatch<InitialState2, void, ActionType>
 ) => {
   return {
-    onOrderBurger: (orderData: string) =>
-      dispatch(actions.purchaseBurger(orderData)),
+    onOrderBurger: (orderData: string, token: string) =>
+      dispatch(actions.purchaseBurger(orderData, token)),
   };
 };
 // onOrderBurger

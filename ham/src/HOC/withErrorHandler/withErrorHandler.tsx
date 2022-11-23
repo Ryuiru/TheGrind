@@ -24,6 +24,7 @@ const withErrorHandler = (
       this.resInterceptor = axios.interceptors.response.use(
         (res) => res,
         (error: boolean) => {
+          console.log('Error Handler:', error);
           this.setState({ error: error });
         }
       );

@@ -11,13 +11,7 @@ const controls = [
   { label: 'Cheese', type: 'cheese' },
   { label: 'Meat', type: 'meat' },
 ];
-interface Disabled {
-  salad: boolean;
-  bacon: boolean;
-  cheese: boolean;
-  meat: boolean;
-  [key: string]: boolean;
-}
+
 interface BuildControlProps {
   ingredientAdded: (type: keyof Ingredients) => void;
   ingredientRemoved: (type: keyof Ingredients) => void;
@@ -25,6 +19,7 @@ interface BuildControlProps {
   disabled: DisabledInfo;
   purchasable: boolean;
   ordered: MouseEventHandler | undefined;
+  isAuth: boolean;
 }
 const BuildControls: React.FC<BuildControlProps> = (props) => (
   <div className='BuildControls'>
@@ -45,7 +40,7 @@ const BuildControls: React.FC<BuildControlProps> = (props) => (
       disabled={!props.purchasable}
       onClick={props.ordered}
     >
-      ORDER NOW!
+      {props.isAuth ? 'ORDER NOW!' : 'Please Sign Up for Ham'}
     </button>
   </div>
 );

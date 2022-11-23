@@ -1,5 +1,8 @@
 import * as actionTypes from './../actions/actionTypes';
 import axios from 'axios';
+import { ThunkDispatch } from 'redux-thunk';
+import { InitialState3 } from '../reducers/auth';
+import { ActionType } from '../reducers/burgerBuilder';
 
 export const authStart = () => {
   return {
@@ -7,7 +10,7 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (token: string, userId: string) => {
+export const authSuccess = (token: string, userId: null | string) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     idToken: token,
@@ -22,8 +25,25 @@ export const authFail = (error: string) => {
   };
 };
 
+export const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('expirationDate');
+  localStorage.removeItem('userId');
+  return {
+    type: actionTypes.AUTH_LOGOUT,
+  };
+};
+
+export const checkAuthTimeout = (expirationTime: number) => {
+  return (dispatch: ThunkDispatch<InitialState3, void, ActionType>) => {
+    setTimeout(() => {
+      dispatch(logout());
+    }, expirationTime * 1000);
+  };
+};
+
 export const auth = (email: string, password: string, isSignUp: boolean) => {
-  return (dispatch: (arg0: { type: string }) => void) => {
+  return (dispatch: ThunkDispatch<InitialState3, void, ActionType>) => {
     dispatch(authStart());
     const authData = {
       email: email,
@@ -40,11 +60,46 @@ export const auth = (email: string, password: string, isSignUp: boolean) => {
       .post(url, authData)
       .then((response) => {
         console.log(response);
+        const expirationDate = new Date(
+          new Date().getTime() + response.data.expiresIn * 1000
+        ).toString();
+        localStorage.setItem('token', response.data.idToken);
+        localStorage.setItem('expirationDate', expirationDate);
+        localStorage.setItem('userId', response.data.localId);
         dispatch(authSuccess(response.data.idToken, response.data.localId));
+        dispatch(checkAuthTimeout(response.data.expiresIn));
       })
       .catch((err) => {
-        console.log(err);
-        dispatch(authFail(err));
+        dispatch(authFail(err.response.data.error));
       });
+  };
+};
+
+export const setAuthRedirectPath = (path: string) => {
+  return {
+    type: actionTypes.SET_AUTH_REDIRECT_PATH,
+    path: path,
+  };
+};
+
+export const authCheckState = () => {
+  return (dispatch: ThunkDispatch<InitialState3, void, ActionType>) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      dispatch(logout());
+    } else {
+      const expirationDate = new Date(localStorage.getItem('expirationDate'));
+      if (expirationDate <= new Date()) {
+        dispatch(logout());
+      } else {
+        const userId = localStorage.getItem('userId');
+        dispatch(authSuccess(token, userId));
+        dispatch(
+          checkAuthTimeout(
+            (expirationDate.getTime() - new Date().getTime()) / 1000
+          )
+        );
+      }
+    }
   };
 };

@@ -26,17 +26,18 @@ export const setIngredients = (ingredients: string) => {
 export const fetchIngredientsFailed = () => {
   return {
     type: actionTypes.FETCH_INGREDIENTS_FAILED,
+    error: true,
   };
 };
 
 export const initIngredients = () => {
-  return (dispatch: (arg0: { type: string; ingredients?: string }) => void) => {
+  return (dispatch: ThunkDispatch<InitialState, void, ActionType>) => {
     axios
       .get(
         'https://react-burger-2caa5-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json'
       )
       .then((response) => {
-        console.log('asd');
+        console.log('Ingredients Loaded!');
         dispatch(setIngredients(response.data));
       })
       .catch((error) => {

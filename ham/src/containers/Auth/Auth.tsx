@@ -3,9 +3,12 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import classes from './../Auth/Auth.module.css';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { ThunkDispatch } from 'redux-thunk';
 import * as actions from '../../store/actions/index';
-import { ActionType } from '../../store/reducers/burgerBuilder';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
+import { InitialState3 } from '../../store/reducers/auth';
 interface Controls {
   email: {
     elementType: string;
@@ -42,6 +45,12 @@ interface AuthState {
 }
 interface AuthProps {
   onAuth: (email: string, password: string, isSignUp: boolean) => void;
+  loading: boolean;
+  error: null;
+  isAuthenticated: boolean;
+  authRedirectPath: string;
+  buildingBurger: boolean;
+  onSetAuthRedirectPath: () => void;
 }
 class Auth extends React.Component<AuthProps, AuthState> {
   state = {
@@ -77,6 +86,12 @@ class Auth extends React.Component<AuthProps, AuthState> {
     },
     isSignUp: true,
   };
+
+  componentDidMount() {
+    if (!this.props.buildingBurger && this.props.authRedirectPath !== '/') {
+      this.props.onSetAuthRedirectPath();
+    }
+  }
 
   checkValidity(
     value: string,
@@ -143,22 +158,39 @@ class Auth extends React.Component<AuthProps, AuthState> {
         config: this.state.controls[key as keyof typeof this.state.controls],
       });
     }
-    const form = formElementsArray.map((formElement) => (
-      <Input
-        key={formElement.id}
-        elementType={formElement.config.elementType}
-        elementConfig={formElement.config.elementConfig}
-        value={formElement.config.value}
-        invalid={!formElement.config.valid}
-        shouldValidate={formElement.config.validation}
-        touched={formElement.config.touched}
-        changed={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
-          this.inputChangedHandler(event, formElement.id)
-        }
-      />
-    ));
+    let form: JSX.Element | JSX.Element[] = formElementsArray.map(
+      (formElement) => (
+        <Input
+          key={formElement.id}
+          elementType={formElement.config.elementType}
+          elementConfig={formElement.config.elementConfig}
+          value={formElement.config.value}
+          invalid={!formElement.config.valid}
+          shouldValidate={formElement.config.validation}
+          touched={formElement.config.touched}
+          changed={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+            this.inputChangedHandler(event, formElement.id)
+          }
+        />
+      )
+    );
+    if (this.props.loading) {
+      form = <Spinner />;
+    }
+    let errorMessage = null;
+
+    if (this.props.error) {
+      errorMessage = <p>{this.props.error['message']}</p>;
+    }
+    let authRedirect = null;
+    if (this.props.isAuthenticated) {
+      authRedirect = <Redirect to={this.props.authRedirectPath} />;
+    }
+
     return (
       <div className={classes.Auth}>
+        {authRedirect}
+        {errorMessage}
         <form onSubmit={this.submitHandler}>
           {form}
           <Button btnType='Success'>SUBMIT</Button>
@@ -172,13 +204,27 @@ class Auth extends React.Component<AuthProps, AuthState> {
   }
 }
 
+const mapStateToProps = (state: {
+  auth: InitialState3;
+  burgerBuilder: InitialState;
+}) => {
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+    isAuthenticated: state.auth.token !== null,
+    buildingBurger: state.burgerBuilder.building,
+    authRedirectPath: state.auth.authRedirectPath,
+  };
+};
+
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<AuthState, void, ActionType>
+  dispatch: ThunkDispatch<InitialState3, void, ActionType>
 ) => {
   return {
     onAuth: (email: string, password: string, isSignUp: boolean) =>
       dispatch(actions.auth(email, password, isSignUp)),
+    onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/')),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

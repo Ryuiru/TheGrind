@@ -7,6 +7,7 @@ import './SideDrawer.css';
 interface PropsSideDrawer {
   open: boolean;
   closed: MouseEventHandler;
+  isAuth: boolean;
 }
 const sideDrawer: React.FC<PropsSideDrawer> = (props) => {
   let attachedClasses = ['SideDrawer', 'Close'];
@@ -16,12 +17,10 @@ const sideDrawer: React.FC<PropsSideDrawer> = (props) => {
   return (
     <Auxiliary>
       <Backdrop show={props.open} clicked={props.closed} />
-      <div className={attachedClasses.join(' ')}>
-        {/* <div className='Logo'> */}
+      <div className={attachedClasses.join(' ')} onClick={props.closed}>
         <Logo />
-        {/* </div> */}
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuthenticated={props.isAuth} />
         </nav>
       </div>
     </Auxiliary>

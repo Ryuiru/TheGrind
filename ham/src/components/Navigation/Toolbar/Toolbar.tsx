@@ -6,6 +6,7 @@ import './Toolbar.css';
 
 interface PropsToolbar {
   drawerToggleClicked: MouseEventHandler;
+  isAuth: boolean;
 }
 const toolbar: React.FC<PropsToolbar> = (props) => (
   <header className='Toolbar'>
@@ -14,7 +15,7 @@ const toolbar: React.FC<PropsToolbar> = (props) => (
     <Logo height='80%' />
     {/* </div> */}
     <nav className='DesktopOnly'>
-      <NavigationItems />
+      <NavigationItems isAuthenticated={props.isAuth} />
     </nav>
   </header>
 );

@@ -6,8 +6,9 @@ export interface ActionType {
   type: string;
   ingredientName?: string;
   idToken?: string;
-  userId?: string;
+  userId?: string | null;
   error?: boolean | string;
+  path?: string;
 }
 
 export interface ActionType2 {
@@ -20,7 +21,8 @@ export interface InitialState {
   ingredients: Ingredients;
   totalPrice: number;
   error: boolean;
-  loading?: boolean;
+  building: boolean;
+  // loading?: boolean;
 }
 
 interface Ingredients {
@@ -31,6 +33,7 @@ const initialState: InitialState = {
   ingredients: {},
   totalPrice: 4,
   error: false,
+  building: false,
 };
 
 const INGREDIENT_PRICES: Ingredients = {
@@ -48,6 +51,7 @@ const addIngredient = (state: InitialState, action: ActionType2) => {
   const updatedState = {
     ingredients: updatedIngredients,
     totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName],
+    building: true,
   };
   return updateObject(state, updatedState);
 };
@@ -60,6 +64,7 @@ const removeIngredient = (state: InitialState, action: ActionType2) => {
   const updatedSt = {
     ingredients: updatedIngs,
     totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName],
+    building: true,
   };
   return updateObject(state, updatedSt);
 };
@@ -74,6 +79,7 @@ const setIngredients = (state: InitialState, action: ActionType2) => {
     },
     totalPrice: 4,
     error: false,
+    building: false,
   });
 };
 

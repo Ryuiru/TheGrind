@@ -1,7 +1,8 @@
 import axios from './../../axios-orders';
 import { ThunkDispatch } from 'redux-thunk';
 import * as actionTypes from './actionTypes';
-import { ActionType, InitialState } from '../reducers/burgerBuilder';
+import { ActionType } from '../reducers/burgerBuilder';
+import { InitialState2 } from '../reducers/order';
 
 export const purchaseBurgerSuccess = (id: string, orderData: string) => {
   return {
@@ -24,18 +25,11 @@ export const purchaseBurgerStart = () => {
   };
 };
 // Async
-export const purchaseBurger = (orderData: string) => {
-  return (
-    dispatch: (arg0: {
-      type: string;
-      orderId?: string;
-      orderData?: string;
-      error?: string;
-    }) => void
-  ) => {
+export const purchaseBurger = (orderData: string, token: string) => {
+  return (dispatch: ThunkDispatch<InitialState2, void, ActionType>) => {
     dispatch(purchaseBurgerStart());
     axios
-      .post('/orders.json', orderData)
+      .post('/orders.json?auth=' + token, orderData)
       .then((response) => {
         dispatch(purchaseBurgerSuccess(response.data, orderData));
       })
@@ -69,19 +63,23 @@ export const fetchOrdersStart = () => {
   };
 };
 
-export const fetchOrders = () => {
-  return (dispatch: ThunkDispatch<InitialState, void, ActionType>) => {
+export const fetchOrders = (token: string, userId: string) => {
+  return (dispatch: ThunkDispatch<InitialState2, void, ActionType>) => {
     dispatch(fetchOrdersStart());
+    const queryParams =
+      '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
     axios
-      .get('/orders.json')
+      .get('/orders.json' + queryParams)
       .then((res) => {
+        console.log('Orders Loaded!');
         const fetchedOrders = [];
         for (let key in res.data) {
           fetchedOrders.push({ ...res.data[key], id: key });
         }
         dispatch(fetchOrdersSuccess(fetchedOrders));
       })
-      .catch((err: string) => {
+      .catch((err) => {
+        console.log('orderActionError:', err);
         dispatch(fetchOrdersFail(err));
       });
   };

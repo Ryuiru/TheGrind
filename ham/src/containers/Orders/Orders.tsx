@@ -6,16 +6,20 @@ import * as actions from '../../store/actions/index';
 import withErrorHandler from '../../HOC/withErrorHandler/withErrorHandler';
 import { ThunkDispatch } from 'redux-thunk';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
+import { ActionType } from '../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../store/reducers/order';
+import { InitialState3 } from '../../store/reducers/auth';
 
 interface OrdersProps extends InitialState2 {
-  onFetchOrders: () => void;
+  onFetchOrders: (token: string, userId: string) => void;
+  token: string;
+  userId: string;
 }
 class Orders extends React.Component<OrdersProps> {
   componentDidMount() {
-    this.props.onFetchOrders();
+    this.props.onFetchOrders(this.props.token, this.props.userId);
   }
+
   render() {
     let orders: JSX.Element | JSX.Element[] = <Spinner />;
     if (!this.props.loading) {
@@ -31,18 +35,24 @@ class Orders extends React.Component<OrdersProps> {
   }
 }
 
-const mapStateToProps = (state: { order: InitialState2 }) => {
+const mapStateToProps = (state: {
+  order: InitialState2;
+  auth: InitialState3;
+}) => {
   return {
     orders: state.order.orders,
     loading: state.order.loading,
+    token: state.auth.token,
+    userId: state.auth.userId,
   };
 };
 
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<InitialState, void, ActionType>
+  dispatch: ThunkDispatch<InitialState2, void, ActionType>
 ) => {
   return {
-    onFetchOrders: () => dispatch(actions.fetchOrders()),
+    onFetchOrders: (token: string, userId: string) =>
+      dispatch(actions.fetchOrders(token, userId)),
   };
 };
 export default connect(

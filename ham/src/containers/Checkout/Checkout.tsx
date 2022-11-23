@@ -4,16 +4,16 @@ import { Redirect, Route } from 'react-router-dom';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 import * as actions from './../../store/actions/index';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 import { ThunkDispatch } from 'redux-thunk';
 import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../store/reducers/order';
-interface CheckoutProps extends RouteComponentProps {
+type CheckoutProps = {
   ings: {};
   onInitPurchase: () => void;
   purchased: boolean;
   menuOpened: boolean;
-}
+} & RouteComponentProps;
 export interface CheckoutState {
   ingredients: Ingredients;
   price: string | number;

@@ -1,14 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Auxiliary from '../../HOC/Auxiliary';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 import './Layout.css';
+import { InitialState3 } from '../../store/reducers/auth';
 
 interface LayoutState {
   showSideDrawer: boolean;
 }
 interface PropsLayout {
   children: React.ReactNode;
+  isAuthenticated: boolean;
 }
 class Layout extends React.Component<PropsLayout, LayoutState> {
   state = {
@@ -25,8 +28,12 @@ class Layout extends React.Component<PropsLayout, LayoutState> {
   render() {
     return (
       <Auxiliary>
-        <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
+        <Toolbar
+          isAuth={this.props.isAuthenticated}
+          drawerToggleClicked={this.sideDrawerToggleHandler}
+        />
         <SideDrawer
+          isAuth={this.props.isAuthenticated}
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler}
         />
@@ -35,4 +42,10 @@ class Layout extends React.Component<PropsLayout, LayoutState> {
     );
   }
 }
-export default Layout;
+
+const mapStateToProps = (state: { auth: InitialState3 }) => {
+  return {
+    isAuthenticated: state.auth.token !== null,
+  };
+};
+export default connect(mapStateToProps)(Layout);

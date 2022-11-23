@@ -10,9 +10,10 @@ import Orders from './containers/Orders/Orders';
 import Logout from './containers/Auth/Logout/Logout';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState3 } from './store/reducers/auth';
+import { RouteComponentProps } from 'react-router';
 import { ActionType } from './store/reducers/burgerBuilder';
 
-interface AppProps {
+interface AppProps extends RouteComponentProps {
   onTryAutoSignup: () => void;
   isAuthenticated: boolean;
 }

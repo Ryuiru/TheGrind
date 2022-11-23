@@ -53,6 +53,9 @@ class BurgerBuilder extends React.Component<
   BurgerBuilderProps,
   BurgerBuilderState
 > {
+  state: BurgerBuilderState = {
+    purchasing: false,
+  };
   componentDidMount() {
     this.props.onInitIngredients();
   }

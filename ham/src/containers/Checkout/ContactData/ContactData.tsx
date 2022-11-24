@@ -12,6 +12,7 @@ import {
   ActionType,
   InitialState,
 } from '../../../store/reducers/burgerBuilder';
+import { updateObject, checkValidity } from '../../../shared/utility';
 import { InitialState2 } from '../../../store/reducers/order';
 import { InitialState3 } from '../../../store/reducers/auth';
 interface ContactDataProps {
@@ -30,13 +31,13 @@ interface ContactDataState {
 }
 
 interface OrderForm {
-  name: SomeValues;
-  street: SomeValues;
-  zipCode: SomeValues;
-  country: SomeValues;
-  email: SomeValues;
-  devileryMethod: DevileryMethod;
-  [key: string]: SomeValues | DevileryMethod;
+  name?: SomeValues;
+  street?: SomeValues;
+  zipCode?: SomeValues;
+  country?: SomeValues;
+  email?: SomeValues;
+  devileryMethod?: DevileryMethod;
+  [key: number]: SomeValues | DevileryMethod;
 }
 export interface DevileryMethod {
   elementType: string;
@@ -62,6 +63,8 @@ export interface SomeValues {
     required: boolean;
     minLength?: number;
     maxLength?: number;
+    isNumeric?: boolean;
+    isEmail?: boolean;
   };
   valid: boolean;
   touched: boolean;
@@ -98,7 +101,12 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'ZIP Code ',
         },
         value: '',
-        validation: { required: true, minLength: 5, maxLength: 5 },
+        validation: {
+          required: true,
+          minLength: 5,
+          maxLength: 5,
+          isNumeric: true,
+        },
         valid: false,
         touched: false,
       },
@@ -120,7 +128,7 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
           placeholder: 'Your Email',
         },
         value: '',
-        validation: { required: true },
+        validation: { required: true, isEmail: true },
         valid: false,
         touched: false,
       },
@@ -163,47 +171,30 @@ class ContactData extends React.Component<ContactDataProps, ContactDataState> {
     };
     this.props.onOrderBurger(order, this.props.token);
   };
-  checkValidity(
-    value: string,
-    rules: {
-      required?: boolean;
-      minLength?: number;
-      maxLength?: number;
-    }
-  ) {
-    let isValid = true;
-    if (!rules) {
-      return true;
-    }
-    if (rules.required) {
-      isValid = value.trim() !== '' && isValid;
-    }
-    if (rules.minLength) {
-      isValid = value.length >= rules.minLength && isValid;
-    }
-    if (rules.maxLength) {
-      isValid = value.length <= rules.maxLength && isValid;
-    }
-    return isValid;
-  }
   inputChangedHandler = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
-    inputIdentifier: string
+    inputIdentifier: number | string
   ) => {
-    const updatedOrderForm = { ...this.state.orderForm };
-    const updatedFormElement = {
-      ...updatedOrderForm[inputIdentifier],
-    };
-    updatedFormElement.value = event.target.value;
-    updatedFormElement.valid = this.checkValidity(
-      updatedFormElement.value,
-      updatedFormElement.validation
+    const updatedFormElement = updateObject(
+      this.state.orderForm[inputIdentifier as keyof typeof inputIdentifier],
+      {
+        value: event.target.value,
+        valid: checkValidity(
+          event.target.value,
+          this.state.orderForm[inputIdentifier as number].validation
+        ),
+        touched: true,
+      }
     );
-    updatedFormElement.touched = true;
-    updatedOrderForm[inputIdentifier] = updatedFormElement;
+    const updatedOrderForm = updateObject(this.state.orderForm, {
+      [inputIdentifier]: updatedFormElement,
+    });
     let formIsValid: boolean = true;
     for (let inputIdentifier in updatedOrderForm) {
-      formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+      formIsValid =
+        updatedOrderForm[inputIdentifier as keyof typeof updatedOrderForm][
+          'valid'
+        ] && formIsValid;
     }
 
     this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });

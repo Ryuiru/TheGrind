@@ -8,9 +8,10 @@ import { ThunkDispatch } from 'redux-thunk';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
+import { updateObject, checkValidity } from '../../shared/utility';
 import { InitialState3 } from '../../store/reducers/auth';
 interface Controls {
-  email: {
+  email?: {
     elementType: string;
     elementConfig: {
       type: string;
@@ -24,7 +25,7 @@ interface Controls {
     valid: boolean;
     touched: boolean;
   };
-  password: {
+  password?: {
     elementType: string;
     elementConfig: {
       type: string;
@@ -93,47 +94,24 @@ class Auth extends React.Component<AuthProps, AuthState> {
     }
   }
 
-  checkValidity(
-    value: string,
-    rules: {
-      required?: boolean;
-      minLength?: number;
-      maxLength?: number;
-    }
-  ) {
-    let isValid = true;
-    if (!rules) {
-      return true;
-    }
-    if (rules.required) {
-      isValid = value.trim() !== '' && isValid;
-    }
-    if (rules.minLength) {
-      isValid = value.length >= rules.minLength && isValid;
-    }
-    if (rules.maxLength) {
-      isValid = value.length <= rules.maxLength && isValid;
-    }
-    return isValid;
-  }
-
   inputChangedHandler = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
     controlName: string
   ) => {
-    const updatedControls = {
-      ...this.state.controls,
-      [controlName]: {
-        ...this.state.controls[controlName as keyof typeof this.state.controls],
-        value: event.target.value,
-        valid: this.checkValidity(
-          event.target.value,
-          this.state.controls[controlName as keyof typeof this.state.controls]
-            .validation
-        ),
-        touched: true,
-      },
-    };
+    const updatedControls = updateObject(this.state.controls, {
+      [controlName]: updateObject(
+        this.state.controls[controlName as keyof typeof this.state.controls],
+        {
+          value: event.target.value,
+          valid: checkValidity(
+            event.target.value,
+            this.state.controls[controlName as keyof typeof this.state.controls]
+              .validation
+          ),
+          touched: true,
+        }
+      ),
+    });
     this.setState({ controls: updatedControls });
   };
   submitHandler = (event: { preventDefault: () => void }) => {

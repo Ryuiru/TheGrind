@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateObject } from './../../store/utility';
+import { updateObject } from '../../shared/utility';
 import * as actionTypes from '../actions/actionTypes';
 
 export interface ActionType {

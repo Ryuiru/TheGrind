@@ -8,6 +8,7 @@ export interface InitialState3 {
   error: null;
   loading: boolean;
   authRedirectPath: string;
+  expirationDate: null;
 }
 
 const initialState: InitialState3 = {
@@ -16,6 +17,7 @@ const initialState: InitialState3 = {
   error: null,
   loading: false,
   authRedirectPath: '/',
+  expirationDate: null,
 };
 
 const authStart = (state: InitialState3, action: ActionType) => {

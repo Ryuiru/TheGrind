@@ -1,4 +1,3 @@
-import React from 'react';
 import { updateObject } from '../../shared/utility';
 import * as actionTypes from '../actions/actionTypes';
 

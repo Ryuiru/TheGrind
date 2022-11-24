@@ -37,7 +37,6 @@ export const initIngredients = () => {
         'https://react-burger-2caa5-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json'
       )
       .then((response) => {
-        console.log('Ingredients Loaded!');
         dispatch(setIngredients(response.data));
       })
       .catch((error) => {

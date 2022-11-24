@@ -22,9 +22,7 @@ class Modal extends React.Component<PropsModal> {
     prevProps: Readonly<PropsModal>,
     prevState: Readonly<{}>,
     snapshot?: any
-  ): void {
-    console.log('[Modal] Updated');
-  }
+  ): void {}
   render() {
     return (
       <Auxiliary>

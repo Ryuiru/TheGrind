@@ -30,7 +30,7 @@ export const checkValidity = (
   }
   if (rules.isEmail) {
     const pattern =
-      /^[a-z0-9!'#$%&*+\/=?^_`{|}~-]+(?:\.[a-z0-9!'#$%&*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-zA-Z]{2,}$/i;
+      /^[a-z0-9!'#$%&*+=?^_`{|}~-]+(?:\.[a-z0-9!'#$%&*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-zA-Z]{2,}$/i;
     isValid = pattern.test(value) && isValid;
   }
   if (rules.isNumeric) {

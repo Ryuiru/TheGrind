@@ -1,5 +1,5 @@
 import * as actionTypes from './../actions/actionTypes';
-import axios from 'axios';
+import axios from './../../axios-orders';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState3 } from '../reducers/auth';
 import { ActionType } from '../reducers/burgerBuilder';
@@ -34,8 +34,8 @@ export const logout = () => {
   };
 };
 
-export const checkAuthTimeout = (expirationTime: number) => {
-  return (dispatch: ThunkDispatch<InitialState3, void, ActionType>) => {
+const checkAuthTimeout = (expirationTime: number) => {
+  return (dispatch: (arg0: { type: string }) => void) => {
     setTimeout(() => {
       dispatch(logout());
     }, expirationTime * 1000);
@@ -59,7 +59,6 @@ export const auth = (email: string, password: string, isSignUp: boolean) => {
     axios
       .post(url, authData)
       .then((response) => {
-        console.log(response);
         const expirationDate = new Date(
           new Date().getTime() + response.data.expiresIn * 1000
         ).toString();

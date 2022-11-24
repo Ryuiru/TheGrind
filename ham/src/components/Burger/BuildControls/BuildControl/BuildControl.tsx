@@ -1,5 +1,4 @@
 import React from 'react';
-import { DisabledInfo } from '../../../../containers/BurgerBuilder/BurgerBuilder';
 import './BuildControl.css';
 
 interface Props {

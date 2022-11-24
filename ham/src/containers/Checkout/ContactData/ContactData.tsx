@@ -19,7 +19,7 @@ interface ContactDataProps {
   ingredients: {};
   price: string | number;
   ings: {};
-  onOrderBurger: ({}, Token: string) => void;
+  onOrderBurger: (order: {}, Token: string) => void;
   loading: boolean;
   token: string;
   userId: string;

@@ -36,11 +36,9 @@ export const logout = () => {
 
 const checkAuthTimeout = (expirationTime: number) => {
   return (dispatch: (arg0: { type: string }) => void) => {
-    console.log('pretimeout', expirationTime);
     setTimeout(() => {
       dispatch(logout());
     }, expirationTime * 1000);
-    console.log('posttimeout', expirationTime);
   };
 };
 
@@ -89,12 +87,12 @@ export const authCheckState = () => {
     if (!token) {
       dispatch(logout());
     } else {
-      const expirationDate = new Date(localStorage.getItem('expirationDate')); //errors: but works
-
-      // const expirationDate = new Date(localStorage.getItem('expirationDate') ? localStorage.getItem('expirationDate') : 0 ); //errors: but works
-
-      // const expirationDate = new Date(localStorage.getItem('expirationDate') ? 'expirationDate' : 0 ); //no errors: doesnt work
-      console.log('checkstate', expirationDate);
+      const expirationDate = new Date(
+        localStorage.getItem('expirationDate') || 0
+      );
+      // const expirationDate = new Date(
+      //   localStorage.getItem('expirationDate') ? 'expirationDate' : 0
+      // );
 
       if (expirationDate <= new Date()) {
         dispatch(logout());

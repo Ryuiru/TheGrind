@@ -3,6 +3,7 @@ import axios from './../../axios-orders';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState3 } from '../reducers/auth';
 import { ActionType } from '../reducers/burgerBuilder';
+import { AxiosResponse } from 'axios';
 
 export const authStart = () => {
   return {
@@ -58,7 +59,7 @@ export const auth = (email: string, password: string, isSignUp: boolean) => {
     }
     axios
       .post(url, authData)
-      .then((response) => {
+      .then((response: AxiosResponse) => {
         const expirationDate = new Date(
           new Date().getTime() + response.data.expiresIn * 1000
         ).toString();
@@ -88,11 +89,8 @@ export const authCheckState = () => {
       dispatch(logout());
     } else {
       const expirationDate = new Date(
-        localStorage.getItem('expirationDate') || 0
+        localStorage.getItem('expirationDate') ?? 0
       );
-      // const expirationDate = new Date(
-      //   localStorage.getItem('expirationDate') ? 'expirationDate' : 0
-      // );
 
       if (expirationDate <= new Date()) {
         dispatch(logout());

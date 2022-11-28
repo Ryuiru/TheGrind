@@ -1,24 +1,11 @@
-import React, { ChangeEventHandler, ReactNode } from 'react';
-import { AuthProps } from '../../../containers/Auth/Auth';
-import { ContactDataProps } from '../../../containers/Checkout/ContactData/ContactData';
+import React, { ChangeEventHandler, Key, ReactNode } from 'react';
 import classes from './Input.module.css';
 
-interface TypePlaceholder {
-  type: string;
-  placeholder: string;
-}
-interface Options {
-  options?:
-    | [
-        { value?: string; displayValue?: string },
-        { value?: string; displayValue?: string }
-      ];
-  type?: string;
-  placeholder?: string;
-}
 interface InputProps {
   elementType: string;
-  elementConfig?: Options;
+  elementConfig: {
+    options?: { value: string; displayValue: string }[];
+  } & TypeAndPlaceholder;
   value: string;
   label?: string;
   onChange?: ChangeEventHandler | undefined;
@@ -27,6 +14,18 @@ interface InputProps {
   shouldValidate: {};
   touched?: boolean | null;
 }
+
+export interface Options {
+  options?: [
+    { value: string; displayValue: string },
+    { value: string; displayValue: string }
+  ];
+}
+export interface TypeAndPlaceholder {
+  type?: string;
+  placeholder?: string;
+}
+
 const input: React.FC<InputProps> = (props) => {
   let inputElement = null;
   const inputClasses = [classes.InputElement];

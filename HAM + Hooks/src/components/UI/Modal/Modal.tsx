@@ -6,7 +6,7 @@ import './Modal.css';
 export interface PropsModal {
   children: React.ReactNode;
   show?: boolean;
-  modalClosed?: (() => void) | null;
+  modalClosed?: MouseEventHandler | undefined;
   // modalClosed?: (event: React.MouseEventHandler) => void;
 }
 const Modal: React.FunctionComponent<PropsModal> = (props) => {

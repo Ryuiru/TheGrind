@@ -8,9 +8,9 @@ import { InitialState2 } from '../../store/reducers/order';
 
 interface CheckoutProps extends RouteComponentProps {
   ings: {};
-  onInitPurchase: () => void;
+  onInitPurchase?: () => void;
   purchased: boolean;
-  menuOpened: boolean;
+  menuOpened?: boolean;
 }
 
 export interface CheckoutState {

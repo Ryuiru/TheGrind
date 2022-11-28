@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import thunk from 'redux-thunk';
+import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,11 +10,17 @@ import {
   applyMiddleware,
   compose,
   combineReducers,
+  AnyAction,
 } from 'redux';
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
 import orderReducer from './store/reducers/order';
 import authReducer from './../src/store/reducers/auth';
-import { Provider } from 'react-redux';
+import {
+  Provider,
+  TypedUseSelectorHook,
+  useDispatch,
+  useSelector,
+} from 'react-redux';
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
@@ -47,6 +53,17 @@ root.render(
   </Provider>
 );
 
+export type AppDispatch = typeof store.dispatch;
+export type ReduxState = ReturnType<typeof rootReducer>;
+export type TypedDispatch = ThunkDispatch<ReduxState, any, AnyAction>;
+export type TypedThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  ReduxState,
+  unknown,
+  AnyAction
+>;
+export const useTypedDispatch = () => useDispatch<TypedDispatch>();
+export const useTypedSelector: TypedUseSelectorHook<ReduxState> = useSelector;
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

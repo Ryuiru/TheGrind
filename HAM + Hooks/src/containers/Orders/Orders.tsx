@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, FunctionComponent, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Order from '../../components/Order/Order';
 import axios from '../../axios-orders';
@@ -9,13 +9,13 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import { ActionType } from '../../store/reducers/burgerBuilder';
 import { InitialState2 } from '../../store/reducers/order';
 import { InitialState3 } from '../../store/reducers/auth';
-import { type } from 'os';
+import { RouteComponentProps } from 'react-router-dom';
 
-type OrdersProps = {
+export interface OrdersProps extends RouteComponentProps, InitialState2 {
   onFetchOrders: (token: string, userId: string) => void;
   token: string;
   userId: string;
-} & InitialState2;
+}
 
 const Orders: React.FC<OrdersProps> = (props) => {
   const { onFetchOrders } = props;

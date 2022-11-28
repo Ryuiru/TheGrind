@@ -16,7 +16,8 @@ import { updateObject, checkValidity } from '../../../shared/utility';
 import { InitialState2 } from '../../../store/reducers/order';
 import { InitialState3 } from '../../../store/reducers/auth';
 import order from '../../../components/Order/Order';
-interface ContactDataProps {
+import { RouteComponentProps } from 'react-router-dom';
+export interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
   price: string | number;
   ings: {};
@@ -99,6 +100,7 @@ const ContactData: React.FunctionComponent<ContactDataProps> = (props) => {
       value: 'fastest',
       validation: {},
       valid: true,
+      touched: null,
     },
   });
 

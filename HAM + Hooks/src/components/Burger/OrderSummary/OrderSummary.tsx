@@ -20,6 +20,7 @@ const OrderSummary: React.FunctionComponent<Props> = (props) => {
       </li>
     );
   });
+
   return (
     <Auxiliary>
       <h3>Your Order</h3>

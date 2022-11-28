@@ -1,26 +1,17 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, ReactNode } from 'react';
+import { AuthProps } from '../../../containers/Auth/Auth';
+import { ContactDataProps } from '../../../containers/Checkout/ContactData/ContactData';
 import classes from './Input.module.css';
 interface InputProps {
   elementType: string;
-  elementConfig?:
-    | {
-        options?: [
-          { value?: string; displayValue?: string },
-          { value?: string; displayValue?: string }
-        ];
-      }
-    | {
-        type?: string;
-        placeholder?: string;
-      };
-
+  elementConfig?: 
   value: string;
   label?: string;
   onChange?: ChangeEventHandler | undefined;
   changed: ChangeEventHandler | undefined;
   invalid: boolean;
   shouldValidate: {};
-  touched?: boolean;
+  touched?: boolean | null;
 }
 const input: React.FC<InputProps> = (props) => {
   let inputElement = null;
@@ -57,7 +48,7 @@ const input: React.FC<InputProps> = (props) => {
           value={props.value}
           onChange={props.changed}
         >
-          {props.elementConfig?.options.map((option) => (
+          {props.elementConfig?.options?.map((option) => (
             <option key={option.value} value={option.value}>
               {option.displayValue}
             </option>

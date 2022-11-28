@@ -3,7 +3,7 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import classes from './../Auth/Auth.module.css';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { ThunkDispatch } from 'redux-thunk';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -11,7 +11,7 @@ import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
 import { updateObject, checkValidity } from '../../shared/utility';
 import { InitialState3 } from '../../store/reducers/auth';
 
-interface AuthProps {
+export interface AuthProps extends RouteComponentProps {
   onAuth: (email: string, password: string, isSignUp: boolean) => void;
   loading?: boolean;
   error?: null;

@@ -27,6 +27,7 @@ interface BuildControlProps {
   ordered: MouseEventHandler | undefined;
   isAuth: boolean;
 }
+
 const BuildControls: React.FC<BuildControlProps> = (props) => (
   <div className='BuildControls'>
     <p>

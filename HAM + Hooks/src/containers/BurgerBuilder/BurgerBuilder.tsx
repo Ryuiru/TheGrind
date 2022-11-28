@@ -21,17 +21,17 @@ export interface DisabledInfo {
   meat: boolean;
   [key: string]: boolean;
 }
-type BurgerBuilderProps = {
+interface BurgerBuilderProps extends RouteComponentProps {
   ings: void;
   onIngredientAdded: (type: keyof Ingredients) => void;
   onIngredientRemoved: (type: keyof Ingredients) => void;
   onInitIngredients: () => void;
   onInitPurchase: () => void;
-  price: number;
+  // price: any;
   error: boolean;
   isAuthenticated: boolean;
   onSetAuthRedirectPath: (path: string) => void;
-} & RouteComponentProps;
+}
 export interface Ingredients {
   [key: string]: number;
 }
@@ -45,10 +45,20 @@ const BurgerBuilder = (props: BurgerBuilderProps) => {
   const [purchasing, setPurchasing] = useState(false);
 
   const dispatch = useDispatch();
-  const ings = useSelector((state) => state.burgerBuilder.ingredients);
-  const price = useSelector((state) => state.burgerBuilder.totalPrice);
-  const error = useSelector((state) => state.burgerBuilder.error);
-  const isAuthenticated = useSelector((state) => state.auth.token !== null);
+  const ings = useSelector(
+    (state: { burgerBuilder: { ingredients: {} } }) =>
+      state.burgerBuilder.ingredients
+  );
+  const price = useSelector(
+    (state: { burgerBuilder: { totalPrice: number } }) =>
+      state.burgerBuilder.totalPrice
+  );
+  const error = useSelector(
+    (state: { burgerBuilder: { error: {} } }) => state.burgerBuilder.error
+  );
+  const isAuthenticated = useSelector(
+    (state: { auth: { token: {} } }) => state.auth.token !== null
+  );
 
   const onIngredientAdded = (ingName: string) =>
     dispatch(actions.addIngredient(ingName));
@@ -98,7 +108,7 @@ const BurgerBuilder = (props: BurgerBuilderProps) => {
 
   const disabledInfo: DisabledInfo = { ...DISABLED_INFO };
   for (let key in disabledInfo) {
-    disabledInfo[key] = ings[key] <= 0;
+    disabledInfo[key] = ings[key as keyof typeof ings] <= 0;
   }
   let orderSummary = null;
   let burger = error ? <p>Ingredients can't be loaded!</p> : <Spinner />;

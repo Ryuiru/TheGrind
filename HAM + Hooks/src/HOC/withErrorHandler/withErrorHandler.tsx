@@ -1,31 +1,53 @@
 import { AxiosInstance } from 'axios';
-import React, {
-  MouseEventHandler,
-  ReactElement,
-  useEffect,
-  useState,
-} from 'react';
+import React from 'react';
 import Modal from '../../components/UI/Modal/Modal';
-import useHttpErrorHandler from './../../hooks/http-error-handler';
 import Auxiliary from '../Auxiliary';
-import { OrdersProps } from '../../containers/Orders/Orders';
-import { ContactDataProps } from '../../containers/Checkout/ContactData/ContactData';
-
+interface State {
+  error: boolean | null;
+}
 const withErrorHandler = (
   WrappedComponent: React.FunctionComponent<any>,
   axios: AxiosInstance
 ) => {
-  return (props: JSX.IntrinsicAttributes) => {
-    const [error, clearError] = useHttpErrorHandler(axios);
+  return class extends React.Component<{}, State> {
+    state = {
+      error: null,
+    };
+    reqInterceptor!: number;
+    resInterceptor!: number;
 
-    return (
-      <Auxiliary>
-        <Modal show={!!error} modalClosed={clearError as MouseEventHandler}>
-          {error ? error.message : null}
-        </Modal>
-        <WrappedComponent {...props} />
-      </Auxiliary>
-    );
+    componentDidMount() {
+      this.reqInterceptor = axios.interceptors.request.use((req) => {
+        this.setState({ error: null });
+        return req;
+      });
+      this.resInterceptor = axios.interceptors.response.use(
+        (res) => res,
+        (error: boolean) => {
+          this.setState({ error: error });
+        }
+      );
+    }
+    componentWillUnmount() {
+      axios.interceptors.request.eject(this.reqInterceptor);
+      axios.interceptors.response.eject(this.resInterceptor);
+    }
+    errorConfirmedHandler = () => {
+      this.setState({ error: null });
+    };
+    render() {
+      return (
+        <Auxiliary>
+          <Modal
+            show={!!this.state.error}
+            modalClosed={this.errorConfirmedHandler}
+          >
+            {this.state.error ? this.state.error['message'] : null}
+          </Modal>
+          <WrappedComponent {...this.props} />
+        </Auxiliary>
+      );
+    }
   };
 };
 

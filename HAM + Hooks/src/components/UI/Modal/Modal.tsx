@@ -6,25 +6,9 @@ import './Modal.css';
 export interface PropsModal {
   children: React.ReactNode;
   show?: boolean;
-  modalClosed?: MouseEventHandler | undefined;
-  // modalClosed?: (event: React.MouseEventHandler) => void;
+  modalClosed?: MouseEventHandler;
 }
 const Modal: React.FunctionComponent<PropsModal> = (props) => {
-  // shouldComponentUpdate(
-  //   nextProps: Readonly<PropsModal>,
-  //   nextState: Readonly<{}>
-  // ): boolean {
-  //   return (
-  //     nextProps.show !== props.show ||
-  //     nextProps.children !== this.props.children
-  //   );
-  // }
-  // componentDidUpdate(
-  //   prevProps: Readonly<PropsModal>,
-  //   prevState: Readonly<{}>,
-  //   snapshot?: any
-  // ): void {}
-
   return (
     <Auxiliary>
       <Backdrop show={props.show} clicked={props.modalClosed} />

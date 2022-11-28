@@ -10,10 +10,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import { RouteComponentProps } from 'react-router';
 import * as actions from '../../store/actions/index';
 import withErrorHandler from '../../HOC/withErrorHandler/withErrorHandler';
-import { ActionType, InitialState } from '../../store/reducers/burgerBuilder';
-import { ThunkDispatch } from 'redux-thunk';
-import { InitialState3 } from '../../store/reducers/auth';
-import { InitialState2 } from '../../store/reducers/order';
+import { AnyAction } from 'redux';
 export interface DisabledInfo {
   salad: boolean;
   bacon: boolean;
@@ -66,9 +63,12 @@ const BurgerBuilder = (props: BurgerBuilderProps) => {
   const onIngredientRemoved = (ingName: string) =>
     dispatch(actions.removeIngredient(ingName));
   const onInitIngredients = useCallback(
-    () => dispatch(actions.initIngredients()),
+    () => dispatch(actions.initIngredients() as unknown as AnyAction),
     [dispatch]
   );
+  // function onInitIngredients() {
+  //   useCallback(() => dispatch(actions.initIngredients()), [dispatch]);
+  // }
   const onInitPurchase = () => dispatch(actions.purchaseInit());
   const onSetAuthRedirectPath = (path: string) =>
     dispatch(actions.setAuthRedirectPath(path));

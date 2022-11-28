@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEventHandler, useState } from 'react';
 import './ContactData.css';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
@@ -94,7 +94,7 @@ const ContactData: React.FunctionComponent<ContactDataProps> = (props) => {
       elementConfig: {
         options: [
           { value: 'fastest', displayValue: 'Fastest' },
-          { value: 'cheapest', displayValue: 'Cheapest ' },
+          { value: 'cheapest', displayValue: 'Cheapest' },
         ],
       },
       value: 'fastest',

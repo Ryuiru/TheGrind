@@ -1,5 +1,10 @@
 import { AxiosInstance } from 'axios';
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, {
+  MouseEventHandler,
+  ReactElement,
+  useEffect,
+  useState,
+} from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import useHttpErrorHandler from './../../hooks/http-error-handler';
 import Auxiliary from '../Auxiliary';
@@ -15,7 +20,7 @@ const withErrorHandler = (
 
     return (
       <Auxiliary>
-        <Modal show={error} modalClosed={clearError}>
+        <Modal show={!!error} modalClosed={clearError as MouseEventHandler}>
           {error ? error.message : null}
         </Modal>
         <WrappedComponent {...props} />

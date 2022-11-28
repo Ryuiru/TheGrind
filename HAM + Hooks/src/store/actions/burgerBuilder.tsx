@@ -2,8 +2,8 @@ import { ActionType, InitialState } from '../reducers/burgerBuilder';
 import axios from './../../axios-orders';
 import { ThunkDispatch } from 'redux-thunk';
 import * as actionTypes from './actionTypes';
-import { ReduxState, TypedThunk } from '../..';
-import { AnyAction } from 'redux';
+import { AnyAction, Dispatch } from 'redux';
+import { useDispatch } from 'react-redux';
 
 export const addIngredient = (name: string) => {
   return {
@@ -33,16 +33,16 @@ export const fetchIngredientsFailed = () => {
 };
 
 export const initIngredients = () => {
-  return (TypedDispatch: ThunkDispatch<ReduxState, void, AnyAction>) => {
+  return (dispatch: ThunkDispatch<InitialState, void, ActionType>) => {
     axios
       .get(
         'https://react-burger-2caa5-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json'
       )
       .then((response) => {
-        TypedDispatch(setIngredients(response.data));
+        dispatch(setIngredients(response.data));
       })
       .catch((error) => {
-        TypedDispatch(fetchIngredientsFailed());
+        dispatch(fetchIngredientsFailed());
       });
   };
 };

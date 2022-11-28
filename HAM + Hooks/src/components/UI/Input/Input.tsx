@@ -2,9 +2,23 @@ import React, { ChangeEventHandler, ReactNode } from 'react';
 import { AuthProps } from '../../../containers/Auth/Auth';
 import { ContactDataProps } from '../../../containers/Checkout/ContactData/ContactData';
 import classes from './Input.module.css';
+
+interface TypePlaceholder {
+  type: string;
+  placeholder: string;
+}
+interface Options {
+  options?:
+    | [
+        { value?: string; displayValue?: string },
+        { value?: string; displayValue?: string }
+      ];
+  type?: string;
+  placeholder?: string;
+}
 interface InputProps {
   elementType: string;
-  elementConfig?: 
+  elementConfig?: Options;
   value: string;
   label?: string;
   onChange?: ChangeEventHandler | undefined;

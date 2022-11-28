@@ -50,7 +50,7 @@ const App: React.FC<AppProps> = (props) => {
     routes = (
       <Switch>
         <Route path='/checkout' render={(props) => <Checkout {...props} />} />
-        <Route path='/orders' render={(props) => <Orders {...props} />} />
+        <Route path='/orders' render={() => <Orders />} />
         <Route path='/auth' exact render={(props) => <Auth {...props} />} />
         <Route path='/' exact component={BurgerBuilder} />
         <Route path='/logout' exact component={Logout} />

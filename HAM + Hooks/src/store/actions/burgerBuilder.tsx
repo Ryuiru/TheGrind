@@ -2,8 +2,6 @@ import { ActionType, InitialState } from '../reducers/burgerBuilder';
 import axios from './../../axios-orders';
 import { ThunkDispatch } from 'redux-thunk';
 import * as actionTypes from './actionTypes';
-import { AnyAction, Dispatch } from 'redux';
-import { useDispatch } from 'react-redux';
 
 export const addIngredient = (name: string) => {
   return {

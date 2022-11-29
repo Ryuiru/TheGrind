@@ -1,4 +1,4 @@
-import React, { Component, FunctionComponent, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Order from '../../components/Order/Order';
 import axios from '../../axios-orders';
@@ -12,7 +12,7 @@ import { InitialState3 } from '../../store/reducers/auth';
 import { RouteComponentProps } from 'react-router-dom';
 
 export interface OrdersProps extends RouteComponentProps, InitialState2 {
-  onFetchOrders: (token: string, userId: string) => void;
+  onFetchOrders: (arg1: string, arg2: string) => void;
   token: string;
   userId: string;
 }
@@ -22,6 +22,7 @@ const Orders: React.FC<OrdersProps> = (props) => {
 
   useEffect(() => {
     onFetchOrders(props.token, props.userId);
+    // eslint-disable-next-line
   }, [onFetchOrders]);
 
   let orders: JSX.Element | JSX.Element[] = <Spinner />;

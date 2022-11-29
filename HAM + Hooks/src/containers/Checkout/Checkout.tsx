@@ -28,7 +28,6 @@ const checkout: React.FunctionComponent<CheckoutProps> = (props) => {
     props.history.goBack();
   };
   const checkoutContinuedHandler = () => {
-    // console.log(this.state.totalPrice);
     props.history.replace('/checkout/contact-data');
   };
 

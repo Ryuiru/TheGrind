@@ -157,7 +157,6 @@ const mapStateToProps = (state: {
 const mapDispatchToProps = (
   dispatch: ThunkDispatch<InitialState3, void, ActionType>
 ) => {
-  console.log('asd');
   return {
     onAuth: (email: string, password: string, isSignUp: boolean) =>
       dispatch(actions.auth(email, password, isSignUp)),

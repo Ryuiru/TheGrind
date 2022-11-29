@@ -1,7 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 import Auxiliary from '../../../HOC/Auxiliary';
 import Button from '../../UI/Button/Button';
-// import './../../UI/Button/Button.css';
 interface Props {
   ingredients: {
     [Key: string]: number;

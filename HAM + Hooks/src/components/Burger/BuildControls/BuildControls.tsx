@@ -1,10 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 import './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import {
-  DisabledInfo,
-  Ingredients,
-} from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
+import { DisabledInfo } from '../../../../src/containers/BurgerBuilder/BurgerBuilder';
 const controls = [
   { label: 'Salad', type: 'salad' },
   { label: 'Bacon', type: 'bacon' },

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
 import Auxiliary from '../../HOC/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -24,7 +24,6 @@ interface BurgerBuilderProps extends RouteComponentProps {
   onIngredientRemoved: (type: keyof Ingredients) => void;
   onInitIngredients: () => void;
   onInitPurchase: () => void;
-  // price: any;
   error: boolean;
   isAuthenticated: boolean;
   onSetAuthRedirectPath: (path: string) => void;
@@ -66,9 +65,6 @@ const BurgerBuilder = (props: BurgerBuilderProps) => {
     () => dispatch(actions.initIngredients() as unknown as AnyAction),
     [dispatch]
   );
-  // function onInitIngredients() {
-  //   useCallback(() => dispatch(actions.initIngredients()), [dispatch]);
-  // }
   const onInitPurchase = () => dispatch(actions.purchaseInit());
   const onSetAuthRedirectPath = (path: string) =>
     dispatch(actions.setAuthRedirectPath(path));

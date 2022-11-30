@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from 'react';
+import React, { useState } from 'react';
 import './ContactData.css';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
@@ -15,7 +15,6 @@ import {
 import { updateObject, checkValidity } from '../../../shared/utility';
 import { InitialState2 } from '../../../store/reducers/order';
 import { InitialState3 } from '../../../store/reducers/auth';
-import order from '../../../components/Order/Order';
 import { RouteComponentProps } from 'react-router-dom';
 export interface ContactDataProps extends RouteComponentProps {
   ingredients: {};
@@ -218,7 +217,6 @@ const mapDispatchToProps = (
       dispatch(actions.purchaseBurger(orderData, token)),
   };
 };
-// onOrderBurger
 export default connect(
   mapStateToProps,
   mapDispatchToProps

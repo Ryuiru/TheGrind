@@ -24,7 +24,6 @@ export const purchaseBurgerStart = () => {
     type: actionTypes.PURCHASE_BURGER_START,
   };
 };
-// Async
 export const purchaseBurger = (orderData: string, token: string) => {
   return (dispatch: ThunkDispatch<InitialState2, void, ActionType>) => {
     dispatch(purchaseBurgerStart());
@@ -78,7 +77,6 @@ export const fetchOrders = (token: string, userId: string) => {
         dispatch(fetchOrdersSuccess(fetchedOrders));
       })
       .catch((err) => {
-        console.log('orderActionError:', err);
         dispatch(fetchOrdersFail(err));
       });
   };

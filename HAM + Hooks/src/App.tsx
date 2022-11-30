@@ -2,9 +2,6 @@ import React, { Suspense, useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-// import Checkout from './containers/Checkout/Checkout';
-// import Auth from './containers/Auth/Auth';
-// import Orders from './containers/Orders/Orders';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 import Logout from './containers/Auth/Logout/Logout';
@@ -35,8 +32,6 @@ const App: React.FC<AppProps> = (props) => {
   useEffect(() => {
     onTryAutoSignup();
   }, [onTryAutoSignup]);
-  //was before componentDidMount
-  //second empty argument [] makes useEffect only run once when component is mounted
 
   let routes = (
     <Switch>

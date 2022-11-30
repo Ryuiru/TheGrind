@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, Key, ReactNode } from 'react';
+import React, { ChangeEventHandler } from 'react';
 import classes from './Input.module.css';
 
 interface InputProps {
